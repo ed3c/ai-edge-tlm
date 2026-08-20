@@ -1,121 +1,107 @@
-# Shadow Architect checkpoint — Foundation pre-publication
+# Shadow Architect checkpoint — Foundation publication
 
-Subject under review:
+## Immutable implementation subject
 
 ```text
-repository       ed3c/ai-edge-tlm
-remote base      0008d99873f815b23f0bea0c9fca989a20b0637e
-foundation head  foundation/domain-decoupled-core-v0
-remote relation  identical to main before Foundation publication
-local candidate  /mnt/data/ai-edge-tlm-foundation
+repository             ed3c/ai-edge-tlm
+base                   0008d99873f815b23f0bea0c9fca989a20b0637e
+implementation commit  51cb2c917a1da54ace87dcef9f4a75bf6504ffac
+implementation tree    fc17337b94626c1b8f4c8b83dfbf543bc3134dfd
+pull request           #16 / draft / unmerged
+changed paths          43 / #15 publication lease
+provider workflow      validate #1 / success
 ```
+
+The open branch head is mutable and must be read live. The immutable implementation commit/tree above is the Foundation evidence subject; subsequent documentation-only reconciliation cannot erase that receipt.
 
 ## Outcome
 
 ```text
-RECONCILE_BEFORE_NEXT_STEP_L2
+CONTINUE_WITH_WARNINGS_L1
 ```
 
-The local Foundation candidate is implementation-ready, but it is not yet a repository exact-head subject. No downstream Worker may treat local candidate evidence as GitHub completion evidence.
+Foundation implementation/publication gates are closed. Warnings identify downstream evidence lanes that remain absent or unexercised; they do not block P0/P1 start.
 
-## Material deltas found by Shadow Monitor
+## Material deltas and disposition
 
 ### S-01 — exact-subject drift
 
 **Class:** `EVIDENCE_DELTA` / `STATE_DELTA`
 
-The remote Foundation branch contains the bootstrap subject while the executable candidate exists only locally.
+The executable candidate originally existed only under `/mnt/data` while the remote branch was the bootstrap commit.
 
-**Status:** OPEN until publication + exact-head readback.
+**Disposition:** `CLOSED_FOR_IMPLEMENTATION_COMMIT`.
 
-**Falsifier:** GitHub compare/readback must show the Foundation bytes on the declared head, followed by gates rerun against that exact head.
+A fresh 43-path local Git index produced tree `fc17337b94626c1b8f4c8b83dfbf543bc3134dfd`, exactly matching the pushed commit tree. GitHub changed-path readback and provider CI closed the cloud publication lane for this root atom.
 
 ### S-02 — missing root molecular atom
 
 **Class:** `OWNERSHIP_DELTA` / `PROCEDURAL_GROUNDING_DELTA`
 
-The Epic originally acted as a conceptual root but did not own a reviewable implementation lease.
+**Disposition:** `CLOSED`.
 
-**Resolution:** issue #15 now owns the Foundation root and explicitly excludes all later workstream paths.
-
-**Status:** RESOLVED_IN_PLAN.
+Issue #15 owns the Foundation root and explicitly excludes later workstream paths.
 
 ### S-03 — Foundation gate depended on future P2 contracts
 
 **Class:** `LIFECYCLE_DELTA` / `EVIDENCE_DELTA`
 
-The first candidate `edge-tlmctl validate` read `contracts/schema/**` and `contracts/examples/**`, while #15 correctly excluded `contracts/**` for P2 (#3). Publishing the proper #15 lease would therefore have broken its own gate.
+**Disposition:** `CLOSED`.
 
-**Resolution:** Foundation validation is self-contained under `tests/fixtures/**` plus the #15 task packet. P2 retains exclusive ownership of real domain schemas/bindings.
+Foundation validation is self-contained under `tests/fixtures/**` plus the #15 packet. P2 retains exclusive domain-contract ownership.
 
-**Status:** RESOLVED_LOCAL; exact-head rerun required after publication.
-
-### S-04 — public-boundary verifier could never inspect `/mnt/data` workspace
+### S-04 — public-boundary verifier skipped `/mnt/data`
 
 **Class:** `EVIDENCE_DELTA` / `FAILURE_SURFACE_DELTA`
 
-The auditor originally excluded any absolute path containing a component named `data`. Because the working tree lives under `/mnt/data`, every public file was skipped, producing a false green. A planted Google Workspace URL exposed the failure.
+**Disposition:** `CLOSED`.
 
-**Resolution:** exclusions are now evaluated against repo-relative path parts; regression tests cover a repository physically located below `/mnt/data`; the repo-local `data/` directory remains intentionally excluded as runtime receipt storage.
+Exclusions use repository-relative paths; `/mnt/data` regression coverage and a planted private Workspace URL prove the scanner reaches the repository.
 
-**Status:** RESOLVED_LOCAL; exact-head rerun required after publication.
+### S-05 — post-publication SSOT remained pre-publication
 
-## FIRST_GREEN evidence
+**Class:** `STATE_DELTA` / `EVIDENCE_DELTA`
 
-Positive gates on the restored local candidate:
+After PR/CI creation, readiness/Stack documents still described Foundation as local-only and P0/P1 as blocked.
 
-```text
-PYTHONPATH=src python -m edge_tlm.cli validate
-PASS: foundation packet, DAG semantics, handoff cardinality, and required SSOT surfaces
+**Disposition:** `RECONCILED_IN_FOLLOW_UP`.
 
-PYTHONPATH=src python -m edge_tlm.cli audit-public-boundary
-PASS: no committed private Google Workspace URLs or CodexDoc URI values
+Public SSOT now records the immutable implementation receipt, draft PR/CI state, mutable-open-head rule, and P0/P1 `START_READY` state without embedding a self-referential follow-up commit SHA.
 
-PYTHONPATH=src python -m pytest -q
-16 passed
-```
+## Exact-subject evidence
 
-Planted negative controls:
+Positive gates:
 
 ```text
-private Google Workspace URL       -> FAIL as required
-second ACTIVE Local Handoff item   -> FAIL as required
-cyclic Foundation DAG              -> FAIL as required
+edge-tlmctl validate                 PASS
+edge-tlmctl audit-public-boundary    PASS
+pytest -q                            16 passed
+GitHub workflow validate #1          SUCCESS
 ```
 
-After restoring the fixtures, all positive gates returned green again.
+Planted controls:
+
+```text
+private Google Workspace URL        FAIL as required
+second ACTIVE Local Handoff item     FAIL as required
+cyclic Foundation DAG               FAIL as required
+```
+
+All fixtures were restored and positive gates returned green.
 
 ## What the green tests do not prove
 
-They do not prove:
+They do not prove P0 source truth, P1 private ACL/authorization, P2 native contract bindings, Android/iOS buildability, provider/device/backend availability, model quality/conversion parity, privacy/energy/thermal results, production sandbox exploit resistance, terms acceptance, merge, release, signing, or store publication.
 
-- that these bytes exist on the declared GitHub head;
-- P0 source/article/PDF truth or license applicability;
-- P1 private Drive ACL correctness or resolver authorization;
-- P2 JSON domain-contract/binding compatibility;
-- Android/iOS native buildability;
-- AICore/ML Kit, Apple Foundation Models, or LiteRT-LM runtime availability;
-- runtime-observed CPU/GPU/NPU/ANE backend selection;
-- model quality, conversion parity, privacy, energy, thermal or device matrix results;
-- production WebView exploit resistance;
-- model/service/store terms acceptance;
-- PR review, merge, release, store publication, signing or provisioning.
-
-## Next admissible transition
-
-Only #15 may move next.
+## Next admissible transitions
 
 ```text
-explicit repository mutation authority
-+ exact base rebind
-+ #15 path manifest
-+ no excluded workstream bytes
-→ Foundation commit
-→ exact-head gates
-→ Shadow BEFORE_COMMIT / BEFORE_PR_OR_PUBLICATION
-→ GitHub changed-path readback
-→ exact-head Foundation receipt
-→ admit P0 (#2) and P1 (#7) as path-disjoint siblings
+live Foundation PR head readback
+→ synchronize untouched P0/P1 child branches to the exact parent
+→ launch P0 #2 and P1 #7 as path-disjoint Workers
+→ receive bounded Context Capsules and owning-lane receipts
+→ admit P2 start when required outputs are readable
+→ retain P2 completion blockers until P0/P1 receipts validate
 ```
 
-Until the exact-head receipt exists, P0/P1 remain `BLOCKED_BY_#15` and the current Shadow result remains L2.
+Merge and every release/terms/secret/store transition remain Human-owned.

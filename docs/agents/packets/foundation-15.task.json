@@ -90,5 +90,32 @@
     "credential_or_secret_mutation",
     "semantic_conflict_resolution"
   ],
-  "current_state": "READY_EXCEPT_PUBLICATION_AUTHORITY"
+  "current_state": "IMPLEMENTED_UNMERGED",
+  "publication_receipt": {
+    "implementation_commit": "51cb2c917a1da54ace87dcef9f4a75bf6504ffac",
+    "implementation_tree": "fc17337b94626c1b8f4c8b83dfbf543bc3134dfd",
+    "pull_request": 16,
+    "pull_request_state": "DRAFT_OPEN",
+    "workflow": {
+      "name": "validate",
+      "run_number": 1,
+      "conclusion": "success"
+    },
+    "changed_path_count": 43,
+    "shadow_outcome": "CONTINUE_WITH_WARNINGS_L1"
+  },
+  "authorized_operations_completed": [
+    "commit",
+    "push",
+    "pull_request_creation"
+  ],
+  "remaining_human_owned_operations": [
+    "merge",
+    "release_promotion",
+    "store_publication",
+    "signing_or_provisioning",
+    "license_or_model_terms_acceptance",
+    "credential_or_secret_mutation",
+    "semantic_conflict_resolution"
+  ]
 }

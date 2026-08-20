@@ -1,13 +1,24 @@
 # Molecular Stack and issue index
 
-This index follows the `C/K/A/E/X/D` vocabulary from `skills-shared/git-town-stacked-pr-worker`. It records **planned** branch topology before publication. A branch/PR does not become buildable merely because it exists; exact-head gates and blockers decide that.
+This index follows the `C/K/A/E/X/D` vocabulary from `skills-shared/git-town-stacked-pr-worker`. Open heads are mutable; exact-head status must be refreshed from GitHub before mutation, review, synchronization, or completion admission.
+
+## Foundation receipt
+
+```text
+C0/K0/D0 implementation commit  51cb2c917a1da54ace87dcef9f4a75bf6504ffac
+implementation tree             fc17337b94626c1b8f4c8b83dfbf543bc3134dfd
+PR                              #16 draft / unmerged
+changed paths                   43
+CI                              validate #1 success
+Shadow                          CONTINUE_WITH_WARNINGS_L1
+```
 
 | Atom | Issue | Class | True prerequisites | Path/resource lease | Evidence lane | Completion gate | Current state |
 |---|---|---|---|---|---|---|---|
-| C0/K0/D0 | [#15](https://github.com/ed3c/ai-edge-tlm/issues/15) | root | `main@0008d99873f815b23f0bea0c9fca989a20b0637e` | root harness, architecture SSOT, reference validators/tests, generic agent docs | LOCAL/CLOUD | exact-head `validate`, boundary audit, `pytest`, negative controls, Shadow FIRST_GREEN | OPEN; local candidate only |
-| C1 | [#2](https://github.com/ed3c/ai-edge-tlm/issues/2) | sibling after root | #15 admitted | `docs/research/**`, source/claim/license validators | SOURCE/STATIC | source register + claim ledger + stale/unsupported mutation | BLOCKED_BY_#15 |
-| C2 | [#7](https://github.com/ed3c/ai-edge-tlm/issues/7) | sibling after root | #15 admitted | public/private boundary surfaces | LOCAL/PRIVATE | leak canary + bounded context-capsule contract | BLOCKED_BY_#15 |
-| C3 | [#3](https://github.com/ed3c/ai-edge-tlm/issues/3) | child/convergence | #2 + #7 | `contracts/**`, generated Kotlin/Swift bindings | LOCAL | schema/generator/golden/mutation gates | BLOCKED_BY_#2_#7 |
+| C0/K0/D0 | [#15](https://github.com/ed3c/ai-edge-tlm/issues/15) | root | `main@0008d99873f815b23f0bea0c9fca989a20b0637e` | root harness, architecture SSOT, reference validators/tests, generic agent docs | LOCAL/CLOUD | exact tree replay + `validate` + boundary audit + `pytest` + controls + CI + Shadow | IMPLEMENTED_UNMERGED / PR_16 |
+| C1 | [#2](https://github.com/ed3c/ai-edge-tlm/issues/2) | sibling after root | live #15 head | `docs/research/**`, P0 source/claim/license validators | SOURCE/STATIC | source register + claim ledger + stale/unsupported/wrong-subject controls | START_READY / `evidence/source-closure` |
+| C2 | [#7](https://github.com/ed3c/ai-edge-tlm/issues/7) | sibling after root | live #15 head | public/private boundary interfaces/docs/tests | LOCAL/PRIVATE | leak/capsule/stale/private-authority controls | START_READY / `control/public-private-boundary` |
+| C3 | [#3](https://github.com/ed3c/ai-edge-tlm/issues/3) | child/convergence | readable #2 + #7 outputs; completion requires their receipts | `contracts/**`, generated Kotlin/Swift bindings | LOCAL | schema/generator/golden/mutation gates | BLOCKED_BY_P0_P1_OUTPUTS |
 | A4 | [#4](https://github.com/ed3c/ai-edge-tlm/issues/4) | sibling | #3 | `adapters/android/system-genai/**` | LIVE_DEVICE | Gradle + supported/unavailable/fallback device receipts | BLOCKED_BY_#3 |
 | A5 | [#5](https://github.com/ed3c/ai-edge-tlm/issues/5) | sibling | #3 | `adapters/apple/foundation-models/**` | LIVE_DEVICE | Xcode + supported device + OS/model revision | BLOCKED_BY_#3 |
 | A6 | [#6](https://github.com/ed3c/ai-edge-tlm/issues/6) | sibling | #3 + #9 + admitted runtime source | `adapters/android/litert-lm/**` | LOCAL/LIVE_DEVICE | runtime/model/backend + failure/device receipts | BLOCKED |
@@ -21,8 +32,8 @@ This index follows the `C/K/A/E/X/D` vocabulary from `skills-shared/git-town-sta
 
 ## Start vs completion edges
 
-A start edge closes when the prerequisite is readable and its writer lease is free. A completion edge closes only when the prerequisite's own exact-subject receipt exists in the required evidence lane. These are independent edges over the same work graph.
+A start edge closes when the prerequisite is readable and its writer lease is free. A completion edge closes only when the prerequisite's exact-subject receipt exists in the required evidence lane. P0/P1 are start-ready; nothing in the Foundation receipt marks either workstream complete.
 
 ## Publication law
 
-Open heads are mutable and never count as durable evidence. When publication begins, re-read Issues, branches and PR heads from GitHub, bind each atom to exact changed paths and gates, reject stale receipts after any rebase/sync, and preserve blockers/`NOT_EXERCISED` states. P8 is the only multi-parent implementation convergence; P9 is the aggregate documentation/handoff owner.
+Before any Worker mutation, re-read the parent/head refs from GitHub and reject stale branch packets. Any parent movement invalidates child exact-head receipts and requires fresh gates. P8 is the only multi-parent implementation convergence; P9 is the aggregate documentation/handoff owner. Merge/release remain Human-owned.

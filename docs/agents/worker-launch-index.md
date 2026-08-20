@@ -1,13 +1,25 @@
 # Worker launch index
 
-The Tech Lead owns this routing table. A new ChatGPT/Codex session may start only when its launch-state predicate is true and the exact base commit is inserted into the worker packet immediately before launch.
+The Tech Lead owns this routing table. A new ChatGPT/Codex session may start only when its launch-state predicate is true and the exact base commit is inserted from live provider readback immediately before mutation.
+
+## Foundation publication receipt
+
+```text
+implementation_commit  51cb2c917a1da54ace87dcef9f4a75bf6504ffac
+implementation_tree    fc17337b94626c1b8f4c8b83dfbf543bc3134dfd
+pull_request           #16 / draft / unmerged
+workflow               validate #1 / success
+shadow                 CONTINUE_WITH_WARNINGS_L1
+```
+
+The implementation commit is immutable. The open PR head may move through documentation-only reconciliation or review fixes, so child branches must be synchronized to the **live** `foundation/domain-decoupled-core-v0` head before their first mutation.
 
 | Worker | Issue | Planned branch | Writable lease | Launch predicate | Current state |
 |---|---|---|---|---|---|
-| FOUNDATION | [#15](https://github.com/ed3c/ai-edge-tlm/issues/15) | `foundation/domain-decoupled-core-v0` | #15 owned root surfaces only | explicit commit/publication authority + exact base bound | READY_EXCEPT_PUBLICATION_AUTHORITY |
-| P0 | [#2](https://github.com/ed3c/ai-edge-tlm/issues/2) | `evidence/source-closure` | `docs/research/**` | #15 exact-head foundation admitted | BLOCKED |
-| P1 | [#7](https://github.com/ed3c/ai-edge-tlm/issues/7) | `control/public-private-boundary` | public/private boundary surfaces | #15 admitted | BLOCKED |
-| P2 | [#3](https://github.com/ed3c/ai-edge-tlm/issues/3) | `contracts/cross-platform-v1` | `contracts/**`, generated bindings | #2/#7 required outputs readable; completion waits receipts | BLOCKED |
+| FOUNDATION | [#15](https://github.com/ed3c/ai-edge-tlm/issues/15) | `foundation/domain-decoupled-core-v0` | #15 owned root surfaces only | implementation receipt + provider CI + exact changed-path readback | IMPLEMENTED_UNMERGED / DRAFT_PR_16 |
+| P0 | [#2](https://github.com/ed3c/ai-edge-tlm/issues/2) | `evidence/source-closure` | `docs/research/**` | branch equals live Foundation head; #15 receipt readable | START_READY |
+| P1 | [#7](https://github.com/ed3c/ai-edge-tlm/issues/7) | `control/public-private-boundary` | public/private boundary surfaces | branch equals live Foundation head; #15 receipt readable | START_READY |
+| P2 | [#3](https://github.com/ed3c/ai-edge-tlm/issues/3) | `contracts/cross-platform-v1` | `contracts/**`, generated bindings | #2/#7 required outputs readable; completion waits receipts | BLOCKED_BY_P0_P1 |
 | P3A | [#4](https://github.com/ed3c/ai-edge-tlm/issues/4) | `adapter/android-system-genai` | `adapters/android/system-genai/**` | #3 frozen contract readable | BLOCKED |
 | P3B | [#5](https://github.com/ed3c/ai-edge-tlm/issues/5) | `adapter/apple-foundation-models` | `adapters/apple/foundation-models/**` | #3 frozen contract readable | BLOCKED |
 | P3C | [#6](https://github.com/ed3c/ai-edge-tlm/issues/6) | `adapter/android-litert-lm` | `adapters/android/litert-lm/**` | #3 readable + #9 admitted artifact/runtime inputs | BLOCKED |
@@ -27,8 +39,8 @@ Before opening a new session, replace every placeholder below from live GitHub/r
 ROLE=<phase role from phase-prompts.md>
 REPOSITORY=ed3c/ai-edge-tlm
 ISSUE_URL=<exact issue>
-BASE_COMMIT=<40-char immutable SHA>
-BASE_BRANCH=<exact parent branch>
+BASE_COMMIT=<live parent SHA-40>
+BASE_BRANCH=foundation/domain-decoupled-core-v0
 HEAD_BRANCH=<planned branch>
 ALLOWED_PATHS=<non-overlapping lease>
 EXCLUDED_PATHS=<all other active leases + private paths>
