@@ -1,0 +1,121 @@
+{
+  "schema": "ai-edge-tlm/task-packet/v1",
+  "task_id": "github-issue-15",
+  "repository": "ed3c/ai-edge-tlm",
+  "issue_url": "https://github.com/ed3c/ai-edge-tlm/issues/15",
+  "role": "Foundation Repository Harness Builder",
+  "base_commit": "0008d99873f815b23f0bea0c9fca989a20b0637e",
+  "base_branch": "main",
+  "head_branch": "foundation/domain-decoupled-core-v0",
+  "goal": "Publish the minimal executable repository harness, architecture SSOT, and pre-implementation gates without consuming later workstream path leases.",
+  "non_goals": [
+    "Implement provider adapters",
+    "Publish contracts or generated bindings owned by issue #3",
+    "Publish source claim records owned by issue #2",
+    "Publish model, skill, training, eval, or app implementations",
+    "Commit private Google Workspace URLs, credentials, model weights, private datasets, roadmap, commercial intent, or private prompt history",
+    "Merge, release, publish stores, accept model terms, change secrets, or resolve semantic conflicts"
+  ],
+  "allowed_paths": [
+    ".github/workflows/validate.yml",
+    ".gitignore",
+    "AGENTS.md",
+    "ARCHITECTURE.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "Makefile",
+    "NOTICE",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "pyproject.toml",
+    "src/edge_tlm/**",
+    "tests/**",
+    "docs/architecture/**",
+    "docs/agents/handoff-protocol.md",
+    "docs/agents/phase-prompts.md",
+    "docs/agents/worker-launch-index.md",
+    "docs/agents/packets/foundation-15.task.json",
+    "docs/governance/evidence-policy.md",
+    "docs/governance/local-handoff.md",
+    "docs/governance/stacked-pr-index.md",
+    "docs/governance/technology-selection.md",
+    "docs/governance/preimplementation-readiness.md",
+    "docs/governance/shadow-foundation-checkpoint.md",
+    "docs/governance/foundation-publication-manifest.md"
+  ],
+  "excluded_paths": [
+    "contracts/**",
+    "bindings/**",
+    "docs/research/**",
+    "docs/governance/public-private-boundary.md",
+    "adapters/**",
+    "models/**",
+    "skills/**",
+    "core/**",
+    "training/**",
+    "eval/**",
+    "apps/**"
+  ],
+  "start_dependencies": [],
+  "completion_dependencies": [],
+  "positive_gates": [
+    "PYTHONPATH=src python -m edge_tlm.cli validate",
+    "PYTHONPATH=src python -m edge_tlm.cli audit-public-boundary",
+    "PYTHONPATH=src python -m pytest -q"
+  ],
+  "negative_controls": [
+    "Malformed/cyclic DAG fixture must fail validation",
+    "Invalid multi-ACTIVE handoff fixture must fail validation",
+    "Private Google Workspace URL or CodexDoc URI value fixture must fail public-boundary audit"
+  ],
+  "evidence_lane": "LOCAL_DETERMINISTIC",
+  "context_id": "CDX-AI-EDGE-001",
+  "rollback_subject": "0008d99873f815b23f0bea0c9fca989a20b0637e",
+  "shadow_mode": "MONITOR",
+  "shadow_required_checkpoints": [
+    "FIRST_GREEN",
+    "BEFORE_COMMIT",
+    "BEFORE_PR_OR_PUBLICATION"
+  ],
+  "human_owned_operations": [
+    "commit",
+    "push",
+    "pull_request_creation",
+    "merge",
+    "release_promotion",
+    "store_publication",
+    "signing_or_provisioning",
+    "license_or_model_terms_acceptance",
+    "credential_or_secret_mutation",
+    "semantic_conflict_resolution"
+  ],
+  "current_state": "IMPLEMENTED_UNMERGED",
+  "publication_receipt": {
+    "implementation_commit": "51cb2c917a1da54ace87dcef9f4a75bf6504ffac",
+    "implementation_tree": "fc17337b94626c1b8f4c8b83dfbf543bc3134dfd",
+    "pull_request": 16,
+    "pull_request_state": "DRAFT_OPEN",
+    "workflow": {
+      "name": "validate",
+      "run_number": 1,
+      "conclusion": "success"
+    },
+    "changed_path_count": 43,
+    "shadow_outcome": "CONTINUE_WITH_WARNINGS_L1"
+  },
+  "authorized_operations_completed": [
+    "commit",
+    "push",
+    "pull_request_creation"
+  ],
+  "remaining_human_owned_operations": [
+    "merge",
+    "release_promotion",
+    "store_publication",
+    "signing_or_provisioning",
+    "license_or_model_terms_acceptance",
+    "credential_or_secret_mutation",
+    "semantic_conflict_resolution"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "ai-edge-tlm/local-handoff/v1",
+  "subject": "ed3c/ai-edge-tlm@0008d99873f815b23f0bea0c9fca989a20b0637e",
+  "items": [
+    {
+      "id": "foundation-publication",
+      "status": "ACTIVE",
+      "entry_condition": "explicit publication authority and exact base rebound",
+      "runtime_lane": "local-git-github",
+      "receipt": "exact-head foundation gate receipt",
+      "exit_condition": "exact-head gates and Shadow checkpoints pass",
+      "next": "p0-p1-fanout"
+    },
+    {
+      "id": "p0-p1-fanout",
+      "status": "BLOCKED_BY_PREDECESSOR",
+      "entry_condition": "foundation exact-head receipt admitted",
+      "runtime_lane": "parallel-disjoint-workers",
+      "receipt": "P0/P1 worker packets",
+      "exit_condition": "workers launched with disjoint leases",
+      "next": null
+    }
+  ]
+}
