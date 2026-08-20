@@ -1,0 +1,10 @@
+{
+  "id": "foundation-smoke-pipeline",
+  "nodes": [
+    {"id": "capability", "dependencies": []},
+    {"id": "policy", "dependencies": ["capability"]},
+    {"id": "execute", "dependencies": ["policy"]},
+    {"id": "validate", "dependencies": ["execute"]}
+  ],
+  "outputs": ["validate"]
+}
