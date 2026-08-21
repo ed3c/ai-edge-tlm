@@ -1,0 +1,12 @@
+{
+  "schema": "ai-edge-tlm/litert-lm-source-pin/v1",
+  "checked_at": "2026-08-21",
+  "repository": "https://github.com/google-ai-edge/LiteRT-LM",
+  "selected_release": "v0.14.0",
+  "release_page_commit_prefix": "80f301f",
+  "release_integrity_state": "REVIEW_REQUIRED",
+  "release_integrity_reason": "Public reports document that v0.14.0 tag and Swift release binaries were changed after initial publication; downstream code must bind source and binary digests separately.",
+  "api_maturity": {"kotlin": "STABLE", "swift": "EARLY_PREVIEW"},
+  "backend_support": {"android": ["CPU", "GPU", "NPU"], "ios": ["CPU", "GPU"]},
+  "evidence_ceiling": "This records public source/API state only. It does not admit an SDK binary, model artifact, Android Gradle build, device backend, terms, privacy, performance, power, or thermal behavior."
+}

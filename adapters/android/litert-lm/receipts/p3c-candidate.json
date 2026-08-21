@@ -1,0 +1,10 @@
+{
+  "schema": "ai-edge-tlm/p3c-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "parent_subject": "76b104d31e834ac8da6a626b4fe3188e097da551",
+  "rollback_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "source_pin": {"release": "v0.14.0", "commit_prefix": "80f301f", "kotlin_maturity": "STABLE", "release_integrity": "REVIEW_REQUIRED"},
+  "gates": {"static_pytest": "3 passed", "kotlin_fake_runtime": "PASS", "provider_ci": "PENDING"},
+  "controls": ["P4 artifact digest/tokenizer/terms mismatch", "UI-thread load", "unsupported NPU -> explicit CPU fallback", "requested vs observed backend", "pre-cancel", "tool proposal only", "no cloud/provider SDK leakage"],
+  "evidence": {"SOURCE": "PASS_WITH_WARNING", "STATIC": "PASS", "LOCAL": "PASS", "ANDROID_GRADLE": "NOT_EXERCISED", "LIVE_DEVICE": "NOT_EXERCISED", "SDK_MODEL_TERMS": "HUMAN_ADMIT_REQUIRED"}
+}
