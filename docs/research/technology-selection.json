@@ -1,0 +1,69 @@
+{
+  "schema": "ai-edge-tlm/technology-selection/v1",
+  "as_of_date": "2026-08-21",
+  "components": [
+    {
+      "component": "LiteRT-LM",
+      "role": "primary embedded LLM runtime",
+      "source_id": "SRC-LITERT-LM-REPO",
+      "default_state": "PIN_STABLE_RELEASE",
+      "commercial_use": "SOURCE_CODE_PERMISSIVE_MODEL_TERMS_SEPARATE"
+    },
+    {
+      "component": "LiteRT",
+      "role": "runtime/delegate substrate",
+      "source_id": "SRC-LITERT-REPO",
+      "default_state": "ADMIT_BY_PLATFORM_AND_DELEGATE",
+      "commercial_use": "SOURCE_CODE_PERMISSIVE_TRANSITIVE_TERMS_REVIEW"
+    },
+    {
+      "component": "litert-torch",
+      "role": "conversion/export tooling",
+      "source_id": "SRC-LITERT-TORCH-REPO",
+      "default_state": "PIN_AND_RUN_PARITY_TESTS",
+      "commercial_use": "SOURCE_CODE_PERMISSIVE_OUTPUT_MODEL_TERMS_SEPARATE"
+    },
+    {
+      "component": "AI Edge Gallery",
+      "role": "reference app and skill format",
+      "source_id": "SRC-GALLERY-REPO",
+      "default_state": "REFERENCE_NOT_WHOLESALE_FORK",
+      "commercial_use": "SOURCE_CODE_PERMISSIVE_REMOTE_SKILLS_SEPARATE"
+    },
+    {
+      "component": "MediaPipe",
+      "role": "legacy/non-LLM compatibility",
+      "source_id": "SRC-MEDIAPIPE-REPO",
+      "default_state": "KEEP_PER_API_WHERE_NEEDED",
+      "commercial_use": "SOURCE_CODE_PERMISSIVE"
+    },
+    {
+      "component": "FunctionGemma",
+      "role": "candidate specialized function-calling TLM",
+      "source_id": "SRC-FUNCTIONGEMMA-MODEL-CARD",
+      "default_state": "OPTIONAL_AFTER_TERMS_AND_TASK_EVAL",
+      "commercial_use": "HUMAN_ADMIT_REQUIRED"
+    },
+    {
+      "component": "FastVLM released weights",
+      "role": "research comparison only",
+      "source_id": "SRC-FASTVLM-MODEL-LICENSE",
+      "default_state": "REJECT_COMMERCIAL_DEFAULT",
+      "commercial_use": "RESEARCH_ONLY"
+    },
+    {
+      "component": "ML Kit GenAI/AICore",
+      "role": "Android system provider",
+      "source_id": "SRC-MLKIT-GENAI-OVERVIEW",
+      "default_state": "RUNTIME_CAPABILITY_PROBE",
+      "commercial_use": "SDK_STORE_TERMS_REVIEW"
+    },
+    {
+      "component": "Apple Foundation Models",
+      "role": "Apple system provider",
+      "source_id": "SRC-APPLE-FOUNDATION-MODELS",
+      "default_state": "RUNTIME_CAPABILITY_AND_OS_VERSION_PROBE",
+      "commercial_use": "APPLE_DEVELOPER_STORE_TERMS_REVIEW"
+    }
+  ]
+}
