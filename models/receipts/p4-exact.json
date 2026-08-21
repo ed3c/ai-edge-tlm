@@ -1,0 +1,71 @@
+{
+  "branch": "models/artifact-supply-v1",
+  "evidence_ceiling": "Binds the exact synthetic content-addressed artifact lifecycle only; it does not admit or redistribute any real model weights.",
+  "evidence_states": {
+    "HUMAN_TERMS": "HUMAN_ADMIT_REQUIRED",
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "MODEL_QUALITY": "NOT_EXERCISED",
+    "PRIVATE": "NOT_EXERCISED",
+    "STATIC": "PASS"
+  },
+  "human_owned_operations": [
+    "merge",
+    "release",
+    "store publication",
+    "signing/provisioning",
+    "terms acceptance",
+    "secrets/access grants",
+    "semantic conflict resolution",
+    "production rollback"
+  ],
+  "implementation": {
+    "changed_paths": 14,
+    "commit": "94a2d926073c231480b9d04a776b1fc6419ba439",
+    "tree": "8bd108b4c59c1497d49c8119b2b61eb871e860bc"
+  },
+  "issue": 9,
+  "local_gates": {
+    "compileall": "PASS",
+    "controls": "digest/size mismatch, partial write, terms, activation, rollback PASS",
+    "pytest": "8 passed"
+  },
+  "manifest": {
+    "git_blob_sha1": "f9e1b2e632f09a0742ed178a94ab646f48bf3d1e",
+    "implementation_file_count": 12,
+    "path": "models/receipts/p4-publication-manifest.json"
+  },
+  "parent": {
+    "commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+    "exact_receipt_git_blob_sha1": "bc4d12a332ccc07fab334923d7af55d590290988",
+    "exact_receipt_path": "contracts/receipts/p2-contracts.exact.v2.json",
+    "provider_ci": "validate#20:SUCCESS",
+    "pull_request": 19,
+    "tree": "7a1502e00f61814c4a1449a701aba7c08cecafed"
+  },
+  "pr": 22,
+  "provider_ci": {
+    "conclusion": "SUCCESS",
+    "head": "94a2d926073c231480b9d04a776b1fc6419ba439",
+    "run_id": 32462382936,
+    "run_number": 23
+  },
+  "residual_states": [
+    "real model download and restricted artifact access",
+    "model, dataset, SDK, service, and store terms acceptance",
+    "runtime conversion parity and tokenizer compatibility on a target device",
+    "quality, latency, privacy, power, thermal, redistribution, merge, and release authority"
+  ],
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p4-model-artifact-supply-exact-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "IMPLEMENTED_UNMERGED",
+  "task_packet": {
+    "git_blob_sha1": "de95fc7767d53e5418e3e9af29b24efc4f516823",
+    "path": "models/task-packets/p4-model-supply-v1.task.json"
+  },
+  "writer_lease": [
+    "models/**",
+    "tests/p4/**"
+  ]
+}
