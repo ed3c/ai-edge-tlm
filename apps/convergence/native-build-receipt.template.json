@@ -1,0 +1,17 @@
+{
+  "schema": "ai-edge-tlm/p8-native-build-receipt/v1",
+  "app_commit": "<SHA40>",
+  "lane": "<ANDROID_GRADLE|XCODE_IOS>",
+  "state": "PASS",
+  "toolchain": {
+    "host_os": "<OS>",
+    "tool": "<gradle|xcodebuild>",
+    "version": "<PINNED_VERSION>"
+  },
+  "command": ["<ARGV>"],
+  "artifact": {
+    "path": "<OUTPUT_PATH>",
+    "sha256": "<SHA256>"
+  },
+  "notes": "Build-only receipt. It is not LIVE_DEVICE evidence."
+}

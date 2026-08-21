@@ -1,0 +1,68 @@
+{
+  "android": {
+    "blockers": [
+      "ANDROID_SDK_HOME_MISSING",
+      "ADB_MISSING",
+      "SDKMANAGER_MISSING",
+      "GRADLE_MISSING",
+      "ANDROID_DEVICE_MISSING"
+    ],
+    "commands": [
+      {
+        "name": "java",
+        "path": "/usr/bin/java",
+        "state": "PRESENT"
+      },
+      {
+        "name": "gradle",
+        "path": null,
+        "state": "MISSING"
+      },
+      {
+        "name": "sdkmanager",
+        "path": null,
+        "state": "MISSING"
+      },
+      {
+        "name": "adb",
+        "path": null,
+        "state": "MISSING"
+      }
+    ],
+    "environment": {
+      "ANDROID_HOME": "",
+      "ANDROID_SDK_ROOT": ""
+    },
+    "lane": "ANDROID_GRADLE_LIVE_DEVICE",
+    "observed_devices": [],
+    "state": "BLOCKED_RESOURCE"
+  },
+  "app_commit": "012254aca87ef72996dfc6f647bad4a8db1616d8",
+  "apple": {
+    "blockers": [
+      "MACOS_HOST_REQUIRED",
+      "XCODEBUILD_MISSING",
+      "XCRUN_MISSING",
+      "APPLE_DEVICE_MISSING"
+    ],
+    "commands": [
+      {
+        "name": "xcodebuild",
+        "path": null,
+        "state": "MISSING"
+      },
+      {
+        "name": "xcrun",
+        "path": null,
+        "state": "MISSING"
+      }
+    ],
+    "environment": {},
+    "lane": "XCODE_IOS_LIVE_DEVICE",
+    "observed_devices": [],
+    "state": "BLOCKED_RESOURCE"
+  },
+  "host_arch": "x86_64",
+  "host_os": "Linux",
+  "schema": "ai-edge-tlm/p8-native-resource-receipt/v1"
+}
