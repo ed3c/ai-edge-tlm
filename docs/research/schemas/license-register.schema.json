@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ed3c/ai-edge-tlm/docs/research/schemas/license-register.schema.json",
+  "title": "AI Edge TLM license register",
+  "type": "object",
+  "required": [
+    "schema",
+    "as_of_date",
+    "entries"
+  ],
+  "properties": {
+    "schema": {
+      "const": "ai-edge-tlm/license-register/v1"
+    },
+    "as_of_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "component",
+          "plane",
+          "source_id",
+          "license_id",
+          "state",
+          "commercial_default",
+          "human_acceptance_required",
+          "obligations",
+          "notes"
+        ]
+      }
+    }
+  }
+}
