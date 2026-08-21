@@ -90,7 +90,13 @@ def load_schema_store(root: Path) -> dict[str, dict[str, Any]]:
     return store
 
 
-def validate_instance(instance: Any, schema: Any, document: dict[str, Any], store: dict[str, dict[str, Any]] | None = None, path: str = "$") -> list[str]:
+def validate_instance(
+    instance: Any,
+    schema: Any,
+    document: dict[str, Any],
+    store: dict[str, dict[str, Any]] | None = None,
+    path: str = "$",
+) -> list[str]:
     """Validate the closed Draft 2020-12 subset emitted by this generator."""
     store = store or {document.get("$id", ""): document}
     failures: list[str] = []
@@ -110,42 +116,58 @@ def validate_instance(instance: Any, schema: Any, document: dict[str, Any], stor
         failures.append(f"{path}: {instance!r} not in enum")
     kind = schema.get("type")
     valid_type = True
-    if kind == "object": valid_type = isinstance(instance, dict)
-    elif kind == "array": valid_type = isinstance(instance, list)
-    elif kind == "string": valid_type = isinstance(instance, str)
-    elif kind == "integer": valid_type = isinstance(instance, int) and not isinstance(instance, bool)
-    elif kind == "number": valid_type = isinstance(instance, (int, float)) and not isinstance(instance, bool) and math.isfinite(float(instance))
-    elif kind == "boolean": valid_type = isinstance(instance, bool)
+    if kind == "object":
+        valid_type = isinstance(instance, dict)
+    elif kind == "array":
+        valid_type = isinstance(instance, list)
+    elif kind == "string":
+        valid_type = isinstance(instance, str)
+    elif kind == "integer":
+        valid_type = isinstance(instance, int) and not isinstance(instance, bool)
+    elif kind == "number":
+        valid_type = isinstance(instance, (int, float)) and not isinstance(instance, bool) and math.isfinite(float(instance))
+    elif kind == "boolean":
+        valid_type = isinstance(instance, bool)
     if kind and not valid_type:
         return failures + [f"{path}: expected {kind}"]
     if isinstance(instance, dict):
         for key in schema.get("required", []):
-            if key not in instance: failures.append(f"{path}: missing required property {key}")
+            if key not in instance:
+                failures.append(f"{path}: missing required property {key}")
         properties = schema.get("properties", {})
         if schema.get("additionalProperties") is False:
             for key in instance:
-                if key not in properties: failures.append(f"{path}: unknown property {key}")
+                if key not in properties:
+                    failures.append(f"{path}: unknown property {key}")
         for key, value in instance.items():
             if key in properties:
                 failures.extend(validate_instance(value, properties[key], document, store, f"{path}.{key}"))
             elif isinstance(schema.get("additionalProperties"), dict):
                 failures.extend(validate_instance(value, schema["additionalProperties"], document, store, f"{path}.{key}"))
     if isinstance(instance, list):
-        if len(instance) < schema.get("minItems", 0): failures.append(f"{path}: too few items")
-        if "maxItems" in schema and len(instance) > schema["maxItems"]: failures.append(f"{path}: too many items")
+        if len(instance) < schema.get("minItems", 0):
+            failures.append(f"{path}: too few items")
+        if "maxItems" in schema and len(instance) > schema["maxItems"]:
+            failures.append(f"{path}: too many items")
         if schema.get("uniqueItems"):
             rendered = [canonical_json_bytes(item) for item in instance]
-            if len(rendered) != len(set(rendered)): failures.append(f"{path}: duplicate items")
+            if len(rendered) != len(set(rendered)):
+                failures.append(f"{path}: duplicate items")
         if "items" in schema:
             for index, item in enumerate(instance):
                 failures.extend(validate_instance(item, schema["items"], document, store, f"{path}[{index}]"))
     if isinstance(instance, str):
-        if len(instance) < schema.get("minLength", 0): failures.append(f"{path}: string too short")
-        if "maxLength" in schema and len(instance) > schema["maxLength"]: failures.append(f"{path}: string too long")
-        if "pattern" in schema and re.search(schema["pattern"], instance) is None: failures.append(f"{path}: pattern mismatch")
+        if len(instance) < schema.get("minLength", 0):
+            failures.append(f"{path}: string too short")
+        if "maxLength" in schema and len(instance) > schema["maxLength"]:
+            failures.append(f"{path}: string too long")
+        if "pattern" in schema and re.search(schema["pattern"], instance) is None:
+            failures.append(f"{path}: pattern mismatch")
     if isinstance(instance, (int, float)) and not isinstance(instance, bool):
-        if "minimum" in schema and instance < schema["minimum"]: failures.append(f"{path}: below minimum")
-        if "maximum" in schema and instance > schema["maximum"]: failures.append(f"{path}: above maximum")
+        if "minimum" in schema and instance < schema["minimum"]:
+            failures.append(f"{path}: below minimum")
+        if "maximum" in schema and instance > schema["maximum"]:
+            failures.append(f"{path}: above maximum")
     return failures
 
 
@@ -168,6 +190,8 @@ def parent_identity_failures(root: Path, packet: dict[str, Any]) -> list[str]:
             if not path.is_file():
                 failures.append(f"missing parent input: {path.relative_to(root)}")
                 continue
-            if git_blob_sha1(path) != item["git_blob_sha1"]: failures.append(f"Git blob drift: {item['path']}")
-            if semantic_sha256(path, item["semantic_mode"]) != item["semantic_sha256"]: failures.append(f"semantic digest drift: {item['path']}")
+            if git_blob_sha1(path) != item["git_blob_sha1"]:
+                failures.append(f"Git blob drift: {item['path']}")
+            if semantic_sha256(path, item["semantic_mode"]) != item["semantic_sha256"]:
+                failures.append(f"semantic digest drift: {item['path']}")
     return failures
