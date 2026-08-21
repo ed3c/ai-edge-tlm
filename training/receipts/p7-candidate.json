@@ -1,0 +1,9 @@
+{
+  "schema": "ai-edge-tlm/p7-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "parent_subject": "19f79d6cc61a1b8b01ad9da77c380c3002264754",
+  "rollback_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "gates": {"pytest": "9 passed", "compileall": "PASS", "provider_ci": "PENDING"},
+  "controls": ["train/eval ID leakage", "normalized text leakage", "mixed model identity", "invalid JSON/schema accounting", "conversion parity threshold", "device observed-backend identity", "source benchmark cannot be local result", "private/secret fixture leakage"],
+  "evidence": {"SOURCE": "PASS_BOUNDARY_ONLY", "STATIC": "PASS", "LOCAL": "PASS", "PRIVATE": "NOT_EXERCISED", "MODEL_QUALITY": "NOT_EXERCISED", "LIVE_DEVICE": "NOT_EXERCISED", "TERMS": "HUMAN_ADMIT_REQUIRED"}
+}
