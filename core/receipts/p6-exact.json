@@ -1,0 +1,15 @@
+{
+  "schema": "ai-edge-tlm/p6-exact-receipt/v1",
+  "state": "IMPLEMENTED_UNMERGED_STATIC_LOCAL",
+  "repository": "ed3c/ai-edge-tlm", "issue": 11, "pull_request": 26, "branch": "core/deterministic-dag-v1",
+  "base_subject": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e",
+  "implementation": {"commit": "fc9723ff6323039a0ac6f03f71c9f447269b8975", "tree": "4da1ece1d3699f44ba69f84913f11b38d33d1ed5"},
+  "publication_manifest": {"commit": "0c3c510aadc15b85e424f7a620879642c1acbe5f", "tree": "aa6c34702d766e29c9318b509f92f1e99a77cc72", "git_blob_sha1": "269cf6966a2370de44861a5d35ed970076969737"},
+  "provider_ci": {"run_id": 32468915015, "run_number": 32, "conclusion": "SUCCESS"},
+  "local_gates": {"pytest": "13 passed", "compileall": "PASS", "public_boundary_literal_scan": "PASS"},
+  "consumed_exact_inputs": {"p2": "e86822f6917b3cee05602731d5899e5e8fbe7594", "p3a": "1ed59b1964bf56070f40c0aedac4dace824a7a92", "p3b": "b4dff7a607333eaed2fb66df46d24874d12577b2", "p5": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e"},
+  "integration_states": {"P3C": "BLOCKED_UNTIL_EXACT_RECEIPT_CONSUMED", "P3D": "BLOCKED_UNTIL_EXACT_RECEIPT_CONSUMED"},
+  "evidence_states": {"STATIC": "PASS", "LOCAL": "PASS", "LIVE_DEVICE": "NOT_EXERCISED", "INTEGRATED_EMBEDDED_PROVIDERS": "NOT_EXERCISED", "PRIVACY_ENERGY_THERMAL": "NOT_EXERCISED", "MERGE_RELEASE": "HUMAN_ADMIT_REQUIRED"},
+  "shadow": "CONTINUE_WITH_WARNINGS_L1", "rollback_subject": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e",
+  "evidence_ceiling": "Closes exact deterministic core behavior for static/local fake-provider evidence only; embedded-provider integration and device evidence remain open."
+}
