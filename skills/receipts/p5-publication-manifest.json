@@ -1,0 +1,106 @@
+{
+  "evidence_ceiling": "Binds local candidate bytes only; GitHub implementation commit/tree and provider CI are added by the exact receipt.",
+  "file_count": 16,
+  "files": [
+    {
+      "bytes": 705,
+      "mode": "100644",
+      "path": "skills/README.md",
+      "sha256": "6db1def6338eeaa81d30f13b2706fe1e90728a270719ab60de85b536a46b57fe"
+    },
+    {
+      "bytes": 67,
+      "mode": "100644",
+      "path": "skills/__init__.py",
+      "sha256": "4997656fb80d323490d8bc11f88beb3de1a96ce7488e585777b71da617f3073b"
+    },
+    {
+      "bytes": 375,
+      "mode": "100644",
+      "path": "skills/fixtures/malicious-scenarios.json",
+      "sha256": "d550b1352bcbb8eeb2e0fc09ddbe3ea887e60e97e82e3bf30f6aa5ef1435e871"
+    },
+    {
+      "bytes": 673,
+      "mode": "100644",
+      "path": "skills/handoff/native-sandbox-integration.template.json",
+      "sha256": "1c67eadf24366158ce7fe39e6eb80162d53686142e61ed17c01020c87bc18203"
+    },
+    {
+      "bytes": 1243,
+      "mode": "100644",
+      "path": "skills/receipts/p5-candidate.json",
+      "sha256": "1959206e3c63ad150810c5ee9e8c6b200efb51e8646d02317ac694bcf04db54a"
+    },
+    {
+      "bytes": 341,
+      "mode": "100644",
+      "path": "skills/runtime/__init__.py",
+      "sha256": "c62b50af10813f229804b0792fb27be5a1ea3cbd6640222b71486ac09875f69f"
+    },
+    {
+      "bytes": 4717,
+      "mode": "100644",
+      "path": "skills/runtime/broker.py",
+      "sha256": "df6f02e07782fb71b31269ab8bdd294c4cbf68bdecf0efc6047063730ae41561"
+    },
+    {
+      "bytes": 387,
+      "mode": "100644",
+      "path": "skills/runtime/errors.py",
+      "sha256": "5a9188f6ba9492231f254fef0528cad6fc6ed09759121230659d194f2e71a6d3"
+    },
+    {
+      "bytes": 3604,
+      "mode": "100644",
+      "path": "skills/runtime/integrity.py",
+      "sha256": "99c531cbb737192b7612d13d967f94631cc58a4039dbe5bcc33f2cb0e2a33958"
+    },
+    {
+      "bytes": 5687,
+      "mode": "100644",
+      "path": "skills/runtime/registry.py",
+      "sha256": "50ab4bd3a5c7a341735ddbc65db7ff2af9c6d4fb216bc6c8ea3631f192849354"
+    },
+    {
+      "bytes": 7804,
+      "mode": "100644",
+      "path": "skills/runtime/sandbox.py",
+      "sha256": "4460808f4b017b96d91cfe04b0453c66547c083f873b35b8323d789628d4c435"
+    },
+    {
+      "bytes": 3268,
+      "mode": "100644",
+      "path": "skills/runtime/types.py",
+      "sha256": "f874a97db029b1a4c5e8d5615026bfe7fe9677d44a9f986c0727a36f2b874ab7"
+    },
+    {
+      "bytes": 1519,
+      "mode": "100644",
+      "path": "skills/shadow-checkpoint.md",
+      "sha256": "a9edcf1abe9c0cf39937f66f44e2b5e2426b9f7e9087b41d44f7a0a2113ec37c"
+    },
+    {
+      "bytes": 178,
+      "mode": "100644",
+      "path": "tests/p5/conftest.py",
+      "sha256": "221ac17ce1c22f4b8842dd66f568e538a3a5467516004b95fe7737db710b70fb"
+    },
+    {
+      "bytes": 1614,
+      "mode": "100644",
+      "path": "tests/p5/test_public_boundaries.py",
+      "sha256": "ef182b758d1ee0067e8014427c82f3ca66e7a70cb8ce80ad7f36ceea039fbf6e"
+    },
+    {
+      "bytes": 10547,
+      "mode": "100644",
+      "path": "tests/p5/test_skill_runtime.py",
+      "sha256": "eff00148ac74abd368d102dd4bcdf889b31c9268ee5c7a96eb9c94c0bf2d922f"
+    }
+  ],
+  "parent_commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "parent_tree": "7a1502e00f61814c4a1449a701aba7c08cecafed",
+  "schema": "ai-edge-tlm/wave1-publication-manifest/v1",
+  "workstream": "P5"
+}

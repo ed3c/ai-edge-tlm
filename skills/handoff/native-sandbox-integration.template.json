@@ -1,0 +1,24 @@
+{
+  "evidence_ceiling": "Native integration receipts do not automatically establish OS/WebView exploit resistance.",
+  "human_states": {
+    "remote_skill_trust": "HUMAN_ADMIT_REQUIRED",
+    "secret_carrier": "PRIVATE_NOT_EXERCISED",
+    "store_release": "HUMAN_ADMIT_REQUIRED"
+  },
+  "required": [
+    "commit_sha",
+    "tree_sha",
+    "host_platform",
+    "webview_version",
+    "origin_policy_digest",
+    "CSP_digest",
+    "native_bridge_allowlist",
+    "network_policy",
+    "storage_policy",
+    "camera_mic_policy",
+    "timeout_cleanup_receipt",
+    "malicious_fixture_results"
+  ],
+  "schema": "ai-edge-tlm/native-sandbox-handoff/v1",
+  "state": "NOT_EXERCISED"
+}

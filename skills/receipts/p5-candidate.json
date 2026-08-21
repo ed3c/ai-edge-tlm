@@ -1,0 +1,38 @@
+{
+  "evidence": {
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "REMOTE_CODE_TRUST": "HUMAN_ADMIT_REQUIRED",
+    "SECRET_CARRIER": "PRIVATE_NOT_EXERCISED",
+    "STATIC": "PASS",
+    "WEBVIEW_EXPLOIT_RESISTANCE": "NOT_EXERCISED"
+  },
+  "gates": {
+    "broker": "PASS",
+    "integrity": "PASS",
+    "provider_ci": "PENDING",
+    "registry": "PASS",
+    "sandbox_policy": "PASS",
+    "timeout_cleanup": "PASS"
+  },
+  "local_gate_details": {
+    "local_test_result": "10 passed",
+    "shadow_fixes": [
+      "integrity verification no longer grants trust",
+      "host trust admission has explicit decision identity",
+      "replay and execution guards are synchronized",
+      "terminated-worker queue teardown cannot deadlock",
+      "script traversal and noncanonical I/O fail closed"
+    ],
+    "toolchain": "Python 3.13 / pytest 9 / multiprocessing spawn"
+  },
+  "parent_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p5-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "wave_local_suite": "26 passed with native lanes; CI-style 24 passed / 2 explicit skips",
+  "writer_lease": [
+    "skills/**",
+    "tests/p5/**"
+  ]
+}
