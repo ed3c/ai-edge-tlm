@@ -1,0 +1,53 @@
+{
+  "branch": "control/public-private-boundary",
+  "completion_readiness": "STATIC_PUBLIC_BOUNDARY_RECEIPT_AVAILABLE",
+  "controls": [
+    "cross-task capsule -> FAIL",
+    "wrong-subject capsule -> FAIL",
+    "expired capsule -> FAIL",
+    "private Workspace URL -> FAIL",
+    "secret-like value -> FAIL",
+    "unallowlisted field -> FAIL",
+    "oversized capsule -> FAIL",
+    "tampered digest -> FAIL",
+    "missing resolver -> ABSENT"
+  ],
+  "counts": {
+    "capsule_allowlist_fields": 6,
+    "global_tests": 28,
+    "p1_tests": 12
+  },
+  "evidence_ceiling": "Exact public contract, DLP, TTL, digest, task/subject, size and resolver-presence behavior only; no private retrieval, ACL, connector authorization or Human disclosure proof.",
+  "evidence_lanes": [
+    "STATIC",
+    "LOCAL_DETERMINISTIC"
+  ],
+  "gates": {
+    "public_boundary": "PASS",
+    "pytest_all": "28 passed",
+    "pytest_p1": "12 passed"
+  },
+  "implementation_commit": "954e026e94f7377803c21870d07279c72a3c1593",
+  "implementation_tree": "22772e70ebe370022ab4e324a274d9c2e32dcb07",
+  "issue": 7,
+  "output_digests": {
+    "control/public_private/classification-policy.json": "7abc2a9b569263d0e66cecb0d82894e08acb0c976ddb14a1eaa5a6a36d61b155",
+    "control/public_private/context-capsule.schema.json": "99a680a28cdda2e5deeb640c79c8b2567920ea70c0251fb7fc39fe2742caa8eb",
+    "docs/governance/public-private-boundary.md": "6e3ecd747b570224c0c15bbf61d07d084a47914dba1520d543d50055b686e807",
+    "src/edge_tlm_control/capsule.py": "8086730daf7be7d58c1842eadce07274190b5468059a1edc5f75615e71b469b2",
+    "src/edge_tlm_control/classification.py": "2feae4c8ceb0357f659383b4a28c1e1f24fb93d90fc0c81c57088df70b0cccec",
+    "src/edge_tlm_control/resolver.py": "0a355647c3b704e3b25bf1d1aed98568de0971fb3310ec117f3c8337574eeb80"
+  },
+  "p2_start_output": "READABLE",
+  "parent_subject": "e959201574b9548758e9d173b02e214c9e8531e7",
+  "residual_states": [
+    "PRIVATE_NOT_EXERCISED: signed-in carrier and Drive ACLs",
+    "HUMAN_ADMIT_REQUIRED: disclosure authorization",
+    "NOT_EXERCISED: network isolation outside this module",
+    "PRIVATE_NOT_EXERCISED: actual CodexDoc retrieval and source truth",
+    "HUMAN_ADMIT_REQUIRED: merge, disclosure, terms and release authority"
+  ],
+  "schema": "ai-edge-tlm/p1-public-private-boundary-exact-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "IMPLEMENTED_UNMERGED"
+}
