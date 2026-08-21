@@ -1,0 +1,14 @@
+{
+  "schema": "ai-edge-tlm/litert-lm-apple-source-pin/v1",
+  "checked_at": "2026-08-21",
+  "repository": "https://github.com/google-ai-edge/LiteRT-LM",
+  "selected_release": "v0.14.0",
+  "release_page_commit_prefix": "80f301f",
+  "swift_api_maturity": "EARLY_PREVIEW",
+  "release_integrity_state": "REVIEW_REQUIRED",
+  "known_release_risk": "v0.14.0 tag/binaries were reported changed after publication; Xcode 26.6 Swift wrapper/binary callback mismatch was reported for the release.",
+  "current_package_binary_checksums": {"ios": "dddac2f6713ed65eaf01c18e115d9fec22184adf575cc7856a21387e8ba937e1", "macos": "450615483509aaa6d34b321fdc6862e41a224b674468ab10aff64ebe113d21b7"},
+  "ios_backend_support": ["CPU", "GPU"],
+  "forbidden_claim": "ANE_OR_NPU_SUPPORTED_WITHOUT_RUNTIME_OBSERVATION",
+  "evidence_ceiling": "Source/package inspection only; no Xcode/iOS SDK, binary reproducibility, physical backend, terms, privacy, performance, power, or thermal acceptance."
+}

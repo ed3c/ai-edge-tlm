@@ -1,0 +1,6 @@
+{
+  "schema": "ai-edge-tlm/apple-litert-device-receipt/v1",
+  "state": "NOT_EXERCISED",
+  "required": ["commit_sha","tree_sha","xcode_version","ios_sdk","litert_lm_source_commit","xcframework_sha256","model_manifest_commit","artifact_sha256","tokenizer_sha256","device_model","os_build","requested_backend","observed_backend","ttft_ms","prefill_tps","decode_tps","peak_rss_mb","privacy_observation","energy_sample","thermal_sample"],
+  "evidence_ceiling": "CPU/GPU runtime observation is required; requested ANE/NPU is never accepted as backend evidence."
+}

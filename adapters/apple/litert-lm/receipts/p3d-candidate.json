@@ -1,0 +1,10 @@
+{
+  "schema": "ai-edge-tlm/p3d-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "parent_subject": "865c1e6edde72c0ebd2d43c4a6de8d30a570a747",
+  "rollback_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "source_pin": {"release": "v0.14.0", "commit_prefix": "80f301f", "swift_maturity": "EARLY_PREVIEW", "release_integrity": "REVIEW_REQUIRED", "ios_backends": ["CPU", "GPU"]},
+  "gates": {"static_pytest": "2 passed", "swift_linux_package": "5 tests PASS", "provider_ci": "PENDING"},
+  "controls": ["preview cannot promote to stable", "P4 artifact identity/terms", "UI-thread load", "memory pressure", "requested GPU vs observed CPU", "requested ANE/NPU forbidden", "tool proposal only", "no cloud/provider/private leakage"],
+  "evidence": {"SOURCE": "PASS_WITH_WARNING", "STATIC": "PASS", "LOCAL": "PASS", "XCODE_IOS": "NOT_EXERCISED", "LIVE_DEVICE": "NOT_EXERCISED", "PRIVATE": "NOT_EXERCISED", "SDK_STORE_TERMS": "HUMAN_ADMIT_REQUIRED"}
+}

@@ -1,0 +1,18 @@
+import XCTest
+import AIEdgeContracts
+@testable import AppleLiteRtLmAdapter
+
+private let shaA=String(repeating:"a",count:64), shaB=String(repeating:"b",count:64)
+final class FakeSession: EmbeddedSession, @unchecked Sendable { let observedBackend:BackendKind; let values:[RuntimeChunk]; var cancelled=false; init(_ backend:BackendKind,_ values:[RuntimeChunk]){self.observedBackend=backend;self.values=values}; func chunks(for request:InferenceRequest)throws->[RuntimeChunk]{values}; func cancel(){cancelled=true}; func close(){} }
+struct FakeRuntime: EmbeddedRuntime { let runtimeID="litert-lm"; let runtimeRevision="v0.14.0-test-double"; let supportedBackends:Set<BackendKind>; let observed:BackendKind; let values:[RuntimeChunk]; func open(artifact:AdmittedArtifact,backend:BackendKind)throws->any EmbeddedSession{FakeSession(observed,values)} }
+
+final class AppleLiteRtLmAdapterTests:XCTestCase{
+    func artifact()->AdmittedArtifact{AdmittedArtifact(ref:ModelArtifactRef(model_id:"tiny",revision:"1",sha256:shaA,format:.litertlm,quantization:"int4",tokenizer_sha256:shaB,license_plane:.modelWeights,terms_state:.accepted),p4ReceiptCommit:"6b90db1654d10cd34ad093890af4209daf810b7d",p4ReceiptBlob:"a7266eeb48b85cb66086431805e84394e4a61627")}
+    func request()->InferenceRequest{InferenceRequest(schema:"ai-edge-tlm/inference-request/v1",request_id:"r1",trace_id:"t1",task_id:"task",task_kind:.functionCalling,messages:[Message(role:.user,content:"open")],capability_profile:CapabilityProfile(platform:.ios,os_version:"26.6",device_model:"test",available_memory_mb:4096,supports_system_model:false,supported_backends:[.cpu,.gpu],supported_modalities:[.text],max_active_sessions:1),resource_budget:ResourceBudget(max_input_tokens:1024,max_output_tokens:128,timeout_ms:5000,max_memory_mb:1024,allow_network:false),model_ref:artifact().ref)}
+    func pin()->LiteRtLmAppleReleasePin{LiteRtLmAppleReleasePin(tag:"v0.14.0",releaseCommitPrefix:"80f301f",swiftMaturity:.preview,integrityState:.releasedWithIntegrityWarning)}
+    func testRequestedGPUCanFallbackToObservedCPU()throws{let x=try AppleLiteRtLmAdapter(releasePin:pin(),runtime:FakeRuntime(supportedBackends:[.cpu],observed:.cpu,values:[.text("ok"),.completed])).execute(request:request(),artifact:artifact(),requestedBackend:.gpu,isMainThread:false);XCTAssertEqual(x.receipt?.selectedBackend,.cpu);XCTAssertEqual(x.receipt?.observedBackend,.cpu);XCTAssertEqual(x.receipt?.swiftMaturity,.preview)}
+    func testToolOutputRemainsProposal()throws{let x=try AppleLiteRtLmAdapter(releasePin:pin(),runtime:FakeRuntime(supportedBackends:[.cpu],observed:.cpu,values:[.toolCandidate(id:"p1",name:"open_settings",arguments:["page":.string("privacy")],raw:"raw"),.completed])).execute(request:request(),artifact:artifact(),requestedBackend:.cpu,isMainThread:false);XCTAssertEqual(x.events.first{$0.type == .toolProposal}?.tool_proposal?.tool_name,"open_settings")}
+    func testPreCancelledDoesNotProduceReceipt()throws{let t=CancellationToken();t.cancel();let x=try AppleLiteRtLmAdapter(releasePin:pin(),runtime:FakeRuntime(supportedBackends:[.cpu],observed:.cpu,values:[.completed])).execute(request:request(),artifact:artifact(),requestedBackend:.cpu,isMainThread:false,cancellation:t);XCTAssertNil(x.receipt);XCTAssertEqual(x.events.first?.type,.cancelled)}
+    func testMemoryPressureFailsTyped()throws{let x=try AppleLiteRtLmAdapter(releasePin:pin(),runtime:FakeRuntime(supportedBackends:[.cpu],observed:.cpu,values:[.memoryPressure("oom")])).execute(request:request(),artifact:artifact(),requestedBackend:.cpu,isMainThread:false);XCTAssertEqual(x.events.last?.error?.code,.resourceExhausted)}
+    func testPreviewInvariant(){XCTAssertEqual(pin().swiftMaturity,.preview)}
+}
