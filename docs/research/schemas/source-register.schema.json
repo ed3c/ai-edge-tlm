@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ed3c/ai-edge-tlm/docs/research/schemas/source-register.schema.json",
+  "title": "AI Edge TLM source register",
+  "type": "object",
+  "required": [
+    "schema",
+    "as_of_date",
+    "foundation_subject",
+    "max_rolling_age_days",
+    "sources"
+  ],
+  "properties": {
+    "schema": {
+      "const": "ai-edge-tlm/source-register/v1"
+    },
+    "as_of_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "foundation_subject": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "max_rolling_age_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "url",
+          "revision",
+          "retrieved_at",
+          "identity_state",
+          "primary",
+          "license_plane",
+          "notes"
+        ]
+      }
+    }
+  }
+}

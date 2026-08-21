@@ -1,0 +1,52 @@
+{
+  "branch": "evidence/source-closure",
+  "completion_readiness": "SOURCE_STATIC_RECEIPT_AVAILABLE",
+  "controls": [
+    "stale rolling source -> FAIL",
+    "wrong immutable subject -> FAIL",
+    "missing source packet self-promotion -> FAIL",
+    "model weights inheriting Apache-2.0 -> FAIL",
+    "FastVLM commercial default -> FAIL",
+    "private Workspace URL -> FAIL"
+  ],
+  "counts": {
+    "claims": 23,
+    "license_entries": 10,
+    "sources": 18,
+    "technology_components": 9
+  },
+  "evidence_ceiling": "Exact source/claim/license bytes and deterministic P0 gates only; no legal acceptance, native runtime, device benchmark, model quality, or merge authority.",
+  "evidence_lanes": [
+    "SOURCE",
+    "STATIC",
+    "LOCAL_DETERMINISTIC"
+  ],
+  "gates": {
+    "public_boundary": "PASS",
+    "pytest_all": "24 passed",
+    "pytest_p0": "8 passed",
+    "validate_evidence": "PASS"
+  },
+  "implementation_commit": "058e52195f64d7e5886414933a949ab9a77ea26b",
+  "implementation_tree": "a61b0a3088deeadc4bb31d05c71f2fb318c9d8af",
+  "issue": 2,
+  "output_digests": {
+    "claim_ledger_sha256": "e6a5bb56864585be2c0e5aa6d437ea5e6035dbe0c88b8abfd3eab1dd463dcbf0",
+    "license_register_sha256": "bbc6c5840b9c85d08661412f447cbeea2256fe876702981878c2165cd2dd2b61",
+    "source_register_sha256": "24720e8d2de629ac7bfdeb95be99e09551d381f9c8aaa775fc511f3de46ee277",
+    "technology_selection_sha256": "fac66ddcea138e93d8a80c2d777482267590e527b6a5eb6ddf08d410519cebf2"
+  },
+  "p2_start_output": "READABLE",
+  "parent_subject": "e959201574b9548758e9d173b02e214c9e8531e7",
+  "residual_states": [
+    "SOURCE_PACKET_REQUIRED: original article/video/PDF identity",
+    "ROLLING_RECHECK_REQUIRED: Apple/Google SDK documentation",
+    "HUMAN_ADMIT_REQUIRED: model/SDK/store terms",
+    "NOT_EXERCISED: native/device/model-quality/privacy/thermal lanes",
+    "HUMAN_ADMIT_REQUIRED: merge and legal/model/SDK terms",
+    "NOT_EXERCISED: P1 private resolver and all native/device lanes"
+  ],
+  "schema": "ai-edge-tlm/p0-source-closure-exact-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "IMPLEMENTED_UNMERGED"
+}

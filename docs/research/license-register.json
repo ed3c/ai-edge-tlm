@@ -1,0 +1,126 @@
+{
+  "schema": "ai-edge-tlm/license-register/v1",
+  "as_of_date": "2026-08-21",
+  "entries": [
+    {
+      "id": "LIC-LITERT-LM-CODE",
+      "component": "google-ai-edge/LiteRT-LM",
+      "plane": "SOURCE_CODE",
+      "source_id": "SRC-LITERT-LM-REPO",
+      "license_id": "Apache-2.0",
+      "state": "TECHNICALLY_ADMISSIBLE",
+      "commercial_default": true,
+      "human_acceptance_required": false,
+      "obligations": ["retain license", "retain applicable notices", "mark modified files"],
+      "notes": "Does not license model weights, datasets, hosted services, stores or trademarks."
+    },
+    {
+      "id": "LIC-LITERT-CODE",
+      "component": "google-ai-edge/LiteRT",
+      "plane": "SOURCE_CODE",
+      "source_id": "SRC-LITERT-REPO",
+      "license_id": "Apache-2.0",
+      "state": "TECHNICALLY_ADMISSIBLE",
+      "commercial_default": true,
+      "human_acceptance_required": false,
+      "obligations": ["retain license", "retain applicable notices", "mark modified files"],
+      "notes": "Binary/transitive composition and vendor delegate terms still require SBOM review."
+    },
+    {
+      "id": "LIC-LITERT-TORCH-CODE",
+      "component": "google-ai-edge/litert-torch",
+      "plane": "SOURCE_CODE",
+      "source_id": "SRC-LITERT-TORCH-REPO",
+      "license_id": "Apache-2.0",
+      "state": "TECHNICALLY_ADMISSIBLE",
+      "commercial_default": true,
+      "human_acceptance_required": false,
+      "obligations": ["retain license", "retain applicable notices", "mark modified files"],
+      "notes": "Exported model remains governed by its own model and dataset terms."
+    },
+    {
+      "id": "LIC-GALLERY-CODE",
+      "component": "google-ai-edge/gallery",
+      "plane": "SOURCE_CODE",
+      "source_id": "SRC-GALLERY-REPO",
+      "license_id": "Apache-2.0",
+      "state": "REFERENCE_ADMISSIBLE",
+      "commercial_default": true,
+      "human_acceptance_required": false,
+      "obligations": ["retain license", "retain applicable notices"],
+      "notes": "Use as a reference/adaptor source; community skills and remotely loaded assets have independent provenance."
+    },
+    {
+      "id": "LIC-MEDIAPIPE-CODE",
+      "component": "google-ai-edge/mediapipe",
+      "plane": "SOURCE_CODE",
+      "source_id": "SRC-MEDIAPIPE-REPO",
+      "license_id": "Apache-2.0",
+      "state": "REFERENCE_ADMISSIBLE",
+      "commercial_default": true,
+      "human_acceptance_required": false,
+      "obligations": ["retain license", "retain applicable notices"],
+      "notes": "Migration decisions remain per API/artifact."
+    },
+    {
+      "id": "LIC-FUNCTIONGEMMA-WEIGHTS",
+      "component": "FunctionGemma 270M weights",
+      "plane": "MODEL_WEIGHTS",
+      "source_id": "SRC-GEMMA-TERMS",
+      "license_id": "Gemma-Terms-2026-04-01",
+      "state": "HUMAN_ADMIT_REQUIRED",
+      "commercial_default": false,
+      "human_acceptance_required": true,
+      "obligations": ["review current terms", "review prohibited use policy", "record acceptance identity", "preserve distribution notices"],
+      "notes": "Responsible commercial use may be possible, but it is not inherited from Apache-2.0 runtime code and cannot be accepted by an Agent."
+    },
+    {
+      "id": "LIC-FASTVLM-CODE",
+      "component": "apple/ml-fastvlm code",
+      "plane": "SOURCE_CODE",
+      "source_id": "SRC-FASTVLM-REPO",
+      "license_id": "Apple-Sample-Code-License",
+      "state": "REVIEW_REQUIRED",
+      "commercial_default": false,
+      "human_acceptance_required": true,
+      "obligations": ["retain license", "review acknowledgements", "review patent/trademark boundary"],
+      "notes": "Code is not Apache-2.0; exact transitive notices require review."
+    },
+    {
+      "id": "LIC-FASTVLM-WEIGHTS",
+      "component": "FastVLM released model weights",
+      "plane": "MODEL_WEIGHTS",
+      "source_id": "SRC-FASTVLM-MODEL-LICENSE",
+      "license_id": "Apple-ML-Research-Model-License",
+      "state": "RESEARCH_ONLY",
+      "commercial_default": false,
+      "human_acceptance_required": true,
+      "obligations": ["research purposes only", "provide agreement on redistribution", "identify derivatives", "retain attribution"],
+      "notes": "Commercial exploitation, product development and commercial products/services are explicitly excluded."
+    },
+    {
+      "id": "LIC-MLKIT-SDK",
+      "component": "ML Kit GenAI APIs / AICore",
+      "plane": "SDK_STORE",
+      "source_id": "SRC-MLKIT-GENAI-OVERVIEW",
+      "license_id": "GOOGLE-SDK-AND-SERVICE-TERMS",
+      "state": "REVIEW_REQUIRED",
+      "commercial_default": false,
+      "human_acceptance_required": true,
+      "obligations": ["review SDK terms", "review Play services/store/device restrictions", "record version and acceptance"],
+      "notes": "Prompt API is beta and rolling; availability and quotas are runtime constraints."
+    },
+    {
+      "id": "LIC-APPLE-FOUNDATION-MODELS-SDK",
+      "component": "Apple Foundation Models framework",
+      "plane": "SDK_STORE",
+      "source_id": "SRC-APPLE-FOUNDATION-MODELS",
+      "license_id": "APPLE-DEVELOPER-AND-OS-TERMS",
+      "state": "REVIEW_REQUIRED",
+      "commercial_default": false,
+      "human_acceptance_required": true,
+      "obligations": ["review Apple Developer terms", "review OS/store availability", "record toolchain/OS acceptance"],
+      "notes": "Framework availability and model behavior vary with OS/device; beta surfaces may change."
+    }
+  ]
+}

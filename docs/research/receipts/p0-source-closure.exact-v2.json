@@ -1,0 +1,48 @@
+{
+  "schema": "ai-edge-tlm/p0-source-closure-exact-receipt/v2",
+  "supersedes": "docs/research/receipts/p0-source-closure.exact.json",
+  "superseded_state": "STALE_LOCAL_CANDIDATE_DIGESTS",
+  "reason": "The v1 receipt recorded SHA-256 values from a local candidate serialization rather than the exact GitHub blobs. V2 binds the immutable implementation subject by ref, path, and Git blob object identity.",
+  "branch": "evidence/source-closure",
+  "implementation_subject": {
+    "commit": "5fc162ab8a6d92de4172ade5730179bb74d19fc0",
+    "tree": "905277e7666929e8c048a40d882fa978f41d82ce"
+  },
+  "files": [
+    {
+      "path": "docs/research/source-register.json",
+      "git_object_format": "sha1",
+      "git_blob": "53ade9492486e6cfbeee8c15eec358ee9cb05eb3"
+    },
+    {
+      "path": "docs/research/claim-ledger.json",
+      "git_object_format": "sha1",
+      "git_blob": "5511d17e693c47e2ff462f43cbdcc523e2c564ca"
+    },
+    {
+      "path": "docs/research/license-register.json",
+      "git_object_format": "sha1",
+      "git_blob": "8abca8aa2f1ddf26dc7c7c3a8d6992111f31fe45"
+    },
+    {
+      "path": "docs/research/technology-selection.json",
+      "git_object_format": "sha1",
+      "git_blob": "5b476bb84eddc3528341330c3c94c62a0c46951e"
+    }
+  ],
+  "gates": {
+    "git_blob_replay": "PASS_ON_EXACT_SUBJECT",
+    "validate_evidence": "PASS",
+    "pytest_p0_before_v2": "8 passed",
+    "provider_ci_before_v2": "validate #7 SUCCESS"
+  },
+  "state": "IMPLEMENTED_UNMERGED_WITH_CORRECTED_EXACT_RECEIPT",
+  "shadow": "RECONCILED_FROM_L2_TO_CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Binds exact public source/claim/license/selection bytes only. It does not supply the missing original article packet, accept terms, or prove native/device/model behavior.",
+  "residual_states": [
+    "SOURCE_PACKET_REQUIRED: canonical article/video/PDF identity",
+    "ROLLING_RECHECK_REQUIRED: Google and Apple rolling documentation",
+    "HUMAN_ADMIT_REQUIRED: model, SDK, store and legal terms",
+    "NOT_EXERCISED: native, device, model-quality, privacy, energy and thermal lanes"
+  ]
+}

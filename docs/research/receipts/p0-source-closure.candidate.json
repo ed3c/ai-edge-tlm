@@ -1,0 +1,26 @@
+{
+  "as_of_date": "2026-08-21",
+  "counts": {
+    "claims": 23,
+    "license_entries": 10,
+    "sources": 18,
+    "technology_components": 9
+  },
+  "digests": {
+    "claim_ledger_sha256": "e6a5bb56864585be2c0e5aa6d437ea5e6035dbe0c88b8abfd3eab1dd463dcbf0",
+    "license_register_sha256": "bbc6c5840b9c85d08661412f447cbeea2256fe876702981878c2165cd2dd2b61",
+    "source_register_sha256": "24720e8d2de629ac7bfdeb95be99e09551d381f9c8aaa775fc511f3de46ee277",
+    "technology_selection_sha256": "fac66ddcea138e93d8a80c2d777482267590e527b6a5eb6ddf08d410519cebf2"
+  },
+  "failures": [],
+  "foundation_subject": "e959201574b9548758e9d173b02e214c9e8531e7",
+  "p2_start_output": "READABLE",
+  "residual_states": [
+    "SOURCE_PACKET_REQUIRED: original article/video/PDF identity",
+    "ROLLING_RECHECK_REQUIRED: Apple/Google SDK documentation",
+    "HUMAN_ADMIT_REQUIRED: model/SDK/store terms",
+    "NOT_EXERCISED: native/device/model-quality/privacy/thermal lanes"
+  ],
+  "schema": "ai-edge-tlm/p0-source-closure-receipt/v1",
+  "state": "PASS"
+}

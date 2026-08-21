@@ -1,0 +1,213 @@
+{
+  "schema": "ai-edge-tlm/claim-ledger/v1",
+  "as_of_date": "2026-08-21",
+  "claims": [
+    {
+      "id": "N-EDGE-PARADIGM-SHIFT",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-LITERT-LM-README", "SRC-MLKIT-GENAI-OVERVIEW", "SRC-APPLE-FOUNDATION-MODELS"],
+      "evidence_ceiling": "SOURCE_AND_ARCHITECTURE_ONLY",
+      "decision": "The latency/privacy/offline/cost motivation and split provider lanes are supported; talk-specific scale and benchmark numbers need the original source packet.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "C-SYSTEM-VS-INAPP-GENAI",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-MLKIT-GENAI-OVERVIEW", "SRC-APPLE-FOUNDATION-MODELS", "SRC-LITERT-LM-README"],
+      "evidence_ceiling": "ARCHITECTURE_DECISION",
+      "decision": "Keep system and embedded providers separate, but do not treat 2B–4B and 100M–1B as hard invariants; route by capability, policy and device availability.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "C-ON-DEMAND-SKILL-HARNESS",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-GALLERY-SKILLS"],
+      "evidence_ceiling": "REFERENCE_PATTERN_ONLY",
+      "decision": "Metadata-first discovery and on-demand instruction loading are corroborated. The exact Load_Skill contract, eight-skill limit and security properties require source/runtime evidence.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "T-SYSTEM-SLM-VS-INAPP-TLM",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-MLKIT-GENAI-OVERVIEW", "SRC-MLKIT-PROMPT-API", "SRC-APPLE-FOUNDATION-MODELS", "SRC-LITERT-LM-README"],
+      "evidence_ceiling": "ARCHITECTURE_DECISION",
+      "decision": "The decision threshold is capability/terms/device/task driven. Current system APIs have device/version fragmentation and beta surfaces.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "S-SUB-BILLION-FUNCTION-TUNING",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-FUNCTIONGEMMA-MODEL-CARD", "SRC-FUNCTIONGEMMA-FINETUNING"],
+      "evidence_ceiling": "MODEL_RESEARCH_ONLY",
+      "decision": "Specialization through task-specific fine-tuning is supported. Current official Mobile Actions figures are 58% base and 85% fine-tuned, not the article 46% to >90% claim.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "P-LITERTTORCH-TO-LITERTLM-PIPELINE",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-LITERT-TORCH-REPO", "SRC-LITERT-LM-README"],
+      "evidence_ceiling": "PROCEDURE_REQUIRES_VERSIONED_EXECUTION",
+      "decision": ".litertlm is the LiteRT-LM container, but exact export commands/operator coverage must be validated against the selected release and target model.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "P-BUILD-EDGE-SKILL-WORKFLOW",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-GALLERY-SKILLS"],
+      "evidence_ceiling": "REFERENCE_PATTERN_ONLY",
+      "decision": "SKILL.md, JS WebView, native intents, URL loading and local import are corroborated. Automated Gemini CLI/ADB generation remains unverified here.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D-FUNCTIONGEMMA-BENCHMARK",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-FUNCTIONGEMMA-MODEL-CARD"],
+      "evidence_ceiling": "SOURCE_REPORTED_NOT_LOCAL_ACCEPTANCE",
+      "decision": "270M is corroborated. Current official example reports 58% to 85% and S25 Ultra CPU 1718 prefill/125.9 decode; Pixel 7 1916/142 and 46% to >90% require the original talk packet.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D-APPLE-FASTVLM-BENCHMARK",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-FASTVLM-REPO", "SRC-FASTVLM-MODEL-LICENSE"],
+      "evidence_ceiling": "RESEARCH_ONLY_NOT_COMMERCIAL_DEFAULT",
+      "decision": "FastVLM 0.5B exists, but the released weights are research-only and the claimed LiteRT-LM Qualcomm-NPU path is not established by the official repository.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D-ELOQUENT-ONDEVICE-PIPELINE",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-ELOQUENT-APPSTORE"],
+      "evidence_ceiling": "STORE_LISTING_ONLY",
+      "decision": "Gemma-based on-device dictation, polishing and personal dictionary are corroborated. Exact two-model internals/parameter counts need source evidence, and optional advanced features may use cloud.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "X-LITERTLM-VS-TASK-FORMAT",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-LITERT-LM-README", "SRC-MEDIAPIPE-REPO"],
+      "evidence_ceiling": "MIGRATION_DECISION_PER_API",
+      "decision": ".litertlm is primary for LiteRT-LM, but .task is not universally retired; MediaPipe and legacy/non-LLM flows remain separate compatibility surfaces.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "K-MULTI-SKILL-CHAINING-LIMIT",
+      "status": "OPEN",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-GALLERY-SKILLS"],
+      "evidence_ceiling": "RESEARCH_UNKNOWN",
+      "decision": "Single-turn autonomous multi-skill reliability is not closed. Production baseline remains a host-validated bounded DAG.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "C-LITERTLM-PIPELINE-ARCHITECTURE",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-LITERT-LM-REPO", "SRC-LITERT-LM-README"],
+      "evidence_ceiling": "SOURCE_AND_CODE_REVIEW_REQUIRED",
+      "decision": "Cross-platform execution, multimodality and tool use are supported. Exact tokenizer/multi-session/file-loader invariants require pinned code/API review and runtime tests.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D-GALLERY-APP-ECOSYSTEM",
+      "status": "CORROBORATED",
+      "source_ids": ["SRC-GALLERY-REPO", "SRC-GALLERY-SKILLS"],
+      "evidence_ceiling": "REFERENCE_IMPLEMENTATION_ONLY",
+      "decision": "Gallery is an official mobile reference app with Agent Skills, WebView JS and native intents. It is not an automatic production-security or cross-app abstraction proof.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "SOURCE_CLASSIFIED"
+    },
+    {
+      "id": "T-EDGE-HARDWARE-ACCELERATION-MATRIX",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-LITERT-LM-README", "SRC-LITERT-REPO", "SRC-MLKIT-GENAI-OVERVIEW"],
+      "evidence_ceiling": "CAPABILITY_PROBE_REQUIRED",
+      "decision": "Do not infer universal CPU/GPU/NPU support from platform names. Backend availability is runtime, delegate, device and model specific; requested backend is not observed backend.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "E-EDGE-SPECIALIZATION-SCALING-LAW",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-FUNCTIONGEMMA-MODEL-CARD", "SRC-FUNCTIONGEMMA-FINETUNING"],
+      "evidence_ceiling": "INFERENCE_NOT_AXIOM",
+      "decision": "Evidence supports specialization gains for FunctionGemma, but it does not establish a universal non-linear law for every 100M–1B model/task.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "P-MEDIAPIPE-TO-LITERTLM-MIGRATION",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-LITERT-LM-README", "SRC-MEDIAPIPE-REPO"],
+      "evidence_ceiling": "MIGRATION_DECISION_PER_API",
+      "decision": "Adopt LiteRT-LM for new supported LLM flows; do not mechanically replace all MediaPipe .task code or namespaces without API-specific migration evidence.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "D-GEMMA4-CROSS-DEVICE-BENCHMARK-PROTOCOL",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-LITERT-LM-README", "SRC-FUNCTIONGEMMA-MODEL-CARD"],
+      "evidence_ceiling": "ROLLING_SOURCE_PROTOCOL",
+      "decision": "Official model/runtime performance sources exist, but local admission requires exact device/runtime/model/backend receipts rather than copied tables.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "P-FUNCTIONGEMMA-TUNING-LAB-PROCEDURE",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-FUNCTIONGEMMA-FINETUNING"],
+      "evidence_ceiling": "PROCEDURE_REQUIRES_VERSIONED_EXECUTION",
+      "decision": "Official current guidance uses notebook/TRL-style fine-tuning and terms-gated model access. A specific four-step hosted Tuning Lab UI requires its original immutable source.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "C-ONDEVICE-PERSONAL-DICTIONARY-BIASING",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-ELOQUENT-APPSTORE"],
+      "evidence_ceiling": "STORE_LISTING_ONLY",
+      "decision": "Personal dictionary and on-device processing are corroborated; the exact ASR decoding-bias and second-stage semantic algorithm are not exposed by the listing.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "G-EDGE-AGENT-WEBVIEW-SANDBOX-PROTOCOL",
+      "status": "CORRECTED",
+      "source_ids": ["SRC-GALLERY-SKILLS"],
+      "evidence_ceiling": "PROJECT_NORMATIVE_REQUIREMENT",
+      "decision": "Gallery corroborates hidden WebView execution and out-of-band secrets. Origin allowlists, CSP, native-bridge least privilege, integrity, timeout, replay and cleanup are ai-edge-tlm requirements, not proven upstream guarantees.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "C-LITERTLM-MULTISESSION-KVCACHE",
+      "status": "SOURCE_PACKET_REQUIRED",
+      "source_ids": ["SRC-USER-ARTICLE-PACKET", "SRC-LITERT-LM-REPO"],
+      "evidence_ceiling": "CODE_AND_RUNTIME_PROOF_REQUIRED",
+      "decision": "Do not claim physical KV-cache isolation or skip-prefill behavior from a diagram alone. Pinned API/code and fault tests are required.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    },
+    {
+      "id": "Q-INAPP-TLM-MAINTENANCE-DEBT",
+      "status": "PARTIAL",
+      "source_ids": ["SRC-MLKIT-GENAI-OVERVIEW", "SRC-MLKIT-PROMPT-API", "SRC-APPLE-FOUNDATION-MODELS"],
+      "evidence_ceiling": "ARCHITECTURE_RISK",
+      "decision": "Current device/version/API fragmentation supports maintaining an embedded lane. The 12–18 month economic forecast remains a product decision, not a verified technical fact.",
+      "falsifier": "A newer exact official source or same-subject runtime receipt contradicts this classification.",
+      "implementation_state": "NOT_IMPLEMENTED"
+    }
+  ]
+}
