@@ -1,5 +1,5 @@
 {
-  "evidence_ceiling": "Binds local candidate bytes only; GitHub implementation commit/tree and provider CI are added by the exact receipt.",
+  "evidence_ceiling": "Binds local implementation candidate bytes only; GitHub commit/tree, Draft PR, CI, and exact receipt are added after publication.",
   "file_count": 16,
   "files": [
     {
@@ -27,10 +27,10 @@
       "sha256": "1c67eadf24366158ce7fe39e6eb80162d53686142e61ed17c01020c87bc18203"
     },
     {
-      "bytes": 1243,
+      "bytes": 1259,
       "mode": "100644",
       "path": "skills/receipts/p5-candidate.json",
-      "sha256": "1959206e3c63ad150810c5ee9e8c6b200efb51e8646d02317ac694bcf04db54a"
+      "sha256": "05c307cc4c6c47c9b17742797dd621a20999e0c1af854a9582c52622a01e097b"
     },
     {
       "bytes": 341,
@@ -75,10 +75,10 @@
       "sha256": "f874a97db029b1a4c5e8d5615026bfe7fe9677d44a9f986c0727a36f2b874ab7"
     },
     {
-      "bytes": 1519,
+      "bytes": 1948,
       "mode": "100644",
       "path": "skills/shadow-checkpoint.md",
-      "sha256": "a9edcf1abe9c0cf39937f66f44e2b5e2426b9f7e9087b41d44f7a0a2113ec37c"
+      "sha256": "2b743277908f3b42ff8e3cc86f6a5aad379bdd0308de5924141e27c3960f3f90"
     },
     {
       "bytes": 178,
@@ -87,10 +87,10 @@
       "sha256": "221ac17ce1c22f4b8842dd66f568e538a3a5467516004b95fe7737db710b70fb"
     },
     {
-      "bytes": 1614,
+      "bytes": 2159,
       "mode": "100644",
       "path": "tests/p5/test_public_boundaries.py",
-      "sha256": "ef182b758d1ee0067e8014427c82f3ca66e7a70cb8ce80ad7f36ceea039fbf6e"
+      "sha256": "d2674a6dcb801f01ae3e0761c40995aea255df11c0dd4846dab1d6df22aeee6b"
     },
     {
       "bytes": 10547,
@@ -101,6 +101,6 @@
   ],
   "parent_commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
   "parent_tree": "7a1502e00f61814c4a1449a701aba7c08cecafed",
-  "schema": "ai-edge-tlm/wave1-publication-manifest/v1",
+  "schema": "ai-edge-tlm/wave1-publication-manifest/v2",
   "workstream": "P5"
 }

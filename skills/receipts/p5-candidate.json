@@ -16,7 +16,8 @@
     "timeout_cleanup": "PASS"
   },
   "local_gate_details": {
-    "local_test_result": "10 passed",
+    "compileall": "PASS",
+    "local_test_result": "11 passed",
     "shadow_fixes": [
       "integrity verification no longer grants trust",
       "host trust admission has explicit decision identity",
@@ -30,7 +31,7 @@
   "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
   "schema": "ai-edge-tlm/p5-candidate-receipt/v1",
   "state": "FIRST_GREEN_LOCAL",
-  "wave_local_suite": "26 passed with native lanes; CI-style 24 passed / 2 explicit skips",
+  "wave_local_suite": "27 passed with explicit Kotlin/JVM and Swift/Linux lanes",
   "writer_lease": [
     "skills/**",
     "tests/p5/**"
