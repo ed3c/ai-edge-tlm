@@ -1,0 +1,33 @@
+{
+  "as_of_date": "2026-08-21",
+  "does_not_prove": [
+    "Android Gradle/SDK",
+    "Xcode/iOS SDK/signing/simulator/device",
+    "provider/model/backend runtime",
+    "PRIVATE or HUMAN lanes"
+  ],
+  "evidence_lane": "LOCAL_DETERMINISTIC",
+  "gates": {
+    "dependency_free_external_ref_validation": "PASS",
+    "draft_2020_12_reference_validation": "PASS",
+    "foundation_validate": "PASS",
+    "generator_check": "PASS / 47 generated files",
+    "kotlin_jvm_compile": "PASS",
+    "kotlin_swift_canonical_golden": "PASS",
+    "public_boundary": "PASS",
+    "pytest": "41 passed",
+    "swift_linux_package_build": "PASS"
+  },
+  "host": "x86_64-linux",
+  "schema": "ai-edge-tlm/p2-toolchain-receipt/v2",
+  "state": "PASS",
+  "toolchains": {
+    "java": "openjdk version \"21.0.11\" 2026-04-21",
+    "jsonschema": "4.26.0",
+    "kotlinc": "(JRE",
+    "pytest": "9.0.2",
+    "python": "3.13.5",
+    "referencing": "installed",
+    "swift": "Swift version 6.2.1 (swift-6.2.1-RELEASE)"
+  }
+}
