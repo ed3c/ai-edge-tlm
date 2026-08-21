@@ -1,0 +1,22 @@
+{
+  "schema": "ai-edge-tlm/p0-source-closure-exact-receipt/v3",
+  "supersedes": [
+    "docs/research/receipts/p0-source-closure.exact.json",
+    "docs/research/receipts/p0-source-closure.exact-v2.json"
+  ],
+  "correction": "The v1 SHA-256 values are canonical JSON semantic digests, not raw-file digests; they remain valid for semantic equality. V2 correctly added Git blob identities but incorrectly described all v1 values as stale local serialization. V3 binds both identities and is authoritative.",
+  "branch": "evidence/source-closure",
+  "implementation_subject": {
+    "commit": "5fc162ab8a6d92de4172ade5730179bb74d19fc0",
+    "tree": "905277e7666929e8c048a40d882fa978f41d82ce"
+  },
+  "files": [
+    {"path": "docs/research/source-register.json", "semantic_digest": {"algorithm": "sha256", "mode": "canonical-json", "value": "24720e8d2de629ac7bfdeb95be99e09551d381f9c8aaa775fc511f3de46ee277"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "53ade9492486e6cfbeee8c15eec358ee9cb05eb3"}},
+    {"path": "docs/research/claim-ledger.json", "semantic_digest": {"algorithm": "sha256", "mode": "canonical-json", "value": "e6a5bb56864585be2c0e5aa6d437ea5e6035dbe0c88b8abfd3eab1dd463dcbf0"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "5511d17e693c47e2ff462f43cbdcc523e2c564ca"}},
+    {"path": "docs/research/license-register.json", "semantic_digest": {"algorithm": "sha256", "mode": "canonical-json", "value": "bbc6c5840b9c85d08661412f447cbeea2256fe876702981878c2165cd2dd2b61"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "8abca8aa2f1ddf26dc7c7c3a8d6992111f31fe45"}},
+    {"path": "docs/research/technology-selection.json", "semantic_digest": {"algorithm": "sha256", "mode": "canonical-json", "value": "fac66ddcea138e93d8a80c2d777482267590e527b6a5eb6ddf08d410519cebf2"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "5b476bb84eddc3528341330c3c94c62a0c46951e"}}
+  ],
+  "state": "IMPLEMENTED_UNMERGED_EXACT_RECEIPT_V3",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Binds P0 semantics and exact Git bytes; it does not supply the missing original article packet, accept terms, or prove native/device/model behavior."
+}
