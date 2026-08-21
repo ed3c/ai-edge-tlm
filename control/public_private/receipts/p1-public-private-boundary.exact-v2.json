@@ -1,0 +1,42 @@
+{
+  "schema": "ai-edge-tlm/p1-public-private-boundary-exact-receipt/v2",
+  "supersedes": "control/public_private/receipts/p1-public-private-boundary.exact.json",
+  "superseded_state": "STALE_LOCAL_CANDIDATE_DIGESTS",
+  "reason": "The v1 receipt recorded SHA-256 values from local candidate formatting. V2 binds each exact GitHub public contract by ref, path, and Git blob object identity.",
+  "branch": "control/public-private-boundary",
+  "implementation_subject": {
+    "commit": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+    "tree": "bdf3aec5e52bf6eb52e899c0d61a2aa91bbbe947"
+  },
+  "files": [
+    {
+      "path": "control/public_private/context-capsule.schema.json",
+      "git_object_format": "sha1",
+      "git_blob": "6c9e239bbb33e97f23cac29b4e32dbd15d303709"
+    },
+    {
+      "path": "control/public_private/classification-policy.json",
+      "git_object_format": "sha1",
+      "git_blob": "14f4e650ee97cc6d45b25cf90fbea8ec284fc7dd"
+    },
+    {
+      "path": "docs/governance/public-private-boundary.md",
+      "git_object_format": "sha1",
+      "git_blob": "15833ae002b1d37a9466b903f150952874332419"
+    }
+  ],
+  "gates": {
+    "git_blob_replay": "PASS_ON_EXACT_SUBJECT",
+    "pytest_p1_before_v2": "12 passed",
+    "pytest_all_before_v2": "28 passed",
+    "provider_ci_before_v2": "validate #8 SUCCESS"
+  },
+  "state": "IMPLEMENTED_UNMERGED_WITH_CORRECTED_EXACT_RECEIPT",
+  "shadow": "RECONCILED_FROM_L2_TO_CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Binds exact public capsule, classification and governance bytes only. It does not prove signed-in retrieval, Drive ACLs, private truth, carrier authentication or Human disclosure approval.",
+  "residual_states": [
+    "PRIVATE_NOT_EXERCISED: signed-in carrier and Drive ACLs",
+    "HUMAN_ADMIT_REQUIRED: disclosure authorization",
+    "NOT_EXERCISED: network isolation outside this module"
+  ]
+}
