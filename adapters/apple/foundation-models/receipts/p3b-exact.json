@@ -1,0 +1,78 @@
+{
+  "branch": "adapters/apple-foundation-v1",
+  "compiled_git_blobs": {
+    "AppleFoundationAdapter.swift": "941a409543427de43bd94b66f3f54df81c7eb76e",
+    "AppleFoundationAdapterTests.swift": "26840bad2c677f2d8b364fb27b530e88015396ff",
+    "AppleFoundationTypes.swift": "e3d06bd0bf6ae9a73cee8246d772ae4af5c8b43c",
+    "FakeAppleSystemSession.swift": "7acf9856553f91a2486c612dd3dd0c165e3bfa73",
+    "Package.swift": "6007697523bc793a95a9691c43429e7d96ff1947",
+    "PortableSHA256.swift": "77820f12d1c20345b0a2eb6f949ad765a46ec326"
+  },
+  "evidence_ceiling": "Binds the exact Swift provider-private adapter and Linux fake-session package tests only; it does not establish Apple SDK or physical-device acceptance.",
+  "evidence_states": {
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "SDK_TERMS": "HUMAN_ADMIT_REQUIRED",
+    "STATIC": "PASS",
+    "XCODE_IOS": "NOT_EXERCISED"
+  },
+  "human_owned_operations": [
+    "merge",
+    "release",
+    "store publication",
+    "signing/provisioning",
+    "terms acceptance",
+    "secrets/access grants",
+    "semantic conflict resolution",
+    "production rollback"
+  ],
+  "implementation": {
+    "changed_paths": 14,
+    "commit": "b9ed9cd0d57266e3a139f8b6465da10848bd38f9",
+    "tree": "4bf034cbf0e6b13cd1b532e5c9c9f41a9e3d1937"
+  },
+  "issue": 5,
+  "local_gates": {
+    "static_candidate": "4 passed",
+    "swift_package": "9 tests PASS on exact compiled Git blobs",
+    "toolchain": "Swift 6.2.1 / x86_64 Linux"
+  },
+  "manifest": {
+    "git_blob_sha1": "3addc611074b9857ea5e31bcf20b7c1bdb14b4b8",
+    "implementation_file_count": 12,
+    "path": "adapters/apple/foundation-models/receipts/p3b-publication-manifest.json"
+  },
+  "parent": {
+    "commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+    "exact_receipt_git_blob_sha1": "bc4d12a332ccc07fab334923d7af55d590290988",
+    "exact_receipt_path": "contracts/receipts/p2-contracts.exact.v2.json",
+    "provider_ci": "validate#20:SUCCESS",
+    "pull_request": 19,
+    "tree": "7a1502e00f61814c4a1449a701aba7c08cecafed"
+  },
+  "pr": 21,
+  "provider_ci": {
+    "conclusion": "SUCCESS",
+    "head": "b9ed9cd0d57266e3a139f8b6465da10848bd38f9",
+    "run_id": 32462358570,
+    "run_number": 22
+  },
+  "residual_states": [
+    "FoundationModels SDK/Xcode and iOS integration",
+    "supported physical device, region, and system-model revision",
+    "latency, privacy, quality, power, and thermal behavior",
+    "signing, provisioning, store, merge, and release authority"
+  ],
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p3b-apple-foundation-exact-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "IMPLEMENTED_UNMERGED",
+  "task_packet": {
+    "git_blob_sha1": "3a3968fc7bad46e0bc675f06ddc6fcbbda686af6",
+    "path": "adapters/apple/foundation-models/task-packets/p3b-apple-foundation-v1.task.json"
+  },
+  "writer_lease": [
+    "adapters/apple/foundation-models/**",
+    "tests/p3b/**"
+  ]
+}
