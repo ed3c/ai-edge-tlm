@@ -1,0 +1,6 @@
+{
+  "admitted_effect": "EXTERNAL_SIDE_EFFECT",
+  "decision": "REQUIRE_CONFIRMATION",
+  "policy_reason": "Calendar writes require explicit user confirmation.",
+  "proposal_id": "proposal-001"
+}

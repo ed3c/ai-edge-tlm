@@ -1,0 +1,148 @@
+{
+  "$defs": {
+    "SkillRef": {
+      "additionalProperties": false,
+      "description": "Metadata-first immutable skill reference.",
+      "properties": {
+        "manifest_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "required_tools": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "skill_id": {
+          "pattern": "^[a-z][a-z0-9-]{1,127}$",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "source_uri": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "trust_state": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/SkillTrustState"
+        },
+        "version": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "skill_id",
+        "version",
+        "source_uri",
+        "source_sha256",
+        "manifest_sha256",
+        "trust_state",
+        "required_tools"
+      ],
+      "type": "object"
+    },
+    "ToolAdmission": {
+      "additionalProperties": false,
+      "description": "Host policy decision for a proposal.",
+      "properties": {
+        "admitted_effect": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ToolEffect"
+        },
+        "decision": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ToolDecision"
+        },
+        "idempotency_key": {
+          "type": "string"
+        },
+        "policy_reason": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "proposal_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposal_id",
+        "decision",
+        "policy_reason",
+        "admitted_effect"
+      ],
+      "type": "object"
+    },
+    "ToolDefinition": {
+      "additionalProperties": false,
+      "description": "Tool contract exposed to a model; execution authority remains host-owned.",
+      "properties": {
+        "description": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "effect": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ToolEffect"
+        },
+        "idempotency_required": {
+          "type": "boolean"
+        },
+        "input_schema_uri": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "requires_confirmation": {
+          "type": "boolean"
+        },
+        "tool_name": {
+          "pattern": "^[a-z][a-z0-9_.-]{1,127}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_name",
+        "description",
+        "input_schema_uri",
+        "effect",
+        "requires_confirmation",
+        "idempotency_required"
+      ],
+      "type": "object"
+    },
+    "ToolProposal": {
+      "additionalProperties": false,
+      "description": "Candidate tool call emitted by a model, never an execution decision.",
+      "properties": {
+        "arguments": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "model_output_digest": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "proposal_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "tool_name": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposal_id",
+        "tool_name",
+        "arguments",
+        "model_output_digest"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM v1 tools records"
+}

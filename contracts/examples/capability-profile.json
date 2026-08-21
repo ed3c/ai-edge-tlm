@@ -1,0 +1,15 @@
+{
+  "available_memory_mb": 4096,
+  "device_model": "example-device",
+  "max_active_sessions": 2,
+  "os_version": "16",
+  "platform": "ANDROID",
+  "supported_backends": [
+    "CPU",
+    "GPU"
+  ],
+  "supported_modalities": [
+    "TEXT"
+  ],
+  "supports_system_model": true
+}

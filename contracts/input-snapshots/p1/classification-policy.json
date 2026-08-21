@@ -1,0 +1,39 @@
+{
+  "schema": "ai-edge-tlm/public-private-classification/v1",
+  "context_id": "CDX-AI-EDGE-001",
+  "capsule_allowlist": [
+    "architecture_decisions",
+    "technical_constraints",
+    "non_goals",
+    "source_ids",
+    "prompt_contract_id",
+    "required_evidence_lanes"
+  ],
+  "private_field_names": [
+    "commercial_intent",
+    "product_positioning",
+    "roadmap",
+    "prompt_history",
+    "private_dataset",
+    "user_data",
+    "private_source_packet",
+    "workspace_url",
+    "control_plane_uri",
+    "ledger_uri",
+    "model_access_grant"
+  ],
+  "secret_name_fragments": [
+    "token",
+    "password",
+    "secret",
+    "cookie",
+    "credential",
+    "private_key",
+    "signing_key",
+    "api_key"
+  ],
+  "max_capsule_bytes": 4096,
+  "max_ttl_seconds": 3600,
+  "retrieval_authority": "SIGNED_IN_CARRIER_REQUIRED",
+  "missing_context_state": "ABSENT"
+}

@@ -1,0 +1,213 @@
+{
+  "$defs": {
+    "ExecutionPlan": {
+      "additionalProperties": false,
+      "description": "Host-owned bounded execution DAG.",
+      "properties": {
+        "fallback_edges": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/FallbackEdge"
+          },
+          "maxItems": 128,
+          "type": "array"
+        },
+        "max_parallelism": {
+          "maximum": 16,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "max_steps": {
+          "maximum": 128,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "nodes": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/PlanNode"
+          },
+          "maxItems": 64,
+          "minItems": 1,
+          "type": "array"
+        },
+        "plan_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "request_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "schema": {
+          "const": "ai-edge-tlm/execution-plan/v1",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "plan_id",
+        "request_id",
+        "nodes",
+        "fallback_edges",
+        "max_parallelism",
+        "max_steps"
+      ],
+      "type": "object"
+    },
+    "FallbackEdge": {
+      "additionalProperties": false,
+      "description": "Explicit failure edge; silent fallback is forbidden.",
+      "properties": {
+        "from_node": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "on_codes": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ErrorCode"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "to_node": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "from_node",
+        "on_codes",
+        "to_node"
+      ],
+      "type": "object"
+    },
+    "PlanNode": {
+      "additionalProperties": false,
+      "description": "One bounded DAG operation.",
+      "properties": {
+        "effect": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ToolEffect"
+        },
+        "input_from": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "node_id": {
+          "pattern": "^[A-Za-z0-9._:-]{1,128}$",
+          "type": "string"
+        },
+        "operation": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "output_schema_uri": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "provider_requirements": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ProviderKind"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "retry": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/RetryPolicy"
+        },
+        "timeout_ms": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "tool_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "operation",
+        "input_from",
+        "provider_requirements",
+        "effect",
+        "timeout_ms",
+        "retry",
+        "output_schema_uri"
+      ],
+      "type": "object"
+    },
+    "ProviderSelectionDecision": {
+      "additionalProperties": false,
+      "description": "Deterministic provider selection receipt.",
+      "properties": {
+        "fallback_provider_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "observed_backends": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/BackendKind"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rationale": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "request_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "selected_provider_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "request_id",
+        "selected_provider_id",
+        "fallback_provider_ids",
+        "rationale",
+        "observed_backends"
+      ],
+      "type": "object"
+    },
+    "RetryPolicy": {
+      "additionalProperties": false,
+      "description": "Bounded host retry policy.",
+      "properties": {
+        "base_delay_ms": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "jitter": {
+          "type": "boolean"
+        },
+        "max_attempts": {
+          "maximum": 10,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "max_delay_ms": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_attempts",
+        "base_delay_ms",
+        "max_delay_ms",
+        "jitter"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM v1 orchestration records"
+}

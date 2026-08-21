@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/handoff-receipt.schema.json",
+  "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/evidence.schema.json#/$defs/HandoffReceipt",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HandoffReceipt"
+}

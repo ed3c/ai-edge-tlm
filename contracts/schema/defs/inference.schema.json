@@ -1,0 +1,165 @@
+{
+  "$defs": {
+    "ErrorDetail": {
+      "additionalProperties": false,
+      "description": "Typed error shared across provider boundaries.",
+      "properties": {
+        "code": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ErrorCode"
+        },
+        "details": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "message": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "provider_id": {
+          "type": "string"
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "type": "object"
+    },
+    "InferenceEvent": {
+      "additionalProperties": false,
+      "description": "Ordered streaming event envelope.",
+      "properties": {
+        "error": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/ErrorDetail"
+        },
+        "finish_reason": {
+          "type": "string"
+        },
+        "request_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "schema": {
+          "const": "ai-edge-tlm/inference-event/v1",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "text_delta": {
+          "type": "string"
+        },
+        "tool_proposal": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json#/$defs/ToolProposal"
+        },
+        "tool_result": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/ToolResult"
+        },
+        "type": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/InferenceEventType"
+        }
+      },
+      "required": [
+        "schema",
+        "request_id",
+        "sequence",
+        "type"
+      ],
+      "type": "object"
+    },
+    "InferenceRequest": {
+      "additionalProperties": false,
+      "description": "Top-level inference request. Host policy evaluates it before provider selection.",
+      "properties": {
+        "capability_profile": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/CapabilityProfile"
+        },
+        "messages": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/Message"
+          },
+          "maxItems": 128,
+          "minItems": 1,
+          "type": "array"
+        },
+        "model_ref": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ModelArtifactRef"
+        },
+        "preferred_provider_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "request_id": {
+          "pattern": "^[A-Za-z0-9._:-]{1,128}$",
+          "type": "string"
+        },
+        "resource_budget": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ResourceBudget"
+        },
+        "schema": {
+          "const": "ai-edge-tlm/inference-request/v1",
+          "type": "string"
+        },
+        "task_id": {
+          "maxLength": 128,
+          "minLength": 1,
+          "type": "string"
+        },
+        "task_kind": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/TaskKind"
+        },
+        "trace_id": {
+          "pattern": "^[A-Za-z0-9._:-]{1,128}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "request_id",
+        "trace_id",
+        "task_id",
+        "task_kind",
+        "messages",
+        "capability_profile",
+        "resource_budget"
+      ],
+      "type": "object"
+    },
+    "ToolResult": {
+      "additionalProperties": false,
+      "description": "Validated tool outcome.",
+      "properties": {
+        "error": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/ErrorDetail"
+        },
+        "output": true,
+        "proposal_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "receipt_subject": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/SubjectRef"
+        },
+        "state": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ResultState"
+        }
+      },
+      "required": [
+        "proposal_id",
+        "state"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM v1 inference records"
+}

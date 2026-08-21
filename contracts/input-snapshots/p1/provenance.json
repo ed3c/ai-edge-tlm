@@ -1,0 +1,10 @@
+{
+  "schema": "ai-edge-tlm/p1-input-snapshot/v1",
+  "source_ref": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+  "verification_ref": "1e9cf411d11d9711a11e73ec19d06fb47979a881",
+  "files": [
+    {"source_path": "control/public_private/context-capsule.schema.json", "snapshot_path": "contracts/input-snapshots/p1/context-capsule.schema.json", "git_blob": "6c9e239bbb33e97f23cac29b4e32dbd15d303709"},
+    {"source_path": "control/public_private/classification-policy.json", "snapshot_path": "contracts/input-snapshots/p1/classification-policy.json", "git_blob": "14f4e650ee97cc6d45b25cf90fbea8ec284fc7dd"},
+    {"source_path": "docs/governance/public-private-boundary.md", "snapshot_path": "contracts/input-snapshots/p1/public-private-boundary.md", "git_blob": "15833ae002b1d37a9466b903f150952874332419"}
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "$defs": {
+    "ApiMaturity": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ApiMaturity"
+    },
+    "ArtifactFormat": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ArtifactFormat"
+    },
+    "BackendKind": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/BackendKind"
+    },
+    "BenchmarkReceipt": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/evidence.schema.json#/$defs/BenchmarkReceipt"
+    },
+    "CapabilityProfile": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/CapabilityProfile"
+    },
+    "ErrorCode": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ErrorCode"
+    },
+    "ErrorDetail": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/ErrorDetail"
+    },
+    "EvidenceLane": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/EvidenceLane"
+    },
+    "EvidenceState": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/EvidenceState"
+    },
+    "ExecutionPlan": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/ExecutionPlan"
+    },
+    "FallbackEdge": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/FallbackEdge"
+    },
+    "GateResult": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/evidence.schema.json#/$defs/GateResult"
+    },
+    "HandoffReceipt": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/evidence.schema.json#/$defs/HandoffReceipt"
+    },
+    "InferenceEvent": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/InferenceEvent"
+    },
+    "InferenceEventType": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/InferenceEventType"
+    },
+    "InferenceRequest": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/InferenceRequest"
+    },
+    "LicensePlane": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/LicensePlane"
+    },
+    "Message": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/Message"
+    },
+    "MessageRole": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/MessageRole"
+    },
+    "Modality": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/Modality"
+    },
+    "ModelArtifactRef": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ModelArtifactRef"
+    },
+    "PlanNode": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/PlanNode"
+    },
+    "PlatformKind": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/PlatformKind"
+    },
+    "ProviderDescriptor": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ProviderDescriptor"
+    },
+    "ProviderKind": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ProviderKind"
+    },
+    "ProviderSelectionDecision": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/ProviderSelectionDecision"
+    },
+    "ResourceBudget": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ResourceBudget"
+    },
+    "ResultState": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ResultState"
+    },
+    "RetryPolicy": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/RetryPolicy"
+    },
+    "SkillRef": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json#/$defs/SkillRef"
+    },
+    "SkillTrustState": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/SkillTrustState"
+    },
+    "SubjectRef": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/SubjectRef"
+    },
+    "TaskKind": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/TaskKind"
+    },
+    "TermsState": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/TermsState"
+    },
+    "ToolAdmission": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json#/$defs/ToolAdmission"
+    },
+    "ToolDecision": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ToolDecision"
+    },
+    "ToolDefinition": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json#/$defs/ToolDefinition"
+    },
+    "ToolEffect": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ToolEffect"
+    },
+    "ToolProposal": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json#/$defs/ToolProposal"
+    },
+    "ToolResult": {
+      "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/ToolResult"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/contracts-v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM cross-platform contracts v1"
+}

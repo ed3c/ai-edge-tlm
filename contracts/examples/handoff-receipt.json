@@ -1,0 +1,33 @@
+{
+  "changed_paths": [
+    "contracts/schema/contracts-v1.schema.json"
+  ],
+  "gates": [
+    {
+      "does_not_prove": "Native runtime, device backend, private authorization, merge, or release.",
+      "evidence_lane": "STATIC",
+      "exact_result": "Draft 2020-12 validation passed",
+      "gate_id": "p2-schema",
+      "proves": "The exact schema validates its deterministic fixtures.",
+      "state": "PASS"
+    }
+  ],
+  "next_authority": "P3/P4/P5 fan-out owner",
+  "output_digests": {
+    "contracts/model/v1.json": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+  },
+  "parent_subjects": [
+    {
+      "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "repository": "ed3c/ai-edge-tlm",
+      "tree_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "schema": "ai-edge-tlm/handoff-receipt/v1",
+  "subject": {
+    "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "repository": "ed3c/ai-edge-tlm",
+    "tree_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "task_id": "P2-03"
+}

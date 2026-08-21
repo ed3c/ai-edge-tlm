@@ -1,0 +1,113 @@
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+from contracts.generator.contract_checks import (
+    load_schema_store,
+    parent_identity_failures,
+    public_text_failures,
+    validate_instance,
+)
+from contracts.generator.generate import ROOT, check_outputs, load_model, render_outputs, scan_for_provider_leak
+from contracts.generator.model_support import compatibility_failures
+
+
+def _kebab(name: str) -> str:
+    import re
+    return re.sub(r"(?<!^)(?=[A-Z])", "-", name).lower()
+
+
+def _reference_validation(root: Path, store: dict[str, dict], model: dict, failures: list[str], required: bool) -> None:
+    try:
+        from jsonschema import Draft202012Validator  # type: ignore
+        from referencing import Registry, Resource  # type: ignore
+    except ImportError:
+        if required:
+            failures.append("jsonschema/referencing packages absent for required Draft 2020-12 gate")
+        return
+    registry = Registry().with_resources(
+        (uri, Resource.from_contents(document)) for uri, document in store.items()
+    )
+    for uri, document in store.items():
+        try:
+            Draft202012Validator.check_schema(document)
+        except Exception as exc:  # pragma: no cover - exact provider message is not stable
+            failures.append(f"invalid Draft 2020-12 schema {uri}: {exc}")
+    for root_name in model["roots"]:
+        wrapper = json.loads((root / f"contracts/schema/{_kebab(root_name)}.schema.json").read_text(encoding="utf-8"))
+        fixture = json.loads((root / f"contracts/examples/{_kebab(root_name)}.json").read_text(encoding="utf-8"))
+        errors = sorted(
+            Draft202012Validator(wrapper, registry=registry).iter_errors(fixture),
+            key=lambda error: list(error.path),
+        )
+        failures.extend(f"{root_name}: {error.message}" for error in errors)
+
+
+def validate(root: Path, require_jsonschema: bool = False) -> list[str]:
+    failures: list[str] = []
+    model = load_model(root)
+    outputs = render_outputs(model, root)
+    failures.extend(check_outputs(root, outputs))
+    failures.extend(scan_for_provider_leak(outputs))
+    task = json.loads((root / "contracts/task-packets/p2-cross-platform-v1.task.json").read_text(encoding="utf-8"))
+    failures.extend(parent_identity_failures(root, task))
+
+    manifest = json.loads((root / "contracts/generated-manifest.json").read_text(encoding="utf-8"))
+    for path, expected in manifest["model_sources"].items():
+        target = root / path
+        if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != expected:
+            failures.append(f"model source manifest mismatch: {path}")
+    for path, expected in manifest["generator_sources"].items():
+        target = root / path
+        if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != expected:
+            failures.append(f"generator source manifest mismatch: {path}")
+    for path, expected in manifest["generated_files"].items():
+        target = root / path
+        if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != expected:
+            failures.append(f"generated manifest mismatch: {path}")
+
+    try:
+        store = load_schema_store(root)
+    except ValueError as exc:
+        failures.append(str(exc))
+        store = {}
+    for root_name in model["roots"]:
+        wrapper = json.loads((root / f"contracts/schema/{_kebab(root_name)}.schema.json").read_text(encoding="utf-8"))
+        fixture = json.loads((root / f"contracts/examples/{_kebab(root_name)}.json").read_text(encoding="utf-8"))
+        failures.extend(f"{root_name}: {item}" for item in validate_instance(fixture, wrapper, wrapper, store))
+    _reference_validation(root, store, model, failures, require_jsonschema)
+
+    public_paths = [
+        *sorted((root / "contracts/model").rglob("*.json")),
+        *sorted((root / "contracts/schema").rglob("*.json")),
+        *sorted((root / "contracts/examples").glob("*.json")),
+        *sorted((root / "bindings/kotlin").rglob("*.kt")),
+        *sorted((root / "bindings/swift").rglob("*.swift")),
+        root / "contracts/task-packets/p2-cross-platform-v1.task.json",
+    ]
+    failures.extend(public_text_failures(public_paths))
+    lock = json.loads((root / "contracts/compatibility/v1.lock.json").read_text(encoding="utf-8"))
+    failures.extend(compatibility_failures(model, lock))
+    return failures
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--require-jsonschema", action="store_true")
+    args = parser.parse_args(argv)
+    failures = validate(args.root.resolve(), args.require_jsonschema)
+    if failures:
+        print("FAIL")
+        for failure in failures:
+            print(f"- {failure}")
+        return 2
+    print("PASS: parent identities, generated bytes, Draft 2020-12 schemas, examples, compatibility and public boundary")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

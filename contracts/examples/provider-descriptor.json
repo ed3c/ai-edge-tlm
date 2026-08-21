@@ -1,0 +1,15 @@
+{
+  "kind": "EMBEDDED_MODEL",
+  "maturity": "STABLE",
+  "provider_id": "android.litert",
+  "requires_network": false,
+  "supported_backends": [
+    "CPU",
+    "GPU"
+  ],
+  "task_kinds": [
+    "CHAT",
+    "FUNCTION_CALLING"
+  ],
+  "terms_state": "NOT_REQUIRED"
+}

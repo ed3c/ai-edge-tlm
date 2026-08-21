@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/tool-definition.schema.json",
+  "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/tools.schema.json#/$defs/ToolDefinition",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ToolDefinition"
+}

@@ -1,0 +1,199 @@
+{
+  "$defs": {
+    "BenchmarkReceipt": {
+      "additionalProperties": false,
+      "description": "Benchmark identity that separates requested and runtime-observed backends.",
+      "properties": {
+        "decode_tokens_per_second": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "device_model": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "evidence_lane": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/EvidenceLane"
+        },
+        "input_tokens": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "model_ref": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ModelArtifactRef"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "observed_backend": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/BackendKind"
+        },
+        "os_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "output_tokens": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "peak_rss_mb": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "prefill_tokens_per_second": {
+          "minimum": 0,
+          "type": "number"
+        },
+        "requested_backend": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/BackendKind"
+        },
+        "runtime_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "runtime_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "schema": {
+          "const": "ai-edge-tlm/benchmark-receipt/v1",
+          "type": "string"
+        },
+        "state": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/EvidenceState"
+        },
+        "subject": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/SubjectRef"
+        },
+        "thermal_state": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "ttft_ms": {
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "schema",
+        "subject",
+        "model_ref",
+        "device_model",
+        "os_version",
+        "requested_backend",
+        "observed_backend",
+        "runtime_id",
+        "runtime_version",
+        "input_tokens",
+        "output_tokens",
+        "ttft_ms",
+        "prefill_tokens_per_second",
+        "decode_tokens_per_second",
+        "peak_rss_mb",
+        "thermal_state",
+        "evidence_lane",
+        "state"
+      ],
+      "type": "object"
+    },
+    "GateResult": {
+      "additionalProperties": false,
+      "description": "One evidence-lane-scoped gate result.",
+      "properties": {
+        "does_not_prove": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "evidence_lane": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/EvidenceLane"
+        },
+        "exact_result": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "gate_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "proves": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "state": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/EvidenceState"
+        }
+      },
+      "required": [
+        "gate_id",
+        "state",
+        "evidence_lane",
+        "exact_result",
+        "proves",
+        "does_not_prove"
+      ],
+      "type": "object"
+    },
+    "HandoffReceipt": {
+      "additionalProperties": false,
+      "description": "Context Capsule-independent public implementation handoff.",
+      "properties": {
+        "changed_paths": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "gates": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/evidence.schema.json#/$defs/GateResult"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "next_authority": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "output_digests": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "parent_subjects": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/SubjectRef"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "schema": {
+          "const": "ai-edge-tlm/handoff-receipt/v1",
+          "type": "string"
+        },
+        "subject": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/SubjectRef"
+        },
+        "task_id": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema",
+        "task_id",
+        "subject",
+        "parent_subjects",
+        "changed_paths",
+        "output_digests",
+        "gates",
+        "next_authority"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/evidence.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM v1 evidence records"
+}

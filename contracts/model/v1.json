@@ -1,0 +1,45 @@
+{
+  "enums_path": "contracts/model/enums.json",
+  "examples_path": "contracts/model/examples.json",
+  "package": {
+    "kotlin": "io.ed3c.aiedge.contracts.v1",
+    "swift": "AIEdgeContracts"
+  },
+  "record_fragments": [
+    {
+      "group": "base",
+      "path": "contracts/model/records/base.json"
+    },
+    {
+      "group": "inference",
+      "path": "contracts/model/records/inference.json"
+    },
+    {
+      "group": "tools",
+      "path": "contracts/model/records/tools.json"
+    },
+    {
+      "group": "orchestration",
+      "path": "contracts/model/records/orchestration.json"
+    },
+    {
+      "group": "evidence",
+      "path": "contracts/model/records/evidence.json"
+    }
+  ],
+  "roots": [
+    "CapabilityProfile",
+    "ProviderDescriptor",
+    "ModelArtifactRef",
+    "InferenceRequest",
+    "InferenceEvent",
+    "ToolDefinition",
+    "ToolAdmission",
+    "ExecutionPlan",
+    "BenchmarkReceipt",
+    "HandoffReceipt"
+  ],
+  "schema": "ai-edge-tlm/contract-model/v1",
+  "version": "1.0.0",
+  "wire_namespace": "ai-edge-tlm/v1"
+}

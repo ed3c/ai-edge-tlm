@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/model-artifact-ref.schema.json",
+  "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json#/$defs/ModelArtifactRef",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModelArtifactRef"
+}

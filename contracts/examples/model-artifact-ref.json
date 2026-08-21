@@ -1,0 +1,10 @@
+{
+  "format": "LITERTLM",
+  "license_plane": "MODEL_WEIGHTS",
+  "model_id": "example.function-model",
+  "quantization": "int4",
+  "revision": "v1",
+  "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "terms_state": "HUMAN_ADMIT_REQUIRED",
+  "tokenizer_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+}
