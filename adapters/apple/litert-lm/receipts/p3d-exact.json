@@ -1,0 +1,14 @@
+{
+  "schema": "ai-edge-tlm/p3d-exact-receipt/v1",
+  "state": "IMPLEMENTED_UNMERGED_STATIC_LOCAL",
+  "repository": "ed3c/ai-edge-tlm", "issue": 8, "pull_request": 25, "branch": "adapters/apple-litert-lm-v1",
+  "base_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "implementation": {"commit": "f6afa68afa55d06b9bfd56e0d1ca62c3f97afc1a", "tree": "8399f09854741254d288ee7839f4a74771db96be"},
+  "publication_manifest": {"commit": "b02154e7f7c5480e827bbb498077816a5cde8e03", "tree": "af50007d843bd3811d767b37011476c76f3969fb", "git_blob_sha1": "07517edbbe2efb51e9f829455b7fdbeac2552ae0"},
+  "provider_ci": {"run_id": 32468896902, "run_number": 31, "conclusion": "SUCCESS"},
+  "local_gates": {"pytest": "2 passed", "swift_linux_package": "5 tests PASS", "public_boundary_literal_scan": "PASS"},
+  "source_state": {"litert_lm_release": "v0.14.0", "swift_maturity": "EARLY_PREVIEW", "release_integrity": "REVIEW_REQUIRED", "ios_backends": ["CPU", "GPU"]},
+  "evidence_states": {"SOURCE": "PASS_WITH_WARNING", "STATIC": "PASS", "LOCAL": "PASS", "XCODE_IOS": "NOT_EXERCISED", "LIVE_DEVICE": "NOT_EXERCISED", "API_PRODUCTION_STABILITY": "NOT_EXERCISED", "MODEL_QUALITY": "NOT_EXERCISED", "PRIVACY_ENERGY_THERMAL": "NOT_EXERCISED", "SDK_STORE_MODEL_TERMS": "HUMAN_ADMIT_REQUIRED", "MERGE_RELEASE": "HUMAN_ADMIT_REQUIRED"},
+  "shadow": "CONTINUE_WITH_WARNINGS_L1", "rollback_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "evidence_ceiling": "Closes the exact Swift/Linux static/local preview-adapter slice only. Xcode/iOS/device/API-stability/terms/release lanes remain open."
+}
