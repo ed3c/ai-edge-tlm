@@ -1,0 +1,12 @@
+{
+  "android_gradle":"NOT_EXERCISED",
+  "cross_platform_golden":"PASS",
+  "kotlin":"kotlinc-jvm 1.9.0 / JRE 21",
+  "live_device":"NOT_EXERCISED",
+  "p2_exact_byte_native_compile":"NOT_EXERCISED",
+  "p2_exact_remote_blob_index":"PASS",
+  "pytest":"11 passed with AI_EDGE_RUN_NATIVE_TOOLCHAINS=1",
+  "schema":"ai-edge-tlm/p8-local-toolchain/v1",
+  "swift":"Swift 6.2.1 / x86_64 Linux",
+  "xcode_ios":"NOT_EXERCISED"
+}

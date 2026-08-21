@@ -1,0 +1,1 @@
+{"network_allowed":false,"observed_backend":"CPU","provider":"embedded.fake","route":"EMBEDDED","tool_decision":"ALLOW","tool_effect":"WRITE_LOCAL","tool_name":"save_note"}

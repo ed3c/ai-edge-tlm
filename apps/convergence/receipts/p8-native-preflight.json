@@ -1,0 +1,45 @@
+{
+  "schema": "ai-edge-tlm/p8-native-preflight-receipt/v1",
+  "state": "BLOCKED_RESOURCE",
+  "repository": "ed3c/ai-edge-tlm",
+  "issue": 13,
+  "pull_request": 28,
+  "static_parent": {
+    "commit": "012254aca87ef72996dfc6f647bad4a8db1616d8",
+    "tree": "b6a9a808c6e7b9f1b44f2fec8d3e8594f9124ed6",
+    "receipt_blob": "d1f1ecc5a1903cb23890036760eb3582221094ec"
+  },
+  "probe": {
+    "commit": "21902300de5e50dee8bdf604081dd2f4e3ba81c6",
+    "tree": "bddbfa67cbdf109b4b2c927f0ab7015007187db6",
+    "changed_paths": 6,
+    "provider_ci": {"workflow": "validate", "run_id": 32476037338, "run_number": 41, "conclusion": "SUCCESS"},
+    "local_tests": "16 passed"
+  },
+  "host": {"os": "Linux", "arch": "x86_64"},
+  "available": ["JDK_21", "kotlinc_1.9.0", "Swift_6.2.1_Linux"],
+  "android": {
+    "state": "BLOCKED_RESOURCE",
+    "missing": ["ANDROID_HOME_OR_ANDROID_SDK_ROOT", "adb", "sdkmanager", "gradle", "physical_android_device"]
+  },
+  "apple": {
+    "state": "BLOCKED_RESOURCE",
+    "missing": ["macOS_host", "xcodebuild", "xcrun", "physical_apple_device"]
+  },
+  "evidence_states": {
+    "NATIVE_RESOURCE_PROBE": "PASS",
+    "NATIVE_BUILD_RECEIPT_VALIDATOR": "PASS",
+    "ANDROID_GRADLE": "BLOCKED_RESOURCE",
+    "XCODE_IOS": "BLOCKED_RESOURCE",
+    "LIVE_DEVICE": "BLOCKED_RESOURCE",
+    "OBSERVED_SYSTEM_PROVIDER": "NOT_EXERCISED",
+    "OBSERVED_EMBEDDED_BACKEND": "NOT_EXERCISED",
+    "MODEL_QUALITY": "NOT_EXERCISED",
+    "PRIVACY_NETWORK_POWER_THERMAL": "NOT_EXERCISED",
+    "TERMS_SIGNING_STORE": "HUMAN_ADMIT_REQUIRED",
+    "MERGE_RELEASE": "HUMAN_ADMIT_REQUIRED"
+  },
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "exit_condition": "Run the exact native/device handoff on hosts with the missing Android and Apple resources, then produce pinned build and physical-device receipts with runtime-observed backend identities.",
+  "evidence_ceiling": "This receipt proves fail-closed native-resource detection and handoff readiness only. It is not Android Gradle, Xcode/iOS, physical-device, model-quality, privacy, power, thermal, terms, signing, store, merge, or release evidence."
+}

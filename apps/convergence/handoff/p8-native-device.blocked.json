@@ -1,0 +1,16 @@
+{
+  "schema": "ai-edge-tlm/local-handoff-resource-block/v1",
+  "subject": "012254aca87ef72996dfc6f647bad4a8db1616d8",
+  "state": "BLOCKED_RESOURCE",
+  "android": {
+    "missing": ["ANDROID_HOME_OR_ANDROID_SDK_ROOT", "adb", "sdkmanager", "gradle", "physical_android_device"],
+    "available": ["JDK_21", "kotlinc_1.9.0"],
+    "exit_condition": "Pinned Android SDK/Gradle build receipt plus physical-device receipt with runtime-observed backend."
+  },
+  "apple": {
+    "missing": ["macOS_host", "xcodebuild", "xcrun", "physical_apple_device"],
+    "available": ["Swift_6.2.1_Linux"],
+    "exit_condition": "Pinned Xcode/iOS build receipt plus physical-device receipt with runtime-observed backend."
+  },
+  "policy": "Missing native resources never infer PASS. Signing, store publication, and terms acceptance remain Human-owned."
+}

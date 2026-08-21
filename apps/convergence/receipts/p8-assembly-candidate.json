@@ -1,0 +1,18 @@
+{
+  "android_gradle":"NOT_EXERCISED",
+  "exact_p2_byte_materialization":"NOT_EXERCISED",
+  "exact_p2_byte_materialization_reason":"connector readback supplies exact identities/content but no direct byte transport into local compiler workspace in this execution lane",
+  "exact_remote_blob_index":"PASS",
+  "live_device":"NOT_EXERCISED",
+  "local_native_semantic_compile":"PASS",
+  "local_native_toolchains":{"kotlin":"kotlinc-jvm 1.9.0 / JRE 21","swift":"Swift 6.2.1 / x86_64 Linux"},
+  "method":"GITHUB_CONNECTOR_EXACT_BLOB_READBACK",
+  "model_quality":"NOT_EXERCISED",
+  "primary_parent":"1df1e3a192f31c7353249d909b448ff164900ef0",
+  "schema":"ai-edge-tlm/p8-assembly-candidate/v1",
+  "selected_blob_ids":["P3C_ADAPTER","P3D_ADAPTER","P4_STORE","P5_BROKER","P6_ENGINE","P2_KOTLIN_ENUMS","P2_KOTLIN_BASE","P2_KOTLIN_TOOLS","P2_KOTLIN_WIRE","P2_SWIFT_ENUMS","P2_SWIFT_BASE","P2_SWIFT_TOOLS","P2_SWIFT_JSON"],
+  "sibling_pr_merge":false,
+  "state":"LOCAL_STATIC_CANDIDATE",
+  "task_head":"3cf90d283812163eff0cf16f6bfcf9492d25a795",
+  "xcode_ios":"NOT_EXERCISED"
+}

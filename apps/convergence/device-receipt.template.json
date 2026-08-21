@@ -1,0 +1,1 @@
+{"schema":"ai-edge-tlm/p8-device-receipt/v1","app_commit":"<sha40>","os":"<exact>","device":"<exact>","provider":"<id>","runtime":"<id+revision>","model_sha256":"<sha256>","observed_backend":"<CPU|GPU|NPU|ANE>","skill_digest":null}
