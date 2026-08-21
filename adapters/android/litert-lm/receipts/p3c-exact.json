@@ -1,0 +1,18 @@
+{
+  "schema": "ai-edge-tlm/p3c-exact-receipt/v1",
+  "state": "IMPLEMENTED_UNMERGED_STATIC_LOCAL",
+  "repository": "ed3c/ai-edge-tlm",
+  "issue": 6,
+  "pull_request": 24,
+  "branch": "adapters/android-litert-lm-v1",
+  "base_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "implementation": {"commit": "20b5bc5d2aa57b62b36ea2a7386ca7889859671b", "tree": "bc960c337f1148316629a3af1d74857ef949ad1a"},
+  "publication_manifest": {"commit": "13eb16dbf41af14bbc65861dad974196c000c838", "tree": "52c240ec7066de1288668875f5e05c4390a0db5b", "git_blob_sha1": "26d336fa02a2a7419743ca594285875c6836ea04"},
+  "provider_ci": {"run_id": 32468878020, "run_number": 30, "conclusion": "SUCCESS"},
+  "local_gates": {"pytest": "3 passed", "kotlin_jvm_fake_runtime": "PASS", "public_boundary_literal_scan": "PASS"},
+  "source_state": {"litert_lm_release": "v0.14.0", "kotlin_maturity": "STABLE", "release_integrity": "REVIEW_REQUIRED"},
+  "evidence_states": {"SOURCE": "PASS_WITH_WARNING", "STATIC": "PASS", "LOCAL": "PASS", "ANDROID_GRADLE": "NOT_EXERCISED", "LIVE_DEVICE": "NOT_EXERCISED", "MODEL_QUALITY": "NOT_EXERCISED", "PRIVACY_ENERGY_THERMAL": "NOT_EXERCISED", "SDK_MODEL_STORE_TERMS": "HUMAN_ADMIT_REQUIRED", "MERGE_RELEASE": "HUMAN_ADMIT_REQUIRED"},
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "rollback_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "evidence_ceiling": "Closes the exact static/local Android embedded-adapter slice only. Requested backend is not observed-backend proof; Android Gradle/device/terms/release lanes remain open."
+}
