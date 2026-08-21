@@ -1,0 +1,41 @@
+{
+  "controls": [
+    "cross-task capsule -> FAIL",
+    "wrong-subject capsule -> FAIL",
+    "expired capsule -> FAIL",
+    "private Workspace URL -> FAIL",
+    "secret-like value -> FAIL",
+    "unallowlisted field -> FAIL",
+    "oversized capsule -> FAIL",
+    "tampered digest -> FAIL",
+    "missing resolver -> ABSENT"
+  ],
+  "counts": {
+    "capsule_allowlist_fields": 6,
+    "global_tests": 28,
+    "p1_tests": 12
+  },
+  "digests": {
+    "control/public_private/classification-policy.json": "7abc2a9b569263d0e66cecb0d82894e08acb0c976ddb14a1eaa5a6a36d61b155",
+    "control/public_private/context-capsule.schema.json": "99a680a28cdda2e5deeb640c79c8b2567920ea70c0251fb7fc39fe2742caa8eb",
+    "docs/governance/public-private-boundary.md": "6e3ecd747b570224c0c15bbf61d07d084a47914dba1520d543d50055b686e807",
+    "src/edge_tlm_control/capsule.py": "8086730daf7be7d58c1842eadce07274190b5468059a1edc5f75615e71b469b2",
+    "src/edge_tlm_control/classification.py": "2feae4c8ceb0357f659383b4a28c1e1f24fb93d90fc0c81c57088df70b0cccec",
+    "src/edge_tlm_control/resolver.py": "0a355647c3b704e3b25bf1d1aed98568de0971fb3310ec117f3c8337574eeb80"
+  },
+  "foundation_subject": "e959201574b9548758e9d173b02e214c9e8531e7",
+  "gates": {
+    "public_boundary": "PASS",
+    "pytest_all": "28 passed",
+    "pytest_p1": "12 passed"
+  },
+  "p2_start_output": "READABLE",
+  "residual_states": [
+    "PRIVATE_NOT_EXERCISED: signed-in carrier and Drive ACLs",
+    "HUMAN_ADMIT_REQUIRED: disclosure authorization",
+    "NOT_EXERCISED: network isolation outside this module"
+  ],
+  "schema": "ai-edge-tlm/p1-public-private-boundary-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "PASS"
+}
