@@ -1,0 +1,16 @@
+{
+  "schema": "ai-edge-tlm/p6-publication-manifest/v1",
+  "state": "IMPLEMENTATION_CI_GREEN",
+  "base": {"branch": "skills/runtime-sandbox-v1", "commit": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e"},
+  "task_head": "d8035fc4f80768096d2734246e039fff87cb6190",
+  "implementation": {"commit": "fc9723ff6323039a0ac6f03f71c9f447269b8975", "tree": "4da1ece1d3699f44ba69f84913f11b38d33d1ed5"},
+  "pull_request": {"number": 26, "url": "https://github.com/ed3c/ai-edge-tlm/pull/26", "draft": true},
+  "provider_ci": {"workflow": "validate", "run_id": 32468915015, "run_number": 32, "conclusion": "SUCCESS"},
+  "changed_path_count": 11,
+  "writer_lease": ["core/**", "tests/p6/**"],
+  "local_gates": {"pytest": "13 passed", "compileall": "PASS", "public_boundary_literal_scan": "PASS"},
+  "consumed_exact_inputs": {"p2": "e86822f6917b3cee05602731d5899e5e8fbe7594", "p3a": "1ed59b1964bf56070f40c0aedac4dace824a7a92", "p3b": "b4dff7a607333eaed2fb66df46d24874d12577b2", "p5": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e"},
+  "blocked_integrations": ["P3C exact receipt", "P3D exact receipt"],
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Static/local deterministic orchestration only. Real provider/device availability, integrated P3C/P3D paths, performance, privacy, power, thermal, merge, and release are not proved."
+}
