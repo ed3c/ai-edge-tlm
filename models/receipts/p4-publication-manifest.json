@@ -1,0 +1,82 @@
+{
+  "evidence_ceiling": "Binds local candidate bytes only; GitHub implementation commit/tree and provider CI are added by the exact receipt.",
+  "file_count": 12,
+  "files": [
+    {
+      "bytes": 533,
+      "mode": "100644",
+      "path": "models/README.md",
+      "sha256": "9d5b903a7572893c6644ddf3e5a44f038bd620abb1e9f73367202cb454899f7f"
+    },
+    {
+      "bytes": 72,
+      "mode": "100644",
+      "path": "models/__init__.py",
+      "sha256": "894d65a97a6722ede513cc7df630e32094034480a4756aeec94fa12a65d91a7b"
+    },
+    {
+      "bytes": 300,
+      "mode": "100644",
+      "path": "models/artifact_supply/__init__.py",
+      "sha256": "468d440f097935a31a98262b958ffbc93220591bf81be9ac98f57d544093d2d9"
+    },
+    {
+      "bytes": 461,
+      "mode": "100644",
+      "path": "models/artifact_supply/errors.py",
+      "sha256": "7ade51fc11bf515c575fefbba1b00d34c7f30f3f4ac0b3c306ab6b3217797200"
+    },
+    {
+      "bytes": 5241,
+      "mode": "100644",
+      "path": "models/artifact_supply/manifest.py",
+      "sha256": "4c7ce1f058f0d95e15b645d436ac6bb26d1a3ef5210bdd099b94f97336f5a9c4"
+    },
+    {
+      "bytes": 1361,
+      "mode": "100644",
+      "path": "models/artifact_supply/notice.py",
+      "sha256": "0b7a1a41cd2e2ed41709e80c83a8d00111b0a75f3b802f302de45ba7edea7168"
+    },
+    {
+      "bytes": 13166,
+      "mode": "100644",
+      "path": "models/artifact_supply/store.py",
+      "sha256": "2f3a0721351e41472dda7a4d363d9acf454abd3abe2f73862fb93953b3e8fdc4"
+    },
+    {
+      "bytes": 639,
+      "mode": "100644",
+      "path": "models/handoff/model-download-and-terms.template.json",
+      "sha256": "7c99515a80777ff2f2ea1df992924fce6cf90b881b81c7c28f825f572d6e407f"
+    },
+    {
+      "bytes": 1024,
+      "mode": "100644",
+      "path": "models/receipts/p4-candidate.json",
+      "sha256": "0392c768b5b8c3b75c20c0bbc091009035493b73262afffb8fe7bbcd39d77027"
+    },
+    {
+      "bytes": 1354,
+      "mode": "100644",
+      "path": "models/shadow-checkpoint.md",
+      "sha256": "4b5a7b943544a33592939ffd0428e85de339600fa4eab8604e4f1a4c81eb8772"
+    },
+    {
+      "bytes": 178,
+      "mode": "100644",
+      "path": "tests/p4/conftest.py",
+      "sha256": "221ac17ce1c22f4b8842dd66f568e538a3a5467516004b95fe7737db710b70fb"
+    },
+    {
+      "bytes": 6881,
+      "mode": "100644",
+      "path": "tests/p4/test_model_artifact_supply.py",
+      "sha256": "4d6b10c2ed674f644346789f9acee2cba3118ae519961612f69857b8f7d93d6c"
+    }
+  ],
+  "parent_commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "parent_tree": "7a1502e00f61814c4a1449a701aba7c08cecafed",
+  "schema": "ai-edge-tlm/wave1-publication-manifest/v1",
+  "workstream": "P4"
+}
