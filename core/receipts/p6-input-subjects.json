@@ -1,0 +1,9 @@
+{
+  "schema": "ai-edge-tlm/p6-input-subjects/v1",
+  "p2": {"commit": "e86822f6917b3cee05602731d5899e5e8fbe7594", "tree": "7a1502e00f61814c4a1449a701aba7c08cecafed", "receipt_blob": "bc4d12a332ccc07fab334923d7af55d590290988"},
+  "p3a": {"commit": "1ed59b1964bf56070f40c0aedac4dace824a7a92", "tree": "af81bef7020dd41acf16b410e22b0108286a559e", "receipt_blob": "31ed96e3a9e1b5ecd15d9a84de3a60b5d8436387"},
+  "p3b": {"commit": "b4dff7a607333eaed2fb66df46d24874d12577b2", "tree": "4176993aa0a7b880e01b43ee323d259b3e8b5e23", "receipt_blob": "ef34c948a365ddac5cf47eb2b3364ec84979bd5f"},
+  "p5": {"commit": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e", "tree": "fddde97ff3245332e7ff20ebbba6826c11732e72", "receipt_blob": "1a34250c2025e0a9cb36cc5794e3b3686b3c4adf"},
+  "p3c_integration": "BLOCKED_UNTIL_EXACT_RECEIPT",
+  "p3d_integration": "BLOCKED_UNTIL_EXACT_RECEIPT"
+}

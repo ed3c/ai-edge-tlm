@@ -1,0 +1,9 @@
+{
+  "schema": "ai-edge-tlm/p6-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "parent_subject": "d8035fc4f80768096d2734246e039fff87cb6190",
+  "rollback_subject": "5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e",
+  "gates": {"pytest": "13 passed", "compileall": "PASS", "provider_ci": "PENDING"},
+  "controls": ["cycle", "missing dependency", "node/depth budget", "duplicate effect identity", "replay", "stale provider subject", "deadline", "cancellation", "provider disappearance", "ToolBroker denial", "explicit fallback", "compensation"],
+  "evidence": {"STATIC": "PASS", "LOCAL": "PASS", "P3A_P3B_INPUTS": "PASS_EXACT", "P3C_P3D_INTEGRATION": "BLOCKED_UNTIL_EXACT_RECEIPT", "LIVE_DEVICE": "NOT_EXERCISED"}
+}
