@@ -1,0 +1,30 @@
+{
+  "inputs": [
+    {"head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2","receipt_blob":"bc4d12a332ccc07fab334923d7af55d590290988"},
+    {"head":"1ed59b1964bf56070f40c0aedac4dace824a7a92","id":"P3A","receipt_blob":"31ed96e3a9e1b5ecd15d9a84de3a60b5d8436387"},
+    {"head":"b4dff7a607333eaed2fb66df46d24874d12577b2","id":"P3B","receipt_blob":"ef34c948a365ddac5cf47eb2b3364ec84979bd5f"},
+    {"head":"b3673295e28a0783e6a29d76a68f6cd8b8fe98cd","id":"P3C","receipt_blob":"43412be9449271bf4ae1fc769f02bd3fbac2cb62"},
+    {"head":"4f9689270b267969a9b44d0473b16f160c816223","id":"P3D","receipt_blob":"f3e867e2528007cbb8c879870f68bb69d9416f33"},
+    {"head":"6b90db1654d10cd34ad093890af4209daf810b7d","id":"P4","receipt_blob":"a7266eeb48b85cb66086431805e84394e4a61627"},
+    {"head":"5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e","id":"P5","receipt_blob":"1a34250c2025e0a9cb36cc5794e3b3686b3c4adf"},
+    {"head":"1df1e3a192f31c7353249d909b448ff164900ef0","id":"P6","receipt_blob":"5c235a7021ccbd8174083b3a3ce802e3a0b3b2f1"},
+    {"head":"86981ba64089af8f961f2045a3d7de01cf20c469","id":"P7","receipt_blob":"bf27a9ea10b34889ad7859de07a7f8eef453776b"},
+    {"head":"1e9cf411d11d9711a11e73ec19d06fb47979a881","id":"P1","receipt_blob":"71f514eeaaa9c3762f2e1152eee1924da4d32f67"}
+  ],
+  "schema":"ai-edge-tlm/p8-exact-input-index/v1",
+  "selected_blobs":[
+    {"blob":"5c80e5d4a088815555a1c2e5df0d50c3298b74e3","head":"b3673295e28a0783e6a29d76a68f6cd8b8fe98cd","id":"P3C_ADAPTER","path":"adapters/android/litert-lm/src/main/kotlin/io/ed3c/aiedge/adapters/android/litertlm/AndroidLiteRtLmAdapter.kt"},
+    {"blob":"d827e7c353ff13d1cb4a5da365eb00d7280ffac3","head":"4f9689270b267969a9b44d0473b16f160c816223","id":"P3D_ADAPTER","path":"adapters/apple/litert-lm/Sources/AppleLiteRtLmAdapter/AppleLiteRtLmAdapter.swift"},
+    {"blob":"13418c0a4caa30296d0b2479bb4a77876e3eac4f","head":"6b90db1654d10cd34ad093890af4209daf810b7d","id":"P4_STORE","path":"models/artifact_supply/store.py"},
+    {"blob":"3dbea2163ea0d509c52b999ef427cbdfe656a736","head":"5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e","id":"P5_BROKER","path":"skills/runtime/broker.py"},
+    {"blob":"7447d2f5724132315bf9c1b380624d1175d2b915","head":"1df1e3a192f31c7353249d909b448ff164900ef0","id":"P6_ENGINE","path":"core/dag/engine.py"},
+    {"blob":"52af7a527a0ae69e387833dae08a7f0f808d2412","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_KOTLIN_ENUMS","path":"bindings/kotlin/src/main/kotlin/io/ed3c/aiedge/contracts/v1/Enums.kt"},
+    {"blob":"df1b3d9fa40e323f11f44b6ea6deb3b1141d74d4","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_KOTLIN_BASE","path":"bindings/kotlin/src/main/kotlin/io/ed3c/aiedge/contracts/v1/BaseContracts.kt"},
+    {"blob":"0824862982be5c236c6b27c29647beaa38bebc78","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_KOTLIN_TOOLS","path":"bindings/kotlin/src/main/kotlin/io/ed3c/aiedge/contracts/v1/ToolsContracts.kt"},
+    {"blob":"a45e686d5efe5288e9c4b5469765a57128f6e068","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_KOTLIN_WIRE","path":"bindings/kotlin/src/main/kotlin/io/ed3c/aiedge/contracts/v1/WireSupport.kt"},
+    {"blob":"7271d65ff990e8ae0c835a2fcec427226a5ffa39","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_SWIFT_ENUMS","path":"bindings/swift/Sources/AIEdgeContracts/Enums.swift"},
+    {"blob":"34f85b9a98e5a9dfc34bc77eda47be036caaf340","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_SWIFT_BASE","path":"bindings/swift/Sources/AIEdgeContracts/BaseContracts.swift"},
+    {"blob":"835c47402f30d1c0e92a04a7ca449cbe39f95fc9","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_SWIFT_TOOLS","path":"bindings/swift/Sources/AIEdgeContracts/ToolsContracts.swift"},
+    {"blob":"68d0c799670d74f3f8fb63aaac3c4a2d2c9ae1c8","head":"e86822f6917b3cee05602731d5899e5e8fbe7594","id":"P2_SWIFT_JSON","path":"bindings/swift/Sources/AIEdgeContracts/JSONValue.swift"}
+  ]
+}
