@@ -1,0 +1,21 @@
+{
+  "schema": "ai-edge-tlm/p1-public-private-boundary-exact-receipt/v3",
+  "supersedes": [
+    "control/public_private/receipts/p1-public-private-boundary.exact.json",
+    "control/public_private/receipts/p1-public-private-boundary.exact-v2.json"
+  ],
+  "correction": "V1 mixed raw local-file SHA-256 values with an exact Git subject; the Context Capsule schema was reformatted during publication. V2 added exact Git blob identities. V3 is authoritative and binds canonical JSON semantics for JSON contracts, raw SHA-256 for Markdown, and Git blob identities for exact bytes.",
+  "branch": "control/public-private-boundary",
+  "implementation_subject": {
+    "commit": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+    "tree": "bdf3aec5e52bf6eb52e899c0d61a2aa91bbbe947"
+  },
+  "files": [
+    {"path": "control/public_private/context-capsule.schema.json", "semantic_digest": {"algorithm": "sha256", "mode": "canonical-json", "value": "2386be2aeea89e2a5ef20be6512b94e78846b94950f3b904a752ca9522cb367d"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "6c9e239bbb33e97f23cac29b4e32dbd15d303709"}},
+    {"path": "control/public_private/classification-policy.json", "semantic_digest": {"algorithm": "sha256", "mode": "canonical-json", "value": "5acb1cc21a1cfe71c03ef1032dd0173ee33665f773e904bef51724e771e8ba3a"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "14f4e650ee97cc6d45b25cf90fbea8ec284fc7dd"}},
+    {"path": "docs/governance/public-private-boundary.md", "semantic_digest": {"algorithm": "sha256", "mode": "raw-bytes", "value": "6e3ecd747b570224c0c15bbf61d07d084a47914dba1520d543d50055b686e807"}, "git_object": {"algorithm": "sha1", "type": "blob", "value": "15833ae002b1d37a9466b903f150952874332419"}}
+  ],
+  "state": "IMPLEMENTED_UNMERGED_EXACT_RECEIPT_V3",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Binds P1 public contract semantics and exact Git bytes; it does not prove signed-in retrieval, Drive ACLs, private truth, carrier authentication or Human disclosure approval."
+}
