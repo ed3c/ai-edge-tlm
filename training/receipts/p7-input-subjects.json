@@ -1,0 +1,10 @@
+{
+  "schema": "ai-edge-tlm/p7-input-subjects/v1",
+  "p0": {"commit": "4d847c941eb582ac28f5973995849d4e1f6d638a", "receipt_blob": "75b37701698826b9a7718e32458b8ba175f59bbe"},
+  "p2": {"commit": "e86822f6917b3cee05602731d5899e5e8fbe7594", "receipt_blob": "bc4d12a332ccc07fab334923d7af55d590290988"},
+  "p4": {"commit": "6b90db1654d10cd34ad093890af4209daf810b7d", "receipt_blob": "a7266eeb48b85cb66086431805e84394e4a61627"},
+  "real_model_terms": "HUMAN_ADMIT_REQUIRED",
+  "private_dataset": "PRIVATE_NOT_EXERCISED",
+  "p3c_runtime": "BLOCKED_UNTIL_EXACT_RECEIPT",
+  "p3d_runtime": "BLOCKED_UNTIL_EXACT_RECEIPT"
+}

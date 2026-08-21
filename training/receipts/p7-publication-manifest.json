@@ -1,0 +1,17 @@
+{
+  "schema": "ai-edge-tlm/p7-publication-manifest/v1",
+  "state": "IMPLEMENTATION_CI_GREEN",
+  "base": {"branch": "models/artifact-supply-v1", "commit": "6b90db1654d10cd34ad093890af4209daf810b7d"},
+  "task_head": "19f79d6cc61a1b8b01ad9da77c380c3002264754",
+  "implementation": {"commit": "13e0130a26b20681cf032141dbbb333911cc2ac9", "tree": "bf08b68ead102be89b41530b80f517cc11701e93"},
+  "pull_request": {"number": 27, "url": "https://github.com/ed3c/ai-edge-tlm/pull/27", "draft": true},
+  "provider_ci": {"workflow": "validate", "run_id": 32468931766, "run_number": 33, "conclusion": "SUCCESS"},
+  "changed_path_count": 12,
+  "writer_lease": ["training/**", "eval/**", "tests/p7/**"],
+  "local_gates": {"pytest": "9 passed", "compileall": "PASS", "public_boundary_literal_scan": "PASS"},
+  "consumed_exact_inputs": {"p0": "4d847c941eb582ac28f5973995849d4e1f6d638a", "p2": "e86822f6917b3cee05602731d5899e5e8fbe7594", "p4": "6b90db1654d10cd34ad093890af4209daf810b7d"},
+  "blocked_integrations": ["real teacher/model service and terms", "P3C exact runtime receipt", "P3D exact runtime receipt", "physical-device model-quality lane"],
+  "first_green_repairs": ["synthetic template placeholder compatibility", "static scan restricted to text files instead of __pycache__", "private URL canary assembled at runtime"],
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Synthetic/static/local protocol only. No real SFT/conversion/private data/model service/mobile quality/device backend/privacy/power/thermal/terms/merge/release evidence."
+}

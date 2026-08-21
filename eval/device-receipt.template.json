@@ -1,0 +1,6 @@
+{
+  "schema": "ai-edge-tlm/device-benchmark-receipt/v1",
+  "state": "NOT_EXERCISED",
+  "required": ["commit_sha","tree_sha","device_model","os_build","runtime_id","runtime_revision","model_sha256","tokenizer_sha256","quantization","requested_backend","observed_backend","ttft_ms","prefill_tps","decode_tps","peak_rss_mb","energy_sample","thermal_sample","fixture_digest"],
+  "rule": "Vendor/talk/source benchmark values must never be copied into local-result fields."
+}
