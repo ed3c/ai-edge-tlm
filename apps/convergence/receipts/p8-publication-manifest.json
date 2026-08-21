@@ -1,0 +1,17 @@
+{
+  "schema": "ai-edge-tlm/p8-publication-manifest/v1",
+  "state": "IMPLEMENTATION_CI_GREEN",
+  "base": {"branch":"core/deterministic-dag-v1","commit":"1df1e3a192f31c7353249d909b448ff164900ef0"},
+  "admission": {"commit":"3cf90d283812163eff0cf16f6bfcf9492d25a795","tree":"3319d89d5f7a38c46f39c6eb4365b8da4f5a337","packet_blob":"3fc03c0346a58c2d7c6ebe3ddf833d0a20174b3b"},
+  "implementation": {"commit":"2e25127e1829e89b33e4e29f54c29920b1e78d6b","tree":"f437f645111410aa9f7c2297b69d0eb12ef9869a"},
+  "pull_request": {"number":28,"url":"https://github.com/ed3c/ai-edge-tlm/pull/28","draft":true},
+  "provider_ci": {"workflow":"validate","run_id":32474054616,"run_number":39,"conclusion":"SUCCESS"},
+  "changed_path_count": 22,
+  "writer_lease": ["apps/android-reference/**","apps/ios-reference/**","apps/convergence/**","tests/p8/**"],
+  "local_gates": {"pytest_native":"11 passed","compileall":"PASS","cross_platform_golden":"PASS","public_boundary":"PASS"},
+  "exact_remote_inputs": {"P2":"e86822f6917b3cee05602731d5899e5e8fbe7594","P3A":"1ed59b1964bf56070f40c0aedac4dace824a7a92","P3B":"b4dff7a607333eaed2fb66df46d24874d12577b2","P3C":"b3673295e28a0783e6a29d76a68f6cd8b8fe98cd","P3D":"4f9689270b267969a9b44d0473b16f160c816223","P4":"6b90db1654d10cd34ad093890af4209daf810b7d","P5":"5ff71da2926b4691b5e0ad8dc672fa1bcc1bce5e","P6":"1df1e3a192f31c7353249d909b448ff164900ef0","P7":"86981ba64089af8f961f2045a3d7de01cf20c469","P1":"1e9cf411d11d9711a11e73ec19d06fb47979a881"},
+  "evidence_notes": {"exact_remote_blob_index":"PASS","local_native_semantic_compile":"PASS","exact_p2_byte_native_compile":"NOT_EXERCISED","reason":"connector readback has exact Git blob identity/content but this execution lane has no direct connector-to-compiler byte materialization path"},
+  "first_green_repairs": ["private-boundary canary literal assembled at runtime","P2 local stub cache rejected as exact-byte evidence","SwiftPM local package identity corrected","pytest duplicate module basename renamed after CI #38 collection failure"],
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Closes P8 STATIC/LOCAL convergence only. Android Gradle/SDK, Xcode/iOS SDK, physical provider/backend/device, model quality/runtime parity, privacy/network/power/thermal, terms/signing/store, merge and release are not proved."
+}
