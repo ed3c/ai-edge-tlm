@@ -1,0 +1,15 @@
+{
+  "schema": "ai-edge-tlm/p3c-publication-manifest/v1",
+  "state": "IMPLEMENTATION_CI_GREEN",
+  "base": {"branch": "models/artifact-supply-v1", "commit": "6b90db1654d10cd34ad093890af4209daf810b7d"},
+  "task_head": "76b104d31e834ac8da6a626b4fe3188e097da551",
+  "implementation": {"commit": "20b5bc5d2aa57b62b36ea2a7386ca7889859671b", "tree": "bc960c337f1148316629a3af1d74857ef949ad1a"},
+  "pull_request": {"number": 24, "url": "https://github.com/ed3c/ai-edge-tlm/pull/24", "draft": true},
+  "provider_ci": {"workflow": "validate", "run_id": 32468878020, "run_number": 30, "conclusion": "SUCCESS"},
+  "changed_path_count": 11,
+  "writer_lease": ["adapters/android/litert-lm/**", "tests/p3c/**"],
+  "changed_paths": ["adapters/android/litert-lm/README.md","adapters/android/litert-lm/handoff/android-litert-device-receipt.template.json","adapters/android/litert-lm/receipts/p3c-candidate.json","adapters/android/litert-lm/receipts/p3c-source-pin.json","adapters/android/litert-lm/shadow-checkpoint.md","adapters/android/litert-lm/src/main/kotlin/io/ed3c/aiedge/adapters/android/litertlm/AndroidLiteRtLmAdapter.kt","adapters/android/litert-lm/task-packets/p3c-android-litert-lm-v1.task.json","tests/p3c/AndroidLiteRtLmAdapterTest.kt","tests/p3c/conftest.py","tests/p3c/run_kotlin_tests.sh","tests/p3c/test_android_litert_static.py"],
+  "local_gates": {"pytest": "3 passed", "kotlin_jvm_fake_runtime": "PASS", "public_boundary_literal_scan": "PASS"},
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "evidence_ceiling": "Static/local adapter and CI evidence only. Android Gradle/Maven, reproducible upstream binary, physical CPU/GPU/NPU, quality, latency, privacy, power, thermal, terms, signing, merge, and release are not proved."
+}
