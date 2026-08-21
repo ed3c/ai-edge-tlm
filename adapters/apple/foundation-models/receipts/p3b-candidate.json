@@ -1,0 +1,41 @@
+{
+  "controls": [
+    "unsupported availability",
+    "revision drift and stale prompt profile",
+    "session owner isolation",
+    "direct tool execution",
+    "network fallback",
+    "evidence-lane promotion"
+  ],
+  "evidence": {
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "SDK_TERMS": "HUMAN_ADMIT_REQUIRED",
+    "STATIC": "PASS",
+    "XCODE_IOS": "NOT_EXERCISED"
+  },
+  "gates": {
+    "fake_session": "PASS_LOCAL",
+    "provider_ci": "PENDING",
+    "static_policy": "PASS",
+    "swift_package": "PASS_LOCAL"
+  },
+  "local_gate_details": {
+    "local_test_result": "4 passed",
+    "shadow_fixes": [
+      "AsyncThrowingStream provider boundary",
+      "provider exceptions map to typed P2 failure",
+      "pre-cancelled request does not enter provider"
+    ],
+    "toolchain": "Swift 6.2.1 / x86_64 Linux"
+  },
+  "parent_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p3b-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "wave_local_suite": "26 passed with native lanes; CI-style 24 passed / 2 explicit skips",
+  "writer_lease": [
+    "adapters/apple/foundation-models/**",
+    "tests/p3b/**"
+  ]
+}

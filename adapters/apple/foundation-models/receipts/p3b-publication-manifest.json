@@ -1,0 +1,82 @@
+{
+  "evidence_ceiling": "Binds local candidate bytes only; GitHub implementation commit/tree and provider CI are added by the exact receipt.",
+  "file_count": 12,
+  "files": [
+    {
+      "bytes": 704,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/Package.swift",
+      "sha256": "01bff021ed8e466441bb1c660957bb969be1dff2d0863cf9186477792aca1c59"
+    },
+    {
+      "bytes": 1129,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/README.md",
+      "sha256": "5559be6af63ecda68264ad73c4779de268d2ba617d4c0b5763381ce92b7db5cb"
+    },
+    {
+      "bytes": 12136,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/Sources/AppleFoundationAdapter/AppleFoundationAdapter.swift",
+      "sha256": "f04c2b321bebe1ace7d545c7701c3788d77d4d00aa444fc095989d880f909691"
+    },
+    {
+      "bytes": 7677,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/Sources/AppleFoundationAdapter/AppleFoundationTypes.swift",
+      "sha256": "cf3361239919e661dd9a4a6376f0bd9d8eeb4d74c62fcb44a99216e399315f40"
+    },
+    {
+      "bytes": 882,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/Sources/AppleFoundationAdapter/FakeAppleSystemSession.swift",
+      "sha256": "49ac22527a704efcf4b87e95e374ed5af4ea8a577861d5c4f934e8ec8afeacc6"
+    },
+    {
+      "bytes": 3087,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/Sources/AppleFoundationAdapter/PortableSHA256.swift",
+      "sha256": "27fb2b26d16e6f94607dbc980d8a9ea5d0f87b60ecc5ac26f2be20667b6a3056"
+    },
+    {
+      "bytes": 8027,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/Tests/AppleFoundationAdapterTests/AppleFoundationAdapterTests.swift",
+      "sha256": "84323c7c64cda6a7806d24089c3fc2f46d075b15a3e9f784d4bb37ef3280aa0e"
+    },
+    {
+      "bytes": 825,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/handoff/apple-device-receipt.template.json",
+      "sha256": "c38302491726ac22c3944af0cb7acad2b77ebf54e24b2473652c38f9a6b85158"
+    },
+    {
+      "bytes": 1226,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/receipts/p3b-candidate.json",
+      "sha256": "fcfb85ea7aec3bbe7fa5fd6b085b09f0c21b4f1be5e303d272a2965c6aa37b2f"
+    },
+    {
+      "bytes": 1525,
+      "mode": "100644",
+      "path": "adapters/apple/foundation-models/shadow-checkpoint.md",
+      "sha256": "0ed6f8373fbe6f8338d9825c16810d5201dcbf7ff437f9d29674e7ba14907a48"
+    },
+    {
+      "bytes": 105,
+      "mode": "100644",
+      "path": "tests/p3b/conftest.py",
+      "sha256": "6ad4ffafa71e123c7c0d03b388e1370dabf98982976c08d7222d3f412d23e0a1"
+    },
+    {
+      "bytes": 2651,
+      "mode": "100644",
+      "path": "tests/p3b/test_apple_foundation_static.py",
+      "sha256": "60199763556ed750c5c0e97b8708bc506072569aee09c3acb0743adcec05bbac"
+    }
+  ],
+  "parent_commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "parent_tree": "7a1502e00f61814c4a1449a701aba7c08cecafed",
+  "schema": "ai-edge-tlm/wave1-publication-manifest/v1",
+  "workstream": "P3B"
+}

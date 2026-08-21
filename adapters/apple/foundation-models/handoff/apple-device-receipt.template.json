@@ -1,0 +1,27 @@
+{
+  "schema": "ai-edge-tlm/apple-foundation-device-receipt/v1",
+  "state": "NOT_EXERCISED",
+  "entry_conditions": [
+    "exact Apple SDK/program terms admitted",
+    "Xcode and target iOS SDK available",
+    "signed supported physical device available",
+    "prompt profile bound to exact OS and system-model revision"
+  ],
+  "required_receipt": {
+    "implementation_commit": "SHA40",
+    "xcode_version": "UNKNOWN",
+    "sdk_build": "UNKNOWN",
+    "device_model": "UNKNOWN",
+    "os_build": "UNKNOWN",
+    "region": "UNKNOWN",
+    "system_model_revision": "UNKNOWN",
+    "prompt_profile_sha256": "SHA256",
+    "availability_reason": "UNKNOWN",
+    "evidence_lane": "LIVE_DEVICE"
+  },
+  "forbidden_promotions": [
+    "swift_linux_to_xcode_ios",
+    "simulator_to_live_device",
+    "availability_to_quality_or_privacy"
+  ]
+}
