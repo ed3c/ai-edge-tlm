@@ -1,0 +1,40 @@
+{
+  "controls": [
+    "unsupported availability",
+    "revision drift",
+    "expired observation",
+    "network fallback",
+    "direct tool execution",
+    "evidence-lane promotion"
+  ],
+  "evidence": {
+    "ANDROID_GRADLE": "NOT_EXERCISED",
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "SDK_TERMS": "HUMAN_ADMIT_REQUIRED",
+    "STATIC": "PASS"
+  },
+  "gates": {
+    "fake_provider": "PASS_LOCAL",
+    "kotlin_compile": "PASS_LOCAL",
+    "provider_ci": "PENDING",
+    "static_policy": "PASS"
+  },
+  "local_gate_details": {
+    "local_test_result": "4 passed",
+    "shadow_fixes": [
+      "atomic capability cache",
+      "pre-cancelled request does not enter provider"
+    ],
+    "toolchain": "kotlinc-jvm 1.9.0 / JRE 21"
+  },
+  "parent_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p3a-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "wave_local_suite": "26 passed with native lanes; CI-style 24 passed / 2 explicit skips",
+  "writer_lease": [
+    "adapters/android/system-genai/**",
+    "tests/p3a/**"
+  ]
+}

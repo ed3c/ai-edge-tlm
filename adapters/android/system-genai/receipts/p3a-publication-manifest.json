@@ -1,0 +1,64 @@
+{
+  "evidence_ceiling": "Binds local candidate bytes only; GitHub implementation commit/tree and provider CI are added by the exact receipt.",
+  "file_count": 9,
+  "files": [
+    {
+      "bytes": 914,
+      "mode": "100644",
+      "path": "adapters/android/system-genai/README.md",
+      "sha256": "2b033c680fdc51d28b2dc4354080334ce227057b64f3fead52d8a62c71fddf07"
+    },
+    {
+      "bytes": 602,
+      "mode": "100644",
+      "path": "adapters/android/system-genai/handoff/android-device-receipt.template.json",
+      "sha256": "4eda8ff203bfda67b0438ea23f4b158061fa47f1b25e34a08b8a9fc24e4ad7a5"
+    },
+    {
+      "bytes": 1134,
+      "mode": "100644",
+      "path": "adapters/android/system-genai/receipts/p3a-candidate.json",
+      "sha256": "3f459a389c10a9d1768f3804e85db18b96b831886bbd66cd3d967a4851873abd"
+    },
+    {
+      "bytes": 1130,
+      "mode": "100644",
+      "path": "adapters/android/system-genai/shadow-checkpoint.md",
+      "sha256": "e86ab6b1646d2660137013756b990307b47b7a6799aa8132c4ab20e5245555e2"
+    },
+    {
+      "bytes": 15334,
+      "mode": "100644",
+      "path": "adapters/android/system-genai/src/main/kotlin/io/ed3c/aiedge/adapters/android/systemgenai/AndroidSystemAdapter.kt",
+      "sha256": "50fb85c7fcee5ee29e68553ac6822e46a0c22ce42a2d2c04e4b29c1b2c6188a4"
+    },
+    {
+      "bytes": 4302,
+      "mode": "100644",
+      "path": "tests/p3a/AndroidSystemAdapterTest.kt",
+      "sha256": "c4a6db362e8ba3e62d5fa3c27f091dfc9fe9cd3ad9d89a2e8fa0b1e05f828d1e"
+    },
+    {
+      "bytes": 178,
+      "mode": "100644",
+      "path": "tests/p3a/conftest.py",
+      "sha256": "221ac17ce1c22f4b8842dd66f568e538a3a5467516004b95fe7737db710b70fb"
+    },
+    {
+      "bytes": 480,
+      "mode": "100755",
+      "path": "tests/p3a/run_kotlin_tests.sh",
+      "sha256": "734233309c2aa2730e6bbd30ff18b6a4d52f92ee3848e448130f76e47033403a"
+    },
+    {
+      "bytes": 1949,
+      "mode": "100644",
+      "path": "tests/p3a/test_android_system_static.py",
+      "sha256": "3233c05e57d100ba7bb80de09c308ad2283d29f8a43a0d25e2a5e011dd272711"
+    }
+  ],
+  "parent_commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "parent_tree": "7a1502e00f61814c4a1449a701aba7c08cecafed",
+  "schema": "ai-edge-tlm/wave1-publication-manifest/v1",
+  "workstream": "P3A"
+}

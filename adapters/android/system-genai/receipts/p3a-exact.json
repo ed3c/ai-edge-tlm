@@ -1,0 +1,70 @@
+{
+  "branch": "adapters/android-system-v1",
+  "evidence_ceiling": "Binds the exact provider-private Kotlin mapping and fake-provider behavior only; it does not establish Android SDK or physical-device acceptance.",
+  "evidence_states": {
+    "ANDROID_GRADLE": "NOT_EXERCISED",
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "SDK_TERMS": "HUMAN_ADMIT_REQUIRED",
+    "STATIC": "PASS"
+  },
+  "human_owned_operations": [
+    "merge",
+    "release",
+    "store publication",
+    "signing/provisioning",
+    "terms acceptance",
+    "secrets/access grants",
+    "semantic conflict resolution",
+    "production rollback"
+  ],
+  "implementation": {
+    "changed_paths": 11,
+    "commit": "cfa8554a497b78adc6d09dda4475f5c1a523df3d",
+    "tree": "ced9d526bef1dbad54e76d8f4d3853cd9dc4d4e1"
+  },
+  "issue": 4,
+  "local_gates": {
+    "kotlin_jvm_fake_provider": "PASS",
+    "static_pytest": "3 passed / 1 explicit LOCAL Kotlin skip",
+    "toolchain": "kotlinc-jvm 1.9.0 / JRE 21"
+  },
+  "manifest": {
+    "git_blob_sha1": "f9c5425bb9c14397e8ebab35844461a55a4e7200",
+    "implementation_file_count": 9,
+    "path": "adapters/android/system-genai/receipts/p3a-publication-manifest.json"
+  },
+  "parent": {
+    "commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+    "exact_receipt_git_blob_sha1": "bc4d12a332ccc07fab334923d7af55d590290988",
+    "exact_receipt_path": "contracts/receipts/p2-contracts.exact.v2.json",
+    "provider_ci": "validate#20:SUCCESS",
+    "pull_request": 19,
+    "tree": "7a1502e00f61814c4a1449a701aba7c08cecafed"
+  },
+  "pr": 20,
+  "provider_ci": {
+    "conclusion": "SUCCESS",
+    "head": "cfa8554a497b78adc6d09dda4475f5c1a523df3d",
+    "run_id": 32462328414,
+    "run_number": 21
+  },
+  "residual_states": [
+    "ML Kit/AICore exact SDK and device availability",
+    "physical system-model revision and observed backend",
+    "latency, privacy, quality, power, and thermal behavior",
+    "signing, store, merge, and release authority"
+  ],
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p3a-android-system-exact-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "IMPLEMENTED_UNMERGED",
+  "task_packet": {
+    "git_blob_sha1": "8b9b6bf737e2e3d9421024ae91e2441a71741a7a",
+    "path": "adapters/android/system-genai/task-packets/p3a-android-system-v1.task.json"
+  },
+  "writer_lease": [
+    "adapters/android/system-genai/**",
+    "tests/p3a/**"
+  ]
+}
