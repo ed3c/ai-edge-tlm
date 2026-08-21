@@ -1,0 +1,8 @@
+{
+  "description": "Create a local calendar event after host admission.",
+  "effect": "EXTERNAL_SIDE_EFFECT",
+  "idempotency_required": true,
+  "input_schema_uri": "https://schemas.example.invalid/calendar-event-v1.json",
+  "requires_confirmation": true,
+  "tool_name": "calendar.create"
+}

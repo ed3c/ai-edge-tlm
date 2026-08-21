@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ed3c/ai-edge-tlm/control/public_private/context-capsule.schema.json",
+  "title": "AI Edge TLM bounded Context Capsule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "context_id", "task_id", "repository_subject", "issued_at", "expires_at", "fields", "sha256"],
+  "properties": {
+    "schema": {"const": "ai-edge-tlm/context-capsule/v1"},
+    "context_id": {"const": "CDX-AI-EDGE-001"},
+    "task_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "repository_subject": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "fields": {
+      "type": "object",
+      "maxProperties": 6,
+      "additionalProperties": false,
+      "properties": {
+        "architecture_decisions": {"$ref": "#/$defs/stringOrStrings"},
+        "technical_constraints": {"$ref": "#/$defs/stringOrStrings"},
+        "non_goals": {"$ref": "#/$defs/stringOrStrings"},
+        "source_ids": {"$ref": "#/$defs/stringOrStrings"},
+        "prompt_contract_id": {"$ref": "#/$defs/stringOrStrings"},
+        "required_evidence_lanes": {"$ref": "#/$defs/stringOrStrings"}
+      }
+    },
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "stringOrStrings": {
+      "oneOf": [
+        {"type": "string", "maxLength": 2048},
+        {"type": "array", "maxItems": 32, "items": {"type": "string", "maxLength": 2048}}
+      ]
+    }
+  }
+}

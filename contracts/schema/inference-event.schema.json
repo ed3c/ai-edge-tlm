@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/inference-event.schema.json",
+  "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/inference.schema.json#/$defs/InferenceEvent",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InferenceEvent"
+}

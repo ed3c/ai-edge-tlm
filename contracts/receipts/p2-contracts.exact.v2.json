@@ -1,0 +1,102 @@
+{
+  "as_of_date": "2026-08-21",
+  "branch": "contracts/cross-platform-v1",
+  "downstream_start_ready": [
+    {
+      "issue": 4,
+      "state": "START_READY_ONLY",
+      "workstream": "Android system GenAI adapter"
+    },
+    {
+      "issue": 5,
+      "state": "START_READY_ONLY",
+      "workstream": "Apple Foundation Models adapter"
+    },
+    {
+      "issue": 9,
+      "state": "START_READY_ONLY",
+      "workstream": "Model artifact supply chain"
+    },
+    {
+      "issue": 10,
+      "state": "START_READY_ONLY",
+      "workstream": "Skill runtime and sandbox"
+    }
+  ],
+  "evidence_ceiling": "This receipt closes the P2 SOURCE/STATIC/LOCAL_DETERMINISTIC contract stage. It does not satisfy LIVE_DEVICE, PRIVATE or HUMAN lanes and does not authorize merge or release.",
+  "gates": {
+    "cross_language_golden": "PASS",
+    "dependency_free_draft_2020_12_validation": "PASS",
+    "foundation_validate": "PASS",
+    "generator_check": "PASS / 47 generated files",
+    "kotlin_jvm_compile": "PASS",
+    "local_native_toolchain": "3 passed with AI_EDGE_RUN_NATIVE_TOOLCHAINS=1",
+    "negative_controls": "PASS_CONTROL",
+    "optional_jsonschema_reference_validation": "PASS on admitted local toolchain; not installed in provider CI",
+    "provider_ci_manifest_subject": "validate #19 SUCCESS",
+    "provider_pytest_manifest_subject": "37 passed, 4 intentional/declared skips",
+    "public_boundary": "PASS",
+    "swift_linux_build": "PASS"
+  },
+  "implementation_subject": {
+    "changed_paths": 81,
+    "commit": "acce12298631a5ad8abfac5ab421837eeb9a55ea",
+    "publication_manifest_path": "contracts/receipts/p2-publication-manifest.v2.json",
+    "tree": "d1d0c720551d4e613abbfe40d717ff4893578f5c"
+  },
+  "issue": 3,
+  "local_handoff": {
+    "completed_item": "LH-FND-03",
+    "next_item": "LH-FANOUT-01",
+    "next_item_state": "ACTIVE_AFTER_FINAL_RECEIPT_READBACK",
+    "rule": "The fan-out control item may create disjoint child branches and task packets. It does not imply adapter, model, or skill implementation completion."
+  },
+  "manifest_subject": {
+    "changed_paths": 82,
+    "commit": "c4d61dadf4b7a976e27381a8f0e151bb0a50c2df",
+    "manifest_git_blob_sha1": "3eb287191fb61a099d0cd207bb23c68c0085e865",
+    "manifest_sha256": "6b9f7dbb4961327b99707d50db1c4156cb5a7bfe4126cdee508197d74b027e8d",
+    "provider_ci": {
+      "conclusion": "success",
+      "run_id": 32452813363,
+      "run_number": 19
+    },
+    "tree": "ea9714baa173c97e4a8dc2c79bc0412c617016b1"
+  },
+  "parent_subjects": {
+    "foundation": "e959201574b9548758e9d173b02e214c9e8531e7",
+    "p0_git_parent": "4d847c941eb582ac28f5973995849d4e1f6d638a",
+    "p1_immutable_task_parent": "1e9cf411d11d9711a11e73ec19d06fb47979a881"
+  },
+  "pull_request": 19,
+  "receipt_self_binding": {
+    "path": "contracts/receipts/p2-contracts.exact.v2.json",
+    "required_external_readback": [
+      "final PR head SHA",
+      "final PR tree SHA",
+      "receipt file Git blob SHA",
+      "final provider CI run and conclusion"
+    ],
+    "rule": "The enclosing Git commit/tree is the exact identity for this receipt blob. The receipt intentionally does not contain its own commit, tree, or hash to avoid a self-referential digest cycle."
+  },
+  "repository": "ed3c/ai-edge-tlm",
+  "schema": "ai-edge-tlm/p2-contracts-exact-receipt/v2",
+  "shadow": {
+    "incidents_closed": [
+      "PR head lacked the claimed full implementation",
+      "pytest repository-local package import boundary",
+      "ambient CI toolchain evidence mixed with explicit LOCAL evidence",
+      "remote generator source drifted from generated manifest"
+    ],
+    "outcome": "CONTINUE_WITH_WARNINGS_L1",
+    "residual_states": [
+      "NOT_EXERCISED: Android Gradle/SDK and Apple Xcode/iOS SDK",
+      "NOT_EXERCISED: system and LiteRT-LM provider runtimes",
+      "NOT_EXERCISED: physical CPU/GPU/NPU/ANE backend selection",
+      "NOT_EXERCISED: model conversion, quality, privacy, energy and thermal",
+      "PRIVATE_NOT_EXERCISED: signed-in carrier and Drive ACL",
+      "HUMAN_ADMIT_REQUIRED: merge, release, signing, stores, model/SDK/legal terms, secrets and production rollback"
+    ]
+  },
+  "state": "IMPLEMENTED_UNMERGED_EXACT_RECEIPT"
+}

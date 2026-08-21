@@ -1,0 +1,34 @@
+{
+  "decode_tokens_per_second": 0.0,
+  "device_model": "example-device",
+  "evidence_lane": "LIVE_DEVICE",
+  "input_tokens": 0,
+  "model_ref": {
+    "format": "LITERTLM",
+    "license_plane": "MODEL_WEIGHTS",
+    "model_id": "example.function-model",
+    "quantization": "int4",
+    "revision": "v1",
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "terms_state": "HUMAN_ADMIT_REQUIRED",
+    "tokenizer_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "notes": "Template only; requested backend is not evidence of observed backend.",
+  "observed_backend": "UNKNOWN",
+  "os_version": "16",
+  "output_tokens": 0,
+  "peak_rss_mb": 0.0,
+  "prefill_tokens_per_second": 0.0,
+  "requested_backend": "NPU",
+  "runtime_id": "example-runtime",
+  "runtime_version": "0.0.0",
+  "schema": "ai-edge-tlm/benchmark-receipt/v1",
+  "state": "NOT_EXERCISED",
+  "subject": {
+    "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "repository": "ed3c/ai-edge-tlm",
+    "tree_sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  "thermal_state": "NOT_EXERCISED",
+  "ttft_ms": 0.0
+}

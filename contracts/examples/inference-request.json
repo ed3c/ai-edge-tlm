@@ -1,0 +1,48 @@
+{
+  "capability_profile": {
+    "available_memory_mb": 4096,
+    "device_model": "example-device",
+    "max_active_sessions": 2,
+    "os_version": "16",
+    "platform": "ANDROID",
+    "supported_backends": [
+      "CPU",
+      "GPU"
+    ],
+    "supported_modalities": [
+      "TEXT"
+    ],
+    "supports_system_model": true
+  },
+  "messages": [
+    {
+      "content": "Create an event tomorrow at 9 AM.",
+      "role": "USER"
+    }
+  ],
+  "model_ref": {
+    "format": "LITERTLM",
+    "license_plane": "MODEL_WEIGHTS",
+    "model_id": "example.function-model",
+    "quantization": "int4",
+    "revision": "v1",
+    "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "terms_state": "HUMAN_ADMIT_REQUIRED",
+    "tokenizer_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "preferred_provider_ids": [
+    "android.litert"
+  ],
+  "request_id": "req-001",
+  "resource_budget": {
+    "allow_network": false,
+    "max_input_tokens": 1024,
+    "max_memory_mb": 512,
+    "max_output_tokens": 256,
+    "timeout_ms": 5000
+  },
+  "schema": "ai-edge-tlm/inference-request/v1",
+  "task_id": "calendar-create",
+  "task_kind": "FUNCTION_CALLING",
+  "trace_id": "trace-001"
+}

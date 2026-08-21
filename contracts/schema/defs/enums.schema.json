@@ -1,0 +1,202 @@
+{
+  "$defs": {
+    "ApiMaturity": {
+      "enum": [
+        "STABLE",
+        "PREVIEW",
+        "BETA",
+        "COMMUNITY",
+        "DISABLED"
+      ],
+      "type": "string"
+    },
+    "ArtifactFormat": {
+      "enum": [
+        "LITERTLM",
+        "TASK",
+        "COREML_PACKAGE",
+        "ONNX",
+        "OTHER"
+      ],
+      "type": "string"
+    },
+    "BackendKind": {
+      "enum": [
+        "CPU",
+        "GPU",
+        "NPU",
+        "ANE",
+        "NNAPI",
+        "METAL",
+        "WEBGPU",
+        "UNKNOWN"
+      ],
+      "type": "string"
+    },
+    "ErrorCode": {
+      "enum": [
+        "CAPABILITY_UNAVAILABLE",
+        "POLICY_DENIED",
+        "ARTIFACT_INVALID",
+        "MODEL_LOAD_FAILED",
+        "GENERATION_FAILED",
+        "SCHEMA_INVALID",
+        "TOOL_DENIED",
+        "TOOL_FAILED",
+        "VALIDATION_FAILED",
+        "TIMEOUT",
+        "RESOURCE_EXHAUSTED",
+        "CANCELLED",
+        "EXHAUSTED_FALLBACK",
+        "INTERNAL"
+      ],
+      "type": "string"
+    },
+    "EvidenceLane": {
+      "enum": [
+        "SOURCE",
+        "STATIC",
+        "LOCAL",
+        "LIVE_DEVICE",
+        "PRIVATE",
+        "HUMAN"
+      ],
+      "type": "string"
+    },
+    "EvidenceState": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "ABSENT",
+        "NOT_IMPLEMENTED",
+        "NOT_EXERCISED",
+        "SKIPPED_BY_POLICY",
+        "HUMAN_ADMIT_REQUIRED"
+      ],
+      "type": "string"
+    },
+    "InferenceEventType": {
+      "enum": [
+        "STARTED",
+        "TOKEN_DELTA",
+        "TOOL_PROPOSAL",
+        "TOOL_RESULT",
+        "COMPLETED",
+        "DEGRADED",
+        "FAILED",
+        "CANCELLED"
+      ],
+      "type": "string"
+    },
+    "LicensePlane": {
+      "enum": [
+        "SOURCE_CODE",
+        "MODEL_WEIGHTS",
+        "DATASET",
+        "SERVICE",
+        "SDK_STORE",
+        "TRADEMARK",
+        "EXPORT_CONTROL",
+        "UNKNOWN"
+      ],
+      "type": "string"
+    },
+    "MessageRole": {
+      "enum": [
+        "SYSTEM",
+        "USER",
+        "ASSISTANT",
+        "TOOL"
+      ],
+      "type": "string"
+    },
+    "Modality": {
+      "enum": [
+        "TEXT",
+        "IMAGE",
+        "AUDIO"
+      ],
+      "type": "string"
+    },
+    "PlatformKind": {
+      "enum": [
+        "ANDROID",
+        "IOS",
+        "MACOS",
+        "LINUX",
+        "WINDOWS",
+        "WEB",
+        "EMBEDDED"
+      ],
+      "type": "string"
+    },
+    "ProviderKind": {
+      "enum": [
+        "SYSTEM_MODEL",
+        "EMBEDDED_MODEL",
+        "CLOUD"
+      ],
+      "type": "string"
+    },
+    "ResultState": {
+      "enum": [
+        "SUCCEEDED",
+        "FAILED",
+        "CANCELLED"
+      ],
+      "type": "string"
+    },
+    "SkillTrustState": {
+      "enum": [
+        "TRUSTED",
+        "UNTRUSTED",
+        "REJECTED"
+      ],
+      "type": "string"
+    },
+    "TaskKind": {
+      "enum": [
+        "CHAT",
+        "SUMMARIZE",
+        "STRUCTURED_GENERATION",
+        "FUNCTION_CALLING",
+        "VISION",
+        "ASR",
+        "TEXT_POLISHING",
+        "EMBEDDING",
+        "CUSTOM"
+      ],
+      "type": "string"
+    },
+    "TermsState": {
+      "enum": [
+        "NOT_REQUIRED",
+        "REVIEW_REQUIRED",
+        "HUMAN_ADMIT_REQUIRED",
+        "ACCEPTED",
+        "REJECTED"
+      ],
+      "type": "string"
+    },
+    "ToolDecision": {
+      "enum": [
+        "ALLOW",
+        "DENY",
+        "REQUIRE_CONFIRMATION"
+      ],
+      "type": "string"
+    },
+    "ToolEffect": {
+      "enum": [
+        "PURE",
+        "READ_LOCAL",
+        "WRITE_LOCAL",
+        "EXTERNAL_SIDE_EFFECT"
+      ],
+      "type": "string"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM v1 enums"
+}

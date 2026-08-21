@@ -1,0 +1,225 @@
+{
+  "$defs": {
+    "CapabilityProfile": {
+      "additionalProperties": false,
+      "description": "Observed device capabilities; requested capabilities are not proof of actual runtime selection.",
+      "properties": {
+        "available_memory_mb": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "device_model": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "max_active_sessions": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "os_version": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "platform": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/PlatformKind"
+        },
+        "supported_backends": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/BackendKind"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supported_modalities": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/Modality"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supports_system_model": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "platform",
+        "os_version",
+        "device_model",
+        "available_memory_mb",
+        "supports_system_model",
+        "supported_backends",
+        "supported_modalities",
+        "max_active_sessions"
+      ],
+      "type": "object"
+    },
+    "Message": {
+      "additionalProperties": false,
+      "description": "Provider-neutral message.",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/MessageRole"
+        }
+      },
+      "required": [
+        "role",
+        "content"
+      ],
+      "type": "object"
+    },
+    "ModelArtifactRef": {
+      "additionalProperties": false,
+      "description": "Content-addressed model identity; source-code license and model terms remain separate.",
+      "properties": {
+        "format": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ArtifactFormat"
+        },
+        "license_plane": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/LicensePlane"
+        },
+        "model_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "quantization": {
+          "type": "string"
+        },
+        "revision": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "terms_state": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/TermsState"
+        },
+        "tokenizer_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model_id",
+        "revision",
+        "sha256",
+        "format",
+        "license_plane",
+        "terms_state"
+      ],
+      "type": "object"
+    },
+    "ProviderDescriptor": {
+      "additionalProperties": false,
+      "description": "Provider-neutral routing descriptor; contains no SDK types.",
+      "properties": {
+        "kind": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ProviderKind"
+        },
+        "maturity": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/ApiMaturity"
+        },
+        "provider_id": {
+          "pattern": "^[a-z0-9][a-z0-9._-]{1,127}$",
+          "type": "string"
+        },
+        "requires_network": {
+          "type": "boolean"
+        },
+        "supported_backends": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/BackendKind"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "task_kinds": {
+          "items": {
+            "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/TaskKind"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "terms_state": {
+          "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/enums.schema.json#/$defs/TermsState"
+        }
+      },
+      "required": [
+        "provider_id",
+        "kind",
+        "maturity",
+        "task_kinds",
+        "supported_backends",
+        "requires_network",
+        "terms_state"
+      ],
+      "type": "object"
+    },
+    "ResourceBudget": {
+      "additionalProperties": false,
+      "description": "Host-owned bounded resource envelope.",
+      "properties": {
+        "allow_network": {
+          "type": "boolean"
+        },
+        "max_input_tokens": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "max_memory_mb": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "max_output_tokens": {
+          "minimum": 1,
+          "type": "integer"
+        },
+        "timeout_ms": {
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_input_tokens",
+        "max_output_tokens",
+        "timeout_ms",
+        "max_memory_mb",
+        "allow_network"
+      ],
+      "type": "object"
+    },
+    "SubjectRef": {
+      "additionalProperties": false,
+      "description": "Immutable Git subject used by every receipt.",
+      "properties": {
+        "commit_sha": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        },
+        "repository": {
+          "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+          "type": "string"
+        },
+        "tree_sha": {
+          "pattern": "^[0-9a-f]{40}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "commit_sha"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/base.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Edge TLM v1 base records"
+}

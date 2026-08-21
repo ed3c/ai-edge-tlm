@@ -1,0 +1,6 @@
+{
+  "$id": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/execution-plan.schema.json",
+  "$ref": "https://github.com/ed3c/ai-edge-tlm/contracts/schema/defs/orchestration.schema.json#/$defs/ExecutionPlan",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExecutionPlan"
+}

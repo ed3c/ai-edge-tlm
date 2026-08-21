@@ -1,0 +1,73 @@
+{
+  "as_of_date": "2026-08-21",
+  "counts": {
+    "enums": 18,
+    "examples": 10,
+    "generated_files": 47,
+    "publication_files_without_receipt_cycle": 79,
+    "pytest_tests": 41,
+    "record_families": 5,
+    "records": 22,
+    "roots": 10,
+    "schemas": 17
+  },
+  "digests": {
+    "generated_manifest_sha256": "99c53dfa6246ca1fade17ac3a70df509ed6aa43e63e8960b8019a3dd6264b1e9",
+    "generator_sources_canonical_sha256": "42501c9af54ea8c2b2a4ff3c818a4ccc8f6c4b6c60c6fae83e6fdd6b9dc78510",
+    "merged_model_canonical_sha256": "69953b9d3554b84fcaa9ba3d35ad592c79b04ab0c5374c680799a1ec7830d48e",
+    "publication_manifest_sha256": "ceddd4f1800234ad82a24d51aadec42927200b8c5ffcde0e5f7a079e785a6af8",
+    "task_packet_sha256": "2d124fd1ca84a78efe3589c37f1d5ac25004296239a2c23b063739e69e8cb4a3",
+    "toolchain_receipt_sha256": "3138cb570e9a27d818dbd6d029cf08279162861b5ced620f77e62842cb5454ee"
+  },
+  "evidence_ceiling": "No native SDK, provider runtime, device, model-quality, private authorization, legal, merge, or release acceptance.",
+  "evidence_lanes": [
+    "SOURCE",
+    "STATIC",
+    "LOCAL_DETERMINISTIC"
+  ],
+  "negative_controls": [
+    "required field removal -> FAIL",
+    "enum reorder -> FAIL",
+    "const version change -> FAIL",
+    "provider SDK type injection -> FAIL",
+    "unknown property -> FAIL",
+    "unversioned envelope -> FAIL",
+    "wrong parent blob/ref -> FAIL",
+    "private URL/resolver/secret -> FAIL",
+    "generated drift/stale file -> FAIL",
+    "evidence-lane laundering -> FAIL",
+    "cross-language wire mismatch -> FAIL"
+  ],
+  "parent_subjects": {
+    "p0": {
+      "ci": "validate#11:SUCCESS",
+      "implementation": "5fc162ab8a6d92de4172ade5730179bb74d19fc0",
+      "verification": "4d847c941eb582ac28f5973995849d4e1f6d638a"
+    },
+    "p1": {
+      "ci": "validate#12:SUCCESS",
+      "implementation": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+      "verification": "1e9cf411d11d9711a11e73ec19d06fb47979a881"
+    }
+  },
+  "positive_gates": {
+    "compatibility_lock": "PASS",
+    "cross_language_golden": "PASS",
+    "dependency_free_fixture_validation": "PASS",
+    "draft_2020_12_reference_validation": "PASS",
+    "foundation_validate": "PASS",
+    "generator_replay": "PASS",
+    "kotlin_jvm_compile": "PASS",
+    "parent_semantic_and_git_blob_identity": "PASS",
+    "public_boundary": "PASS",
+    "pytest": "41 passed",
+    "swift_linux_build": "PASS"
+  },
+  "schema": "ai-edge-tlm/p2-contract-candidate-receipt/v2",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "LOCAL_CANDIDATE_PASS",
+  "task_packet_subject": {
+    "commit": "3648e6fd43d41258a83405401ffb41a4871cba1f",
+    "tree": "e1298a300023ba55c7a14f3da67f1608ed955651"
+  }
+}
