@@ -1,0 +1,14 @@
+{
+  "schema": "ai-edge-tlm/p7-exact-receipt/v1",
+  "state": "IMPLEMENTED_UNMERGED_STATIC_LOCAL",
+  "repository": "ed3c/ai-edge-tlm", "issue": 12, "pull_request": 27, "branch": "eval/training-conversion-v1",
+  "base_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "implementation": {"commit": "13e0130a26b20681cf032141dbbb333911cc2ac9", "tree": "bf08b68ead102be89b41530b80f517cc11701e93"},
+  "publication_manifest": {"commit": "39d29c8f47c6180d00c5c200924318aa9f1242a8", "tree": "0386686db1cd3b9b6ccc9c98c65b8545ed4e2372", "git_blob_sha1": "f7f8b6f029598fc7e0e10ecf2eab179e9864f86b"},
+  "provider_ci": {"run_id": 32468931766, "run_number": 33, "conclusion": "SUCCESS"},
+  "local_gates": {"pytest": "9 passed", "compileall": "PASS", "public_boundary_literal_scan": "PASS"},
+  "consumed_exact_inputs": {"p0": "4d847c941eb582ac28f5973995849d4e1f6d638a", "p2": "e86822f6917b3cee05602731d5899e5e8fbe7594", "p4": "6b90db1654d10cd34ad093890af4209daf810b7d"},
+  "evidence_states": {"SOURCE_BOUNDARY": "PASS", "STATIC": "PASS", "LOCAL": "PASS", "REAL_SFT_CONVERSION": "NOT_EXERCISED", "PRIVATE_DATA_SERVICE": "NOT_EXERCISED", "MODEL_QUALITY": "NOT_EXERCISED", "P3C_P3D_RUNTIME_PARITY": "NOT_EXERCISED", "LIVE_DEVICE": "NOT_EXERCISED", "PRIVACY_ENERGY_THERMAL": "NOT_EXERCISED", "MODEL_SERVICE_TERMS": "HUMAN_ADMIT_REQUIRED", "MERGE_RELEASE": "HUMAN_ADMIT_REQUIRED"},
+  "shadow": "CONTINUE_WITH_WARNINGS_L1", "rollback_subject": "6b90db1654d10cd34ad093890af4209daf810b7d",
+  "evidence_ceiling": "Closes exact synthetic/static/local protocol behavior only; real training/conversion/model-quality/private/device/terms/release lanes remain open."
+}
