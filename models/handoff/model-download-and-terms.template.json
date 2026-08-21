@@ -1,0 +1,25 @@
+{
+  "entry_conditions": [
+    "exact manifest digest",
+    "current model terms reviewed",
+    "authorized credential handle available out of band",
+    "target runtime and device matrix declared"
+  ],
+  "forbidden_in_git": [
+    "model bytes",
+    "access token",
+    "signed/private URL",
+    "terms acceptance secret"
+  ],
+  "receipt_required": [
+    "artifact sha256",
+    "tokenizer sha256",
+    "manifest sha256",
+    "terms decision identity",
+    "download source revision",
+    "runtime compatibility",
+    "activation/rollback result"
+  ],
+  "schema": "ai-edge-tlm/model-download-handoff/v1",
+  "state": "HUMAN_ADMIT_REQUIRED"
+}

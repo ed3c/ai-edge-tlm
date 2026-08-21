@@ -1,0 +1,34 @@
+{
+  "evidence": {
+    "HUMAN_TERMS": "HUMAN_ADMIT_REQUIRED",
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "MODEL_QUALITY": "NOT_EXERCISED",
+    "PRIVATE": "NOT_EXERCISED",
+    "STATIC": "PASS"
+  },
+  "gates": {
+    "atomic_activation": "PASS",
+    "negative_controls": "PASS",
+    "provider_ci": "PENDING",
+    "rollback": "PASS",
+    "synthetic_admission": "PASS"
+  },
+  "local_gate_details": {
+    "local_test_result": "8 passed",
+    "shadow_fixes": [
+      "existing content-addressed objects are reverified",
+      "multi-file activation failures restore active pointer and history"
+    ],
+    "toolchain": "Python 3.13 / pytest 9"
+  },
+  "parent_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p4-candidate-receipt/v1",
+  "state": "FIRST_GREEN_LOCAL",
+  "wave_local_suite": "26 passed with native lanes; CI-style 24 passed / 2 explicit skips",
+  "writer_lease": [
+    "models/**",
+    "tests/p4/**"
+  ]
+}
