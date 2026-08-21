@@ -1,0 +1,16 @@
+{
+  "schema": "ai-edge-tlm/skill-malicious-fixtures/v1",
+  "scenarios": [
+    "unallowlisted-origin",
+    "modified-package-digest",
+    "self-mutated-metadata",
+    "bridge-escalation",
+    "camera-or-microphone-escalation",
+    "secret-echo",
+    "malformed-result",
+    "replayed-nonce",
+    "oversized-output",
+    "timeout-and-residue"
+  ],
+  "evidence_lane": "LOCAL"
+}

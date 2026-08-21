@@ -1,0 +1,79 @@
+{
+  "branch": "skills/runtime-sandbox-v1",
+  "candidate": {
+    "git_blob_sha1": "e40eb3d499c6661755ebf77b5a2ec643bdd5b186",
+    "path": "skills/receipts/p5-candidate.json"
+  },
+  "evidence_ceiling": "Binds the exact metadata registry, host tool broker, and process-isolated policy harness only; it does not make remote code trusted or prove a production WebView sandbox.",
+  "evidence_states": {
+    "LIVE_DEVICE": "NOT_EXERCISED",
+    "LOCAL": "PASS",
+    "REMOTE_CODE_TRUST": "HUMAN_ADMIT_REQUIRED",
+    "SECRET_CARRIER": "PRIVATE_NOT_EXERCISED",
+    "STATIC": "PASS",
+    "WEBVIEW_EXPLOIT_RESISTANCE": "NOT_EXERCISED"
+  },
+  "human_owned_operations": [
+    "merge",
+    "release",
+    "store publication",
+    "signing/provisioning",
+    "terms acceptance",
+    "secrets/access grants",
+    "semantic conflict resolution",
+    "production rollback"
+  ],
+  "implementation": {
+    "commit": "74edfd213703e9f657a69738647fb19108a0d370",
+    "tree": "8ae293d4025673e54e4accede6fc7b293d3ff9c6"
+  },
+  "issue": 10,
+  "local_gates": {
+    "compileall": "PASS",
+    "controls": "origin, digest, trust, bridge, CSP, secret, replay, malformed output, timeout and cleanup PASS",
+    "pytest_on_published_candidate": "11 passed"
+  },
+  "manifest": {
+    "git_blob_sha1": "a7143bf239b83ab942a12bc7d79c4b91ad65611a",
+    "implementation_file_count": 16,
+    "path": "skills/receipts/p5-publication-manifest.json"
+  },
+  "parent": {
+    "commit": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+    "exact_receipt_git_blob_sha1": "bc4d12a332ccc07fab334923d7af55d590290988",
+    "exact_receipt_path": "contracts/receipts/p2-contracts.exact.v2.json",
+    "provider_ci": "validate#20:SUCCESS",
+    "pull_request": 19,
+    "tree": "7a1502e00f61814c4a1449a701aba7c08cecafed"
+  },
+  "pr": 23,
+  "provider_ci": {
+    "conclusion": "SUCCESS",
+    "head": "fd26d4d88a5391d6e80310c9a5608e7d65c7d89e",
+    "run_id": 32463611342,
+    "run_number": 25
+  },
+  "reconciliation": {
+    "changed_paths": 18,
+    "commit": "fd26d4d88a5391d6e80310c9a5608e7d65c7d89e",
+    "tree": "136d5636cb87e2d0bd5eb1aed79cb08f966b18c0"
+  },
+  "residual_states": [
+    "native Android/iOS WebView and bridge integration",
+    "OS/WebView exploit resistance and network isolation",
+    "signed-in secret carrier and private authorization",
+    "remote-skill trust, store, merge, and release authority"
+  ],
+  "rollback_subject": "e86822f6917b3cee05602731d5899e5e8fbe7594",
+  "schema": "ai-edge-tlm/p5-skill-runtime-exact-receipt/v1",
+  "shadow": "CONTINUE_WITH_WARNINGS_L1",
+  "state": "IMPLEMENTED_UNMERGED",
+  "task_packet": {
+    "git_blob_sha1": "07f731e4480966fd094a2946417f42bee24edee7",
+    "path": "skills/task-packets/p5-skill-runtime-v1.task.json"
+  },
+  "writer_lease": [
+    "skills/**",
+    "tests/p5/**"
+  ]
+}
