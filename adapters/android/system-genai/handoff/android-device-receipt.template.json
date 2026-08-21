@@ -1,0 +1,23 @@
+{
+  "evidence_ceiling": "A physical-device receipt applies only to the exact device, OS, API and model revision.",
+  "human_states": {
+    "sdk_terms": "HUMAN_ADMIT_REQUIRED",
+    "signing": "HUMAN_ADMIT_REQUIRED"
+  },
+  "required": [
+    "commit_sha",
+    "tree_sha",
+    "android_sdk",
+    "api_artifact",
+    "device_model",
+    "os_build",
+    "system_model_revision",
+    "provider_availability",
+    "request_fixture_digest",
+    "observed_latency_ms",
+    "privacy_observation",
+    "fallback_result"
+  ],
+  "schema": "ai-edge-tlm/android-system-device-receipt/v1",
+  "state": "NOT_EXERCISED"
+}
