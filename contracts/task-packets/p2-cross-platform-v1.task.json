@@ -1,0 +1,195 @@
+{
+  "schema": "ai-edge-tlm/p2-cross-platform-contract-task/v1",
+  "task_id": "P2-03",
+  "issue": 3,
+  "repository": "ed3c/ai-edge-tlm",
+  "state": "START_READY_CONVERGENCE",
+  "convergence_owner": "P2-03",
+  "head_branch": "contracts/cross-platform-v1",
+  "git_base_parent": {
+    "issue": 2,
+    "pull_request": 17,
+    "branch": "evidence/source-closure",
+    "head_sha": "5fc162ab8a6d92de4172ade5730179bb74d19fc0",
+    "tree_sha": "905277e7666929e8c048a40d882fa978f41d82ce",
+    "relationship": "PRIMARY_GIT_PARENT",
+    "receipt_path": "docs/research/receipts/p0-source-closure.exact.json",
+    "receipt_state": "SOURCE_STATIC_RECEIPT_AVAILABLE",
+    "ci": "validate#7:SUCCESS"
+  },
+  "additional_task_parents": [
+    {
+      "issue": 7,
+      "pull_request": 18,
+      "branch": "control/public-private-boundary",
+      "head_sha": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+      "tree_sha": "bdf3aec5e52bf6eb52e899c0d61a2aa91bbbe947",
+      "relationship": "IMMUTABLE_CONVERGENCE_INPUT_NOT_IN_GIT_ANCESTRY",
+      "receipt_path": "control/public_private/receipts/p1-public-private-boundary.exact.json",
+      "receipt_state": "STATIC_PUBLIC_BOUNDARY_RECEIPT_AVAILABLE",
+      "ci": "validate#8:SUCCESS"
+    }
+  ],
+  "foundation_subject": {
+    "issue": 15,
+    "pull_request": 16,
+    "branch": "foundation/domain-decoupled-core-v0",
+    "head_sha": "e959201574b9548758e9d173b02e214c9e8531e7",
+    "tree_sha": "a7339de7916540abb75b49101119b46055a945e7"
+  },
+  "goal": "Freeze provider-neutral v1 wire contracts and generate reproducible Kotlin and Swift bindings without leaking provider SDK types or private control-plane values.",
+  "non_goals": [
+    "implement Android, Apple, LiteRT-LM, model, skill or application adapters",
+    "merge P0, P1, Foundation or main branches",
+    "accept model, SDK, store or legal terms",
+    "read private Google Workspace locations or private document bytes",
+    "claim native build, runtime, device, model-quality, privacy, energy or thermal acceptance"
+  ],
+  "allowed_paths": [
+    "contracts/**",
+    "bindings/kotlin/**",
+    "bindings/swift/**",
+    "tests/p2/**"
+  ],
+  "excluded_paths": [
+    "README.md",
+    "AGENTS.md",
+    "ARCHITECTURE.md",
+    "docs/research/**",
+    "control/public_private/**",
+    "src/edge_tlm_control/**",
+    "adapters/**",
+    "models/**",
+    "skills/**",
+    "core/**",
+    "training/**",
+    "eval/**",
+    "apps/**",
+    ".github/workflows/**"
+  ],
+  "input_contracts": {
+    "p0": [
+      {
+        "path": "docs/research/source-register.json",
+        "sha256": "24720e8d2de629ac7bfdeb95be99e09551d381f9c8aaa775fc511f3de46ee277"
+      },
+      {
+        "path": "docs/research/claim-ledger.json",
+        "sha256": "e6a5bb56864585be2c0e5aa6d437ea5e6035dbe0c88b8abfd3eab1dd463dcbf0"
+      },
+      {
+        "path": "docs/research/license-register.json",
+        "sha256": "bbc6c5840b9c85d08661412f447cbeea2256fe876702981878c2165cd2dd2b61"
+      },
+      {
+        "path": "docs/research/technology-selection.json",
+        "sha256": "fac66ddcea138e93d8a80c2d777482267590e527b6a5eb6ddf08d410519cebf2"
+      }
+    ],
+    "p1": [
+      {
+        "ref": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+        "path": "control/public_private/context-capsule.schema.json",
+        "sha256": "99a680a28cdda2e5deeb640c79c8b2567920ea70c0251fb7fc39fe2742caa8eb"
+      },
+      {
+        "ref": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+        "path": "control/public_private/classification-policy.json",
+        "sha256": "7abc2a9b569263d0e66cecb0d82894e08acb0c976ddb14a1eaa5a6a36d61b155"
+      },
+      {
+        "ref": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+        "path": "docs/governance/public-private-boundary.md",
+        "sha256": "6e3ecd747b570224c0c15bbf61d07d084a47914dba1520d543d50055b686e807"
+      }
+    ]
+  },
+  "required_contract_surfaces": [
+    "inference request and streaming event envelope",
+    "capability profile and provider descriptor",
+    "model artifact reference and provenance identity",
+    "tool definition, proposal, admission decision and result",
+    "skill metadata and immutable skill reference",
+    "bounded DAG, node, effect, cancellation, retry and fallback semantics",
+    "benchmark and physical-device receipt identity",
+    "evidence lane, subject, digest, state and handoff identity",
+    "typed error taxonomy and compatibility/version metadata"
+  ],
+  "hard_invariants": [
+    "provider-specific Android, Apple or LiteRT-LM SDK types never cross the v1 boundary",
+    "private Workspace URLs, resolver values, roadmap, prompt history, credentials, private data and Human approvals never enter generated/public contracts",
+    "model output remains candidate data and never implies tool execution authority",
+    "requested accelerator is distinct from runtime-observed backend",
+    "source-code license, model terms, dataset terms and SDK/store terms remain separate values",
+    "start-readiness and completion-readiness remain separate edges",
+    "wire evolution is explicitly versioned and breaking changes fail compatibility gates",
+    "one deterministic generator owns generated Kotlin and Swift bytes"
+  ],
+  "start_dependencies": [
+    {
+      "id": "P0_READABLE",
+      "state": "PASS",
+      "subject": "5fc162ab8a6d92de4172ade5730179bb74d19fc0",
+      "evidence": "PR#17 draft/open/mergeable; validate#7 SUCCESS; exact SOURCE/STATIC receipt"
+    },
+    {
+      "id": "P1_READABLE",
+      "state": "PASS",
+      "subject": "69b3e15c05bf3c16103e0482b2ce592ee6b3311f",
+      "evidence": "PR#18 draft/open/mergeable; validate#8 SUCCESS; exact STATIC/LOCAL receipt"
+    }
+  ],
+  "completion_dependencies": [
+    "P0 output digests and exact receipt validate against the consumed subject",
+    "P1 output digests and exact receipt validate against the consumed subject",
+    "any parent-head drift invalidates this task packet until recompiled",
+    "P2 own schema, generator, binding, golden and mutation receipts pass on its exact head"
+  ],
+  "required_positive_gates": [
+    "JSON Schema Draft 2020-12 validation for every v1 schema",
+    "deterministic generator replay produces identical bytes and digest",
+    "generated Kotlin package compiles in isolation on the admitted toolchain",
+    "generated Swift package compiles in isolation on the admitted toolchain",
+    "Kotlin and Swift golden fixtures round-trip to equivalent canonical wire values",
+    "all consumed P0/P1 bytes match frozen SHA-256 values",
+    "repository public-boundary audit remains green",
+    "full deterministic test suite remains green"
+  ],
+  "required_negative_controls": [
+    "breaking schema mutation fails compatibility",
+    "provider SDK type leakage fails generated-binding gate",
+    "private URL or resolver-value mutation fails public-boundary gate",
+    "unknown field or unversioned envelope fails closed",
+    "wrong parent SHA or digest fails convergence admission",
+    "nondeterministic generator output fails replay",
+    "cheaper evidence lane cannot satisfy LIVE_DEVICE, PRIVATE or HUMAN fields"
+  ],
+  "worker_protocol": {
+    "p1_input_read": "Read P1 inputs from the exact immutable Git ref with git show or equivalent read-only provider access; do not merge or copy private values.",
+    "writer_rule": "P2 is the sole writer for allowed_paths; P0/P1 paths are read-only inputs.",
+    "convergence_rule": "Do not auto-resolve semantic disagreement between P0 and P1. Record the conflict and stop for Tech Lead/Human review.",
+    "publication_rule": "Open a Draft PR only after real v1 contract and generated-binding bytes exist and all static gates run."
+  },
+  "shadow_checkpoints": [
+    "ARCHITECTURE_CHOICE",
+    "FIRST_SCHEMA_VERTICAL_SLICE",
+    "FIRST_GENERATED_KOTLIN_SWIFT_PAIR",
+    "FIRST_GREEN",
+    "BEFORE_COMMIT",
+    "BEFORE_PR_OR_PUBLICATION"
+  ],
+  "evidence_lanes": [
+    "SOURCE",
+    "STATIC",
+    "LOCAL_DETERMINISTIC"
+  ],
+  "evidence_ceiling": "This packet admits P2 contract implementation only. It does not prove native provider integration, physical devices, model quality, private carrier authorization, legal acceptance, merge or release.",
+  "rollback_subject": "5fc162ab8a6d92de4172ade5730179bb74d19fc0",
+  "human_owned_operations": [
+    "semantic resolution of conflicting parent requirements",
+    "merge of PRs 16, 17, 18 or future P2 PR",
+    "release or tag promotion",
+    "model, SDK, store or legal terms acceptance",
+    "credentials, signing, secret mutation or production rollback"
+  ]
+}
